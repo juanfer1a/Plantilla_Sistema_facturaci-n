@@ -7,19 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace _Plantilla_Sistema_facturación_
 {
-    public partial class frmlogin : Form
+    public partial class frmPrincipal : MaterialForm
     {
-        public frmlogin()
+        public frmPrincipal()
         {
             InitializeComponent();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
