@@ -50,6 +50,7 @@ namespace _Plantilla_Sistema_facturación_
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.pnlPrincipal.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
@@ -149,6 +150,7 @@ namespace _Plantilla_Sistema_facturación_
             // Acerca
             // 
             this.Acerca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.Acerca.Controls.Add(this.button6);
             this.Acerca.Controls.Add(this.pictureBox5);
             this.Acerca.Location = new System.Drawing.Point(4, 22);
             this.Acerca.Name = "Acerca";
@@ -165,7 +167,7 @@ namespace _Plantilla_Sistema_facturación_
             this.tabOpcionesMenu.Name = "tabOpcionesMenu";
             this.tabOpcionesMenu.Size = new System.Drawing.Size(597, 27);
             this.tabOpcionesMenu.TabIndex = 1;
-            this.tabOpcionesMenu.Click += new System.EventHandler(this.tabOpcionesMenu_Click);
+            
             // 
             // pictureBox1
             // 
@@ -318,6 +320,22 @@ namespace _Plantilla_Sistema_facturación_
             this.button5.Text = "Salir";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Tai Le", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.GhostWhite;
+            this.button6.Image = global::_Plantilla_Sistema_facturación_.Properties.Resources.salir;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(2, 262);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(188, 39);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Salir";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,5 +386,6 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
     }
 }
