@@ -18,5 +18,10 @@ namespace _Plantilla_Sistema_facturación_
         {
             InitializeComponent();
         }
+
+        private void tabOpcionesMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
