@@ -12,13 +12,15 @@ using MaterialSkin.Controls;
 
 namespace _Plantilla_Sistema_facturación_
 {
-    public partial class frmPrincipal : MaterialForm
+    public partial class frmListaClientes : Form
     {
-        public frmPrincipal()
+        public frmListaClientes()
         {
             InitializeComponent();
         }
 
-      
-    }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }    }
 }

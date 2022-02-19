@@ -31,12 +31,12 @@ namespace _Plantilla_Sistema_facturación_
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlogin));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new MaterialSkin.Controls.MaterialLabel();
             this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnValidar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCancelar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,26 +51,16 @@ namespace _Plantilla_Sistema_facturación_
             this.panel1.Size = new System.Drawing.Size(202, 250);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 145);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Depth = 0;
-            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblTitulo.Location = new System.Drawing.Point(309, 38);
             this.lblTitulo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(136, 19);
+            this.lblTitulo.Size = new System.Drawing.Size(154, 18);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "VALIDAR USUARIO";
             // 
@@ -110,6 +100,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             // btnValidar
             // 
+            this.btnValidar.AutoSize = true;
             this.btnValidar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnValidar.Depth = 0;
             this.btnValidar.Icon = null;
@@ -117,13 +108,14 @@ namespace _Plantilla_Sistema_facturación_
             this.btnValidar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Primary = true;
-            this.btnValidar.Size = new System.Drawing.Size(113, 36);
+            this.btnValidar.Size = new System.Drawing.Size(77, 36);
             this.btnValidar.TabIndex = 4;
             this.btnValidar.Text = "VALIDAR";
             this.btnValidar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
+            this.btnCancelar.AutoSize = true;
             this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancelar.Depth = 0;
             this.btnCancelar.Icon = null;
@@ -131,11 +123,21 @@ namespace _Plantilla_Sistema_facturación_
             this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Primary = true;
-            this.btnCancelar.Size = new System.Drawing.Size(109, 36);
+            this.btnCancelar.Size = new System.Drawing.Size(91, 36);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(22, 50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 145);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmlogin
             // 

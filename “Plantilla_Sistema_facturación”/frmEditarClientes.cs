@@ -7,18 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 
 namespace _Plantilla_Sistema_facturación_
 {
-    public partial class frmPrincipal : MaterialForm
+    public partial class frmEditarClientes : Form
     {
-        public frmPrincipal()
+        public frmEditarClientes()
         {
             InitializeComponent();
         }
-
-      
     }
 }
