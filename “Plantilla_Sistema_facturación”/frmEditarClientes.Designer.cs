@@ -46,7 +46,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblTitulo.Depth = 0;
             this.lblTitulo.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitulo.Location = new System.Drawing.Point(166, 116);
+            this.lblTitulo.Location = new System.Drawing.Point(162, 61);
             this.lblTitulo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(206, 19);
@@ -57,7 +57,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtNombreCliente.Depth = 0;
             this.txtNombreCliente.Hint = "Nombre Cliente";
-            this.txtNombreCliente.Location = new System.Drawing.Point(67, 197);
+            this.txtNombreCliente.Location = new System.Drawing.Point(63, 142);
             this.txtNombreCliente.MaxLength = 32767;
             this.txtNombreCliente.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreCliente.Name = "txtNombreCliente";
@@ -74,7 +74,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtDocumento.Depth = 0;
             this.txtDocumento.Hint = "Documento";
-            this.txtDocumento.Location = new System.Drawing.Point(67, 237);
+            this.txtDocumento.Location = new System.Drawing.Point(63, 182);
             this.txtDocumento.MaxLength = 32767;
             this.txtDocumento.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtDocumento.Name = "txtDocumento";
@@ -91,7 +91,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtDireccion.Depth = 0;
             this.txtDireccion.Hint = "Direccion";
-            this.txtDireccion.Location = new System.Drawing.Point(67, 276);
+            this.txtDireccion.Location = new System.Drawing.Point(63, 221);
             this.txtDireccion.MaxLength = 32767;
             this.txtDireccion.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtDireccion.Name = "txtDireccion";
@@ -108,7 +108,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtTelefono.Depth = 0;
             this.txtTelefono.Hint = "Telefono";
-            this.txtTelefono.Location = new System.Drawing.Point(67, 317);
+            this.txtTelefono.Location = new System.Drawing.Point(63, 262);
             this.txtTelefono.MaxLength = 32767;
             this.txtTelefono.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTelefono.Name = "txtTelefono";
@@ -125,7 +125,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtEmail.Depth = 0;
             this.txtEmail.Hint = "Email";
-            this.txtEmail.Location = new System.Drawing.Point(67, 359);
+            this.txtEmail.Location = new System.Drawing.Point(63, 304);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtEmail.Name = "txtEmail";
@@ -144,7 +144,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnActualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnActualizar.Depth = 0;
             this.btnActualizar.Icon = null;
-            this.btnActualizar.Location = new System.Drawing.Point(128, 408);
+            this.btnActualizar.Location = new System.Drawing.Point(124, 353);
             this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Primary = true;
@@ -156,21 +156,20 @@ namespace _Plantilla_Sistema_facturación_
             // lblSalir
             // 
             this.lblSalir.AutoSize = true;
-            this.lblSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.lblSalir.Depth = 0;
             this.lblSalir.Icon = null;
-            this.lblSalir.Location = new System.Drawing.Point(313, 408);
+            this.lblSalir.Location = new System.Drawing.Point(309, 353);
             this.lblSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Primary = true;
-            this.lblSalir.Size = new System.Drawing.Size(58, 36);
+            this.lblSalir.Size = new System.Drawing.Size(100, 36);
             this.lblSalir.TabIndex = 10;
             this.lblSalir.Text = "SALIR";
             this.lblSalir.UseVisualStyleBackColor = true;
             // 
             // txtIdCliente
             // 
-            this.txtIdCliente.Location = new System.Drawing.Point(67, 161);
+            this.txtIdCliente.Location = new System.Drawing.Point(63, 106);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(36, 20);
             this.txtIdCliente.TabIndex = 11;
@@ -179,7 +178,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 473);
+            this.ClientSize = new System.Drawing.Size(554, 453);
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.lblSalir);
             this.Controls.Add(this.btnActualizar);
@@ -189,6 +188,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Controls.Add(this.txtDocumento);
             this.Controls.Add(this.txtNombreCliente);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEditarClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACTUALIZAR CLIENTES";

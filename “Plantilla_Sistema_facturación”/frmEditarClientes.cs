@@ -12,7 +12,7 @@ using MaterialSkin.Controls;
 
 namespace _Plantilla_Sistema_facturación_
 {
-    public partial class frmEditarClientes : MaterialForm
+    public partial class frmEditarClientes : Form
     {
         public int IdCliente { get; set; }
 
