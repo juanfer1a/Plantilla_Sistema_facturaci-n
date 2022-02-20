@@ -37,5 +37,15 @@ namespace _Plantilla_Sistema_facturación_
                 txtTelefono.Text = "23452345";
             }
         }
+
+        private void grbAdminClientes_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

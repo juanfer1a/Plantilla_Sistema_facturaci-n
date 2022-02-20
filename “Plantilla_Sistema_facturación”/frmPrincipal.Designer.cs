@@ -47,9 +47,9 @@ namespace _Plantilla_Sistema_facturación_
             this.btnInformes = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Seguridad = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSeguridad = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnRoles = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Acerca = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -182,6 +182,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnCategorias.Text = "Categorias";
             this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // btnClientes
             // 
@@ -217,6 +218,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnProductos.Text = "Productos";
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // pictureBox1
             // 
@@ -257,6 +259,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnFacturas.Text = "Facturas ";
             this.btnFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFacturas.UseVisualStyleBackColor = true;
+            this.btnFacturas.Click += new System.EventHandler(this.btnFacturas_Click);
             // 
             // btnInformes
             // 
@@ -274,6 +277,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnInformes.Text = "Informes";
             this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInformes.UseVisualStyleBackColor = true;
+            this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
             // pictureBox3
             // 
@@ -289,9 +293,9 @@ namespace _Plantilla_Sistema_facturación_
             // Seguridad
             // 
             this.Seguridad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Seguridad.Controls.Add(this.button1);
+            this.Seguridad.Controls.Add(this.btnSeguridad);
             this.Seguridad.Controls.Add(this.btnEmpleados);
-            this.Seguridad.Controls.Add(this.button3);
+            this.Seguridad.Controls.Add(this.btnRoles);
             this.Seguridad.Controls.Add(this.pictureBox4);
             this.Seguridad.Location = new System.Drawing.Point(4, 22);
             this.Seguridad.Name = "Seguridad";
@@ -299,22 +303,23 @@ namespace _Plantilla_Sistema_facturación_
             this.Seguridad.TabIndex = 3;
             this.Seguridad.Text = "Seguridad";
             // 
-            // button1
+            // btnSeguridad
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(17, 322);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 39);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Seguridad";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSeguridad.FlatAppearance.BorderSize = 0;
+            this.btnSeguridad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnSeguridad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeguridad.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeguridad.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btnSeguridad.Image = ((System.Drawing.Image)(resources.GetObject("btnSeguridad.Image")));
+            this.btnSeguridad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeguridad.Location = new System.Drawing.Point(17, 322);
+            this.btnSeguridad.Name = "btnSeguridad";
+            this.btnSeguridad.Size = new System.Drawing.Size(159, 39);
+            this.btnSeguridad.TabIndex = 8;
+            this.btnSeguridad.Text = "Seguridad";
+            this.btnSeguridad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSeguridad.UseVisualStyleBackColor = true;
+            this.btnSeguridad.Click += new System.EventHandler(this.btnSeguridad_Click);
             // 
             // btnEmpleados
             // 
@@ -332,23 +337,25 @@ namespace _Plantilla_Sistema_facturación_
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
-            // button3
+            // btnRoles
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(17, 264);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 39);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Roles";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRoles.FlatAppearance.BorderSize = 0;
+            this.btnRoles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoles.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoles.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btnRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnRoles.Image")));
+            this.btnRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoles.Location = new System.Drawing.Point(17, 264);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Size = new System.Drawing.Size(114, 39);
+            this.btnRoles.TabIndex = 6;
+            this.btnRoles.Text = "Roles";
+            this.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // pictureBox4
             // 
@@ -389,6 +396,7 @@ namespace _Plantilla_Sistema_facturación_
             this.button2.Text = "Ayuda";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            
             // 
             // button4
             // 
@@ -406,6 +414,7 @@ namespace _Plantilla_Sistema_facturación_
             this.button4.Text = "Acerca de";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
+            
             // 
             // pictureBox5
             // 
@@ -478,9 +487,9 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnFacturas;
         private System.Windows.Forms.Button btnInformes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSeguridad;
         private System.Windows.Forms.Button btnEmpleados;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRoles;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel pnlContenedor;

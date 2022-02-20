@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAdminSeguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminSeguridad.Designer.cs">
+      <DependentUpon>frmAdminSeguridad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCategoriasProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,11 +67,23 @@
     <Compile Include="frmEditarClientes.Designer.cs">
       <DependentUpon>frmEditarClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFacturas.Designer.cs">
       <DependentUpon>frmFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformes.Designer.cs">
+      <DependentUpon>frmInformes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListaClientes.cs">
       <SubType>Form</SubType>
@@ -91,16 +109,31 @@
     <Compile Include="frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRolEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRolEmpleados.Designer.cs">
+      <DependentUpon>frmRolEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAdminSeguridad.resx">
+      <DependentUpon>frmAdminSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCategoriasProductos.resx">
       <DependentUpon>frmCategoriasProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarClientes.resx">
       <DependentUpon>frmEditarClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFacturas.resx">
       <DependentUpon>frmFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformes.resx">
+      <DependentUpon>frmInformes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaClientes.resx">
       <DependentUpon>frmListaClientes.cs</DependentUpon>
@@ -113,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRolEmpleados.resx">
+      <DependentUpon>frmRolEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

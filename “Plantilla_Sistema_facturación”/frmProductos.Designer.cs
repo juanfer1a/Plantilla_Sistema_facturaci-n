@@ -49,7 +49,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             // txtIdCliente
             // 
-            this.txtIdCliente.Location = new System.Drawing.Point(31, 61);
+            this.txtIdCliente.Location = new System.Drawing.Point(31, 26);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(36, 20);
             this.txtIdCliente.TabIndex = 20;
@@ -59,11 +59,11 @@ namespace _Plantilla_Sistema_facturación_
             this.lblSalir.AutoSize = true;
             this.lblSalir.Depth = 0;
             this.lblSalir.Icon = null;
-            this.lblSalir.Location = new System.Drawing.Point(322, 432);
+            this.lblSalir.Location = new System.Drawing.Point(495, 388);
             this.lblSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Primary = true;
-            this.lblSalir.Size = new System.Drawing.Size(97, 36);
+            this.lblSalir.Size = new System.Drawing.Size(104, 36);
             this.lblSalir.TabIndex = 19;
             this.lblSalir.Text = "SALIR";
             this.lblSalir.UseVisualStyleBackColor = true;
@@ -73,11 +73,11 @@ namespace _Plantilla_Sistema_facturación_
             this.btnActualizar.AutoSize = true;
             this.btnActualizar.Depth = 0;
             this.btnActualizar.Icon = null;
-            this.btnActualizar.Location = new System.Drawing.Point(137, 432);
+            this.btnActualizar.Location = new System.Drawing.Point(310, 388);
             this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Primary = true;
-            this.btnActualizar.Size = new System.Drawing.Size(103, 36);
+            this.btnActualizar.Size = new System.Drawing.Size(149, 36);
             this.btnActualizar.TabIndex = 18;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtCantStock.Depth = 0;
             this.txtCantStock.Hint = "Cantidad Stock";
-            this.txtCantStock.Location = new System.Drawing.Point(31, 259);
+            this.txtCantStock.Location = new System.Drawing.Point(31, 224);
             this.txtCantStock.MaxLength = 32767;
             this.txtCantStock.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCantStock.Name = "txtCantStock";
@@ -103,7 +103,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtPrecioVenta.Depth = 0;
             this.txtPrecioVenta.Hint = "Precio de venta";
-            this.txtPrecioVenta.Location = new System.Drawing.Point(31, 217);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(31, 182);
             this.txtPrecioVenta.MaxLength = 32767;
             this.txtPrecioVenta.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
@@ -120,7 +120,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtPrecioCompra.Depth = 0;
             this.txtPrecioCompra.Hint = "Precio de compra";
-            this.txtPrecioCompra.Location = new System.Drawing.Point(31, 176);
+            this.txtPrecioCompra.Location = new System.Drawing.Point(31, 141);
             this.txtPrecioCompra.MaxLength = 32767;
             this.txtPrecioCompra.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecioCompra.Name = "txtPrecioCompra";
@@ -137,7 +137,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtCodRef.Depth = 0;
             this.txtCodRef.Hint = "Codigo Referencia";
-            this.txtCodRef.Location = new System.Drawing.Point(31, 137);
+            this.txtCodRef.Location = new System.Drawing.Point(31, 102);
             this.txtCodRef.MaxLength = 32767;
             this.txtCodRef.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCodRef.Name = "txtCodRef";
@@ -154,7 +154,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtNombreProducto.Depth = 0;
             this.txtNombreProducto.Hint = "Nombre Producto";
-            this.txtNombreProducto.Location = new System.Drawing.Point(31, 97);
+            this.txtNombreProducto.Location = new System.Drawing.Point(31, 62);
             this.txtNombreProducto.MaxLength = 32767;
             this.txtNombreProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreProducto.Name = "txtNombreProducto";
@@ -164,6 +164,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtNombreProducto.SelectionStart = 0;
             this.txtNombreProducto.Size = new System.Drawing.Size(420, 23);
             this.txtNombreProducto.TabIndex = 13;
+            this.txtNombreProducto.TabStop = false;
             this.txtNombreProducto.UseSystemPasswordChar = false;
             // 
             // lblTituloProductos
@@ -172,18 +173,17 @@ namespace _Plantilla_Sistema_facturación_
             this.lblTituloProductos.Depth = 0;
             this.lblTituloProductos.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblTituloProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTituloProductos.Location = new System.Drawing.Point(334, 33);
+            this.lblTituloProductos.Location = new System.Drawing.Point(353, 38);
             this.lblTituloProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTituloProductos.Name = "lblTituloProductos";
             this.lblTituloProductos.Size = new System.Drawing.Size(246, 19);
             this.lblTituloProductos.TabIndex = 12;
             this.lblTituloProductos.Text = "ADMINISTRACION DE PRODUCTOS";
-            
             // 
             // cxbCategoria
             // 
             this.cxbCategoria.FormattingEnabled = true;
-            this.cxbCategoria.Location = new System.Drawing.Point(630, 99);
+            this.cxbCategoria.Location = new System.Drawing.Point(630, 64);
             this.cxbCategoria.Name = "cxbCategoria";
             this.cxbCategoria.Size = new System.Drawing.Size(121, 21);
             this.cxbCategoria.TabIndex = 21;
@@ -194,7 +194,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblCategoria.Depth = 0;
             this.lblCategoria.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCategoria.Location = new System.Drawing.Point(538, 101);
+            this.lblCategoria.Location = new System.Drawing.Point(538, 66);
             this.lblCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(74, 19);
@@ -205,7 +205,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.materialSingleLineTextField1.Depth = 0;
             this.materialSingleLineTextField1.Hint = "Cantidad Stock";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(542, 137);
+            this.materialSingleLineTextField1.Location = new System.Drawing.Point(542, 102);
             this.materialSingleLineTextField1.MaxLength = 32767;
             this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
@@ -217,7 +217,6 @@ namespace _Plantilla_Sistema_facturación_
             this.materialSingleLineTextField1.TabIndex = 23;
             this.materialSingleLineTextField1.TabStop = false;
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
-            
             // 
             // lblDetalleProduc
             // 
@@ -225,7 +224,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblDetalleProduc.Depth = 0;
             this.lblDetalleProduc.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblDetalleProduc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblDetalleProduc.Location = new System.Drawing.Point(538, 181);
+            this.lblDetalleProduc.Location = new System.Drawing.Point(538, 146);
             this.lblDetalleProduc.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblDetalleProduc.Name = "lblDetalleProduc";
             this.lblDetalleProduc.Size = new System.Drawing.Size(121, 19);
@@ -234,18 +233,16 @@ namespace _Plantilla_Sistema_facturación_
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(542, 212);
+            this.textBox1.Location = new System.Drawing.Point(542, 177);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(307, 78);
             this.textBox1.TabIndex = 25;
-            
             // 
             // grbAdminProductos
             // 
             this.grbAdminProductos.Controls.Add(this.txtNombreProducto);
             this.grbAdminProductos.Controls.Add(this.textBox1);
-            this.grbAdminProductos.Controls.Add(this.lblTituloProductos);
             this.grbAdminProductos.Controls.Add(this.lblDetalleProduc);
             this.grbAdminProductos.Controls.Add(this.txtCodRef);
             this.grbAdminProductos.Controls.Add(this.materialSingleLineTextField1);
@@ -255,9 +252,9 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminProductos.Controls.Add(this.txtPrecioVenta);
             this.grbAdminProductos.Controls.Add(this.txtCantStock);
             this.grbAdminProductos.Controls.Add(this.txtIdCliente);
-            this.grbAdminProductos.Location = new System.Drawing.Point(23, 88);
+            this.grbAdminProductos.Location = new System.Drawing.Point(26, 79);
             this.grbAdminProductos.Name = "grbAdminProductos";
-            this.grbAdminProductos.Size = new System.Drawing.Size(873, 319);
+            this.grbAdminProductos.Size = new System.Drawing.Size(873, 283);
             this.grbAdminProductos.TabIndex = 26;
             this.grbAdminProductos.TabStop = false;
             // 
@@ -265,10 +262,12 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 494);
+            this.ClientSize = new System.Drawing.Size(926, 446);
             this.Controls.Add(this.grbAdminProductos);
             this.Controls.Add(this.lblSalir);
+            this.Controls.Add(this.lblTituloProductos);
             this.Controls.Add(this.btnActualizar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.grbAdminProductos.ResumeLayout(false);

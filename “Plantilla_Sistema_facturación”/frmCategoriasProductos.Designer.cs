@@ -34,11 +34,13 @@ namespace _Plantilla_Sistema_facturación_
             this.lblCatProduc = new MaterialSkin.Controls.MaterialLabel();
             this.lblSalirCatProduc = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizarCatProduc = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.grbCategoriaProductos = new System.Windows.Forms.GroupBox();
+            this.grbCategoriaProductos.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtIdCatProduc
             // 
-            this.txtIdCatProduc.Location = new System.Drawing.Point(50, 99);
+            this.txtIdCatProduc.Location = new System.Drawing.Point(22, 34);
             this.txtIdCatProduc.Name = "txtIdCatProduc";
             this.txtIdCatProduc.Size = new System.Drawing.Size(36, 20);
             this.txtIdCatProduc.TabIndex = 14;
@@ -47,7 +49,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtNombreCategoria.Depth = 0;
             this.txtNombreCategoria.Hint = "Nombre Categoria";
-            this.txtNombreCategoria.Location = new System.Drawing.Point(50, 135);
+            this.txtNombreCategoria.Location = new System.Drawing.Point(22, 70);
             this.txtNombreCategoria.MaxLength = 32767;
             this.txtNombreCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreCategoria.Name = "txtNombreCategoria";
@@ -66,7 +68,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblCatProduc.Depth = 0;
             this.lblCatProduc.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblCatProduc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCatProduc.Location = new System.Drawing.Point(149, 54);
+            this.lblCatProduc.Location = new System.Drawing.Point(140, 28);
             this.lblCatProduc.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCatProduc.Name = "lblCatProduc";
             this.lblCatProduc.Size = new System.Drawing.Size(180, 19);
@@ -76,9 +78,10 @@ namespace _Plantilla_Sistema_facturación_
             // lblSalirCatProduc
             // 
             this.lblSalirCatProduc.AutoSize = true;
+            this.lblSalirCatProduc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.lblSalirCatProduc.Depth = 0;
             this.lblSalirCatProduc.Icon = null;
-            this.lblSalirCatProduc.Location = new System.Drawing.Point(319, 205);
+            this.lblSalirCatProduc.Location = new System.Drawing.Point(291, 140);
             this.lblSalirCatProduc.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSalirCatProduc.Name = "lblSalirCatProduc";
             this.lblSalirCatProduc.Primary = true;
@@ -93,7 +96,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnActualizarCatProduc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnActualizarCatProduc.Depth = 0;
             this.btnActualizarCatProduc.Icon = null;
-            this.btnActualizarCatProduc.Location = new System.Drawing.Point(134, 205);
+            this.btnActualizarCatProduc.Location = new System.Drawing.Point(106, 140);
             this.btnActualizarCatProduc.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizarCatProduc.Name = "btnActualizarCatProduc";
             this.btnActualizarCatProduc.Primary = true;
@@ -102,19 +105,30 @@ namespace _Plantilla_Sistema_facturación_
             this.btnActualizarCatProduc.Text = "ACTUALIZAR";
             this.btnActualizarCatProduc.UseVisualStyleBackColor = true;
             // 
+            // grbCategoriaProductos
+            // 
+            this.grbCategoriaProductos.Controls.Add(this.txtIdCatProduc);
+            this.grbCategoriaProductos.Controls.Add(this.lblSalirCatProduc);
+            this.grbCategoriaProductos.Controls.Add(this.txtNombreCategoria);
+            this.grbCategoriaProductos.Controls.Add(this.btnActualizarCatProduc);
+            this.grbCategoriaProductos.Location = new System.Drawing.Point(12, 70);
+            this.grbCategoriaProductos.Name = "grbCategoriaProductos";
+            this.grbCategoriaProductos.Size = new System.Drawing.Size(453, 220);
+            this.grbCategoriaProductos.TabIndex = 17;
+            this.grbCategoriaProductos.TabStop = false;
+            // 
             // frmCategoriasProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 340);
-            this.Controls.Add(this.lblSalirCatProduc);
-            this.Controls.Add(this.btnActualizarCatProduc);
-            this.Controls.Add(this.txtIdCatProduc);
-            this.Controls.Add(this.txtNombreCategoria);
+            this.ClientSize = new System.Drawing.Size(487, 321);
+            this.Controls.Add(this.grbCategoriaProductos);
             this.Controls.Add(this.lblCatProduc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCategoriasProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.grbCategoriaProductos.ResumeLayout(false);
+            this.grbCategoriaProductos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +141,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialLabel lblCatProduc;
         private MaterialSkin.Controls.MaterialRaisedButton lblSalirCatProduc;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizarCatProduc;
+        private System.Windows.Forms.GroupBox grbCategoriaProductos;
     }
 }
