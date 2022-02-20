@@ -30,10 +30,10 @@ namespace _Plantilla_Sistema_facturación_
         private void InitializeComponent()
         {
             this.lblAdminClientes = new MaterialSkin.Controls.MaterialLabel();
-            this.lblBuscarClientes = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtBuscarClientes = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgClientes = new System.Windows.Forms.DataGridView();
             this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intDocumentoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +41,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnEditarCliente = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAdminClientes
@@ -57,22 +57,22 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminClientes.TabIndex = 0;
             this.lblAdminClientes.Text = "ADMINISTRACION CLIENTES";
             // 
-            // lblBuscarClientes
+            // txtBuscarClientes
             // 
-            this.lblBuscarClientes.Depth = 0;
-            this.lblBuscarClientes.Hint = "Buscar cliente";
-            this.lblBuscarClientes.Location = new System.Drawing.Point(68, 178);
-            this.lblBuscarClientes.MaxLength = 32767;
-            this.lblBuscarClientes.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblBuscarClientes.Name = "lblBuscarClientes";
-            this.lblBuscarClientes.PasswordChar = '\0';
-            this.lblBuscarClientes.SelectedText = "";
-            this.lblBuscarClientes.SelectionLength = 0;
-            this.lblBuscarClientes.SelectionStart = 0;
-            this.lblBuscarClientes.Size = new System.Drawing.Size(420, 23);
-            this.lblBuscarClientes.TabIndex = 3;
-            this.lblBuscarClientes.TabStop = false;
-            this.lblBuscarClientes.UseSystemPasswordChar = false;
+            this.txtBuscarClientes.Depth = 0;
+            this.txtBuscarClientes.Hint = "Buscar cliente";
+            this.txtBuscarClientes.Location = new System.Drawing.Point(68, 178);
+            this.txtBuscarClientes.MaxLength = 32767;
+            this.txtBuscarClientes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBuscarClientes.Name = "txtBuscarClientes";
+            this.txtBuscarClientes.PasswordChar = '\0';
+            this.txtBuscarClientes.SelectedText = "";
+            this.txtBuscarClientes.SelectionLength = 0;
+            this.txtBuscarClientes.SelectionStart = 0;
+            this.txtBuscarClientes.Size = new System.Drawing.Size(420, 23);
+            this.txtBuscarClientes.TabIndex = 3;
+            this.txtBuscarClientes.TabStop = false;
+            this.txtBuscarClientes.UseSystemPasswordChar = false;
             // 
             // btnBuscar
             // 
@@ -88,6 +88,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNuevo
             // 
@@ -103,22 +104,23 @@ namespace _Plantilla_Sistema_facturación_
             this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // dataGridView1
+            // dgClientes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Cliente,
             this.strcliente,
             this.intDocumentoCliente,
             this.intTelefonoCliente,
             this.btnEditarCliente,
             this.btnBorrar});
-            this.dataGridView1.Location = new System.Drawing.Point(68, 207);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(809, 150);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgClientes.Location = new System.Drawing.Point(68, 207);
+            this.dgClientes.Name = "dgClientes";
+            this.dgClientes.Size = new System.Drawing.Size(809, 150);
+            this.dgClientes.TabIndex = 7;
+            this.dgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentClick);
             // 
             // id_Cliente
             // 
@@ -177,6 +179,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmListaClientes
             // 
@@ -184,16 +187,17 @@ namespace _Plantilla_Sistema_facturación_
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 450);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgClientes);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.lblBuscarClientes);
+            this.Controls.Add(this.txtBuscarClientes);
             this.Controls.Add(this.lblAdminClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmListaClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListaClientes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmListaClientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,10 +206,10 @@ namespace _Plantilla_Sistema_facturación_
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel lblAdminClientes;
-        private MaterialSkin.Controls.MaterialSingleLineTextField lblBuscarClientes;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarClientes;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private MaterialSkin.Controls.MaterialRaisedButton btnNuevo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgClientes;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn strcliente;

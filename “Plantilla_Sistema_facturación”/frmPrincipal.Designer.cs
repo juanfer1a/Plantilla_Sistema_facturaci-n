@@ -31,6 +31,7 @@ namespace _Plantilla_Sistema_facturación_
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tabMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.Principal = new System.Windows.Forms.TabPage();
@@ -51,11 +52,10 @@ namespace _Plantilla_Sistema_facturación_
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Acerca = new System.Windows.Forms.TabPage();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.tabOpcionesMenu = new MaterialSkin.Controls.MaterialTabSelector();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.tabOpcionesMenu = new MaterialSkin.Controls.MaterialTabSelector();
             this.pnlPrincipal.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
@@ -73,12 +73,20 @@ namespace _Plantilla_Sistema_facturación_
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.panel1);
+            this.pnlPrincipal.Controls.Add(this.pnlContenedor);
             this.pnlPrincipal.Controls.Add(this.pnlMenu);
             this.pnlPrincipal.Location = new System.Drawing.Point(1, 62);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(1198, 588);
             this.pnlPrincipal.TabIndex = 0;
+            // 
+            // pnlContenedor
+            // 
+            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenedor.Location = new System.Drawing.Point(200, 0);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(998, 588);
+            this.pnlContenedor.TabIndex = 1;
             // 
             // pnlMenu
             // 
@@ -191,6 +199,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnProductos
             // 
@@ -364,27 +373,6 @@ namespace _Plantilla_Sistema_facturación_
             this.Acerca.TabIndex = 4;
             this.Acerca.Text = "Acerca";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(192, 67);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            // 
-            // tabOpcionesMenu
-            // 
-            this.tabOpcionesMenu.BaseTabControl = this.tabMenu;
-            this.tabOpcionesMenu.Depth = 0;
-            this.tabOpcionesMenu.Location = new System.Drawing.Point(299, 29);
-            this.tabOpcionesMenu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tabOpcionesMenu.Name = "tabOpcionesMenu";
-            this.tabOpcionesMenu.Size = new System.Drawing.Size(597, 27);
-            this.tabOpcionesMenu.TabIndex = 1;
-            // 
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
@@ -419,13 +407,26 @@ namespace _Plantilla_Sistema_facturación_
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // pictureBox5
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(200, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(998, 588);
-            this.panel1.TabIndex = 1;
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(192, 67);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
+            // 
+            // tabOpcionesMenu
+            // 
+            this.tabOpcionesMenu.BaseTabControl = this.tabMenu;
+            this.tabOpcionesMenu.Depth = 0;
+            this.tabOpcionesMenu.Location = new System.Drawing.Point(299, 29);
+            this.tabOpcionesMenu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tabOpcionesMenu.Name = "tabOpcionesMenu";
+            this.tabOpcionesMenu.Size = new System.Drawing.Size(597, 27);
+            this.tabOpcionesMenu.TabIndex = 1;
             // 
             // frmPrincipal
             // 
@@ -482,6 +483,6 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlContenedor;
     }
 }

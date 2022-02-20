@@ -19,6 +19,21 @@ namespace _Plantilla_Sistema_facturación_
             InitializeComponent();
         }
 
-      
+        public void AbrirForm(Form formHijo)
+        {
+            if (this.pnlContenedor.Controls.Count > 0)
+                this.pnlContenedor.Controls.RemoveAt(0);
+            formHijo.TopLevel = false;
+            formHijo.FormBorderStyle = FormBorderStyle.None;
+            formHijo.Dock = DockStyle.Fill;
+            this.pnlContenedor.Controls.Add(formHijo);
+            formHijo.Show();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmListaClientes ListaClientes = new frmListaClientes();
+            AbrirForm(ListaClientes);
+        }
     }
 }

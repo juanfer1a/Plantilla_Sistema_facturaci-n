@@ -75,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmEditarClientes.resx">
+      <DependentUpon>frmEditarClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListaClientes.resx">
       <DependentUpon>frmListaClientes.cs</DependentUpon>
     </EmbeddedResource>
