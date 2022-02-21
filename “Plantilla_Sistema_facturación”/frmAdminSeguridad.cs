@@ -17,6 +17,19 @@ namespace _Plantilla_Sistema_facturación_
             InitializeComponent();
         }
 
-      
+        private void btnActualizarUsuarioEmpleado_Click(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(cxbEmpleadoUsuario, "Ingrese un valor");
+            errorProvider1.SetError(txtClave, "Ingrese un valor");
+            errorProvider1.SetError(txtUsuario, "Ingrese un valor");
+
+        }
+
+
+        private void lblSalirAdminUsuario_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

@@ -38,9 +38,15 @@ namespace _Plantilla_Sistema_facturación_
             }
         }
 
-        private void grbAdminClientes_Enter(object sender, EventArgs e)
+        
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-
+            errorProvider1.SetError(txtIdCliente, "Ingrese un valor");
+            errorProvider1.SetError(txtDireccion, "Ingrese un valor");
+            errorProvider1.SetError(txtDocumento, "Ingrese un valor");
+            errorProvider1.SetError(txtEmail, "Ingrese un valor");
+            errorProvider1.SetError(txtNombreCliente, "Ingrese un valor");
+            errorProvider1.SetError(txtTelefono, "Ingrese un valor");
         }
 
         private void lblSalir_Click(object sender, EventArgs e)

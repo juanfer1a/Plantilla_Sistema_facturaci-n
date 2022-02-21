@@ -78,6 +78,9 @@ namespace _Plantilla_Sistema_facturación_
             AbrirForm(Seguridad);
         }
 
-       
+        private void btnSalirPrincipal_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

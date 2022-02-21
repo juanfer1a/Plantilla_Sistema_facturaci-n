@@ -17,9 +17,17 @@ namespace _Plantilla_Sistema_facturación_
             InitializeComponent();
         }
 
-        private void materialLabel3_Click(object sender, EventArgs e)
-        {
+       
 
+        private void btnGenerarInforme_Click(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(cxbFechaFin, "Seleccione un valor");
+            errorProvider1.SetError(cxbSeleccionInforme, "Seleccione un valor");
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

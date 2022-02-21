@@ -29,13 +29,16 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtIdCatProduc = new System.Windows.Forms.TextBox();
             this.txtNombreCategoria = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblCatProduc = new MaterialSkin.Controls.MaterialLabel();
             this.lblSalirCatProduc = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizarCatProduc = new MaterialSkin.Controls.MaterialRaisedButton();
             this.grbCategoriaProductos = new System.Windows.Forms.GroupBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbCategoriaProductos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdCatProduc
@@ -57,7 +60,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtNombreCategoria.SelectedText = "";
             this.txtNombreCategoria.SelectionLength = 0;
             this.txtNombreCategoria.SelectionStart = 0;
-            this.txtNombreCategoria.Size = new System.Drawing.Size(420, 23);
+            this.txtNombreCategoria.Size = new System.Drawing.Size(343, 23);
             this.txtNombreCategoria.TabIndex = 13;
             this.txtNombreCategoria.TabStop = false;
             this.txtNombreCategoria.UseSystemPasswordChar = false;
@@ -89,6 +92,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblSalirCatProduc.TabIndex = 16;
             this.lblSalirCatProduc.Text = "SALIR";
             this.lblSalirCatProduc.UseVisualStyleBackColor = true;
+            this.lblSalirCatProduc.Click += new System.EventHandler(this.lblSalirCatProduc_Click);
             // 
             // btnActualizarCatProduc
             // 
@@ -104,6 +108,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnActualizarCatProduc.TabIndex = 15;
             this.btnActualizarCatProduc.Text = "ACTUALIZAR";
             this.btnActualizarCatProduc.UseVisualStyleBackColor = true;
+            this.btnActualizarCatProduc.Click += new System.EventHandler(this.btnActualizarCatProduc_Click);
             // 
             // grbCategoriaProductos
             // 
@@ -117,11 +122,16 @@ namespace _Plantilla_Sistema_facturación_
             this.grbCategoriaProductos.TabIndex = 17;
             this.grbCategoriaProductos.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeftChanged += new System.EventHandler(this.btnActualizarCatProduc_Click);
+            // 
             // frmCategoriasProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 321);
+            this.ClientSize = new System.Drawing.Size(485, 321);
             this.Controls.Add(this.grbCategoriaProductos);
             this.Controls.Add(this.lblCatProduc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -129,6 +139,7 @@ namespace _Plantilla_Sistema_facturación_
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.grbCategoriaProductos.ResumeLayout(false);
             this.grbCategoriaProductos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +153,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton lblSalirCatProduc;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizarCatProduc;
         private System.Windows.Forms.GroupBox grbCategoriaProductos;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

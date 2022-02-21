@@ -29,11 +29,12 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grbAdminClientes = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cxbEstadoFactura = new System.Windows.Forms.ComboBox();
+            this.cxbEmpleado = new System.Windows.Forms.ComboBox();
+            this.cxbCliente = new System.Windows.Forms.ComboBox();
             this.txtTotalIva = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtTotalFactura = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtDescuento = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -48,16 +49,18 @@ namespace _Plantilla_Sistema_facturación_
             this.txtDetalleFactura = new System.Windows.Forms.TextBox();
             this.lblSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbAdminClientes.SuspendLayout();
             this.grbDetalleFactura.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbAdminClientes
             // 
             this.grbAdminClientes.Controls.Add(this.dateTimePicker1);
-            this.grbAdminClientes.Controls.Add(this.comboBox3);
-            this.grbAdminClientes.Controls.Add(this.comboBox2);
-            this.grbAdminClientes.Controls.Add(this.comboBox1);
+            this.grbAdminClientes.Controls.Add(this.cxbEstadoFactura);
+            this.grbAdminClientes.Controls.Add(this.cxbEmpleado);
+            this.grbAdminClientes.Controls.Add(this.cxbCliente);
             this.grbAdminClientes.Controls.Add(this.txtTotalIva);
             this.grbAdminClientes.Controls.Add(this.txtTotalFactura);
             this.grbAdminClientes.Controls.Add(this.txtDescuento);
@@ -81,30 +84,29 @@ namespace _Plantilla_Sistema_facturación_
             this.dateTimePicker1.Size = new System.Drawing.Size(163, 20);
             this.dateTimePicker1.TabIndex = 33;
             // 
-            // comboBox3
+            // cxbEstadoFactura
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(512, 148);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(163, 21);
-            this.comboBox3.TabIndex = 32;
+            this.cxbEstadoFactura.FormattingEnabled = true;
+            this.cxbEstadoFactura.Location = new System.Drawing.Point(512, 148);
+            this.cxbEstadoFactura.Name = "cxbEstadoFactura";
+            this.cxbEstadoFactura.Size = new System.Drawing.Size(163, 21);
+            this.cxbEstadoFactura.TabIndex = 32;
             // 
-            // comboBox2
+            // cxbEmpleado
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(150, 114);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(305, 21);
-            this.comboBox2.TabIndex = 31;
+            this.cxbEmpleado.FormattingEnabled = true;
+            this.cxbEmpleado.Location = new System.Drawing.Point(150, 114);
+            this.cxbEmpleado.Name = "cxbEmpleado";
+            this.cxbEmpleado.Size = new System.Drawing.Size(305, 21);
+            this.cxbEmpleado.TabIndex = 31;
             // 
-            // comboBox1
+            // cxbCliente
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(150, 78);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(305, 21);
-            this.comboBox1.TabIndex = 30;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cxbCliente.FormattingEnabled = true;
+            this.cxbCliente.Location = new System.Drawing.Point(150, 78);
+            this.cxbCliente.Name = "cxbCliente";
+            this.cxbCliente.Size = new System.Drawing.Size(305, 21);
+            this.cxbCliente.TabIndex = 30;
             // 
             // txtTotalIva
             // 
@@ -276,6 +278,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblSalir.TabIndex = 12;
             this.lblSalir.Text = "SALIR";
             this.lblSalir.UseVisualStyleBackColor = true;
+            this.lblSalir.Click += new System.EventHandler(this.lblSalir_Click);
             // 
             // btnActualizar
             // 
@@ -291,6 +294,11 @@ namespace _Plantilla_Sistema_facturación_
             this.btnActualizar.TabIndex = 11;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmFacturas
             // 
@@ -309,6 +317,7 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminClientes.PerformLayout();
             this.grbDetalleFactura.ResumeLayout(false);
             this.grbDetalleFactura.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,12 +337,13 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTotalIva;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTotalFactura;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtDescuento;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cxbCliente;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cxbEstadoFactura;
+        private System.Windows.Forms.ComboBox cxbEmpleado;
         private System.Windows.Forms.TextBox txtDetalleFactura;
         private MaterialSkin.Controls.MaterialRaisedButton lblSalir;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -18,5 +18,19 @@ namespace _Plantilla_Sistema_facturación_
         {
             InitializeComponent();
         }
+
+        private void btnActualizarCatProduc_Click(object sender, EventArgs e)
+        {
+
+            errorProvider1.SetError(txtIdCatProduc, "Ingrese un valor");
+            errorProvider1.SetError(txtNombreCategoria, "Ingrese un valor");
+
+
+        }
+
+        private void lblSalirCatProduc_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

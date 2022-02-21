@@ -29,15 +29,18 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grbRolEmpleados = new System.Windows.Forms.GroupBox();
-            this.lblSalirRol = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnActualizarRol = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtDescripcionRol = new System.Windows.Forms.TextBox();
+            this.lblDescripcionRol = new MaterialSkin.Controls.MaterialLabel();
             this.txtIdRolEmpleado = new System.Windows.Forms.TextBox();
             this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblSalirRol = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnActualizarRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblRolEmpleados = new MaterialSkin.Controls.MaterialLabel();
-            this.lblDescripcionRol = new MaterialSkin.Controls.MaterialLabel();
-            this.txtDescripcionRol = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbRolEmpleados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbRolEmpleados
@@ -52,35 +55,26 @@ namespace _Plantilla_Sistema_facturación_
             this.grbRolEmpleados.TabIndex = 0;
             this.grbRolEmpleados.TabStop = false;
             // 
-            // lblSalirRol
+            // txtDescripcionRol
             // 
-            this.lblSalirRol.AutoSize = true;
-            this.lblSalirRol.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.lblSalirRol.Depth = 0;
-            this.lblSalirRol.Icon = null;
-            this.lblSalirRol.Location = new System.Drawing.Point(364, 402);
-            this.lblSalirRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblSalirRol.Name = "lblSalirRol";
-            this.lblSalirRol.Primary = true;
-            this.lblSalirRol.Size = new System.Drawing.Size(58, 36);
-            this.lblSalirRol.TabIndex = 21;
-            this.lblSalirRol.Text = "SALIR";
-            this.lblSalirRol.UseVisualStyleBackColor = true;
+            this.txtDescripcionRol.Location = new System.Drawing.Point(56, 164);
+            this.txtDescripcionRol.Multiline = true;
+            this.txtDescripcionRol.Name = "txtDescripcionRol";
+            this.txtDescripcionRol.Size = new System.Drawing.Size(420, 101);
+            this.txtDescripcionRol.TabIndex = 21;
             // 
-            // btnActualizarRol
+            // lblDescripcionRol
             // 
-            this.btnActualizarRol.AutoSize = true;
-            this.btnActualizarRol.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnActualizarRol.Depth = 0;
-            this.btnActualizarRol.Icon = null;
-            this.btnActualizarRol.Location = new System.Drawing.Point(179, 402);
-            this.btnActualizarRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnActualizarRol.Name = "btnActualizarRol";
-            this.btnActualizarRol.Primary = true;
-            this.btnActualizarRol.Size = new System.Drawing.Size(103, 36);
-            this.btnActualizarRol.TabIndex = 20;
-            this.btnActualizarRol.Text = "ACTUALIZAR";
-            this.btnActualizarRol.UseVisualStyleBackColor = true;
+            this.lblDescripcionRol.AutoSize = true;
+            this.lblDescripcionRol.Depth = 0;
+            this.lblDescripcionRol.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblDescripcionRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblDescripcionRol.Location = new System.Drawing.Point(52, 128);
+            this.lblDescripcionRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblDescripcionRol.Name = "lblDescripcionRol";
+            this.lblDescripcionRol.Size = new System.Drawing.Size(180, 19);
+            this.lblDescripcionRol.TabIndex = 20;
+            this.lblDescripcionRol.Text = "Descripcion detallada Rol";
             // 
             // txtIdRolEmpleado
             // 
@@ -106,6 +100,38 @@ namespace _Plantilla_Sistema_facturación_
             this.txtNombreRol.TabStop = false;
             this.txtNombreRol.UseSystemPasswordChar = false;
             // 
+            // lblSalirRol
+            // 
+            this.lblSalirRol.AutoSize = true;
+            this.lblSalirRol.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.lblSalirRol.Depth = 0;
+            this.lblSalirRol.Icon = null;
+            this.lblSalirRol.Location = new System.Drawing.Point(364, 402);
+            this.lblSalirRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSalirRol.Name = "lblSalirRol";
+            this.lblSalirRol.Primary = true;
+            this.lblSalirRol.Size = new System.Drawing.Size(58, 36);
+            this.lblSalirRol.TabIndex = 21;
+            this.lblSalirRol.Text = "SALIR";
+            this.lblSalirRol.UseVisualStyleBackColor = true;
+            this.lblSalirRol.Click += new System.EventHandler(this.lblSalirRol_Click);
+            // 
+            // btnActualizarRol
+            // 
+            this.btnActualizarRol.AutoSize = true;
+            this.btnActualizarRol.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarRol.Depth = 0;
+            this.btnActualizarRol.Icon = null;
+            this.btnActualizarRol.Location = new System.Drawing.Point(179, 402);
+            this.btnActualizarRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarRol.Name = "btnActualizarRol";
+            this.btnActualizarRol.Primary = true;
+            this.btnActualizarRol.Size = new System.Drawing.Size(103, 36);
+            this.btnActualizarRol.TabIndex = 20;
+            this.btnActualizarRol.Text = "ACTUALIZAR";
+            this.btnActualizarRol.UseVisualStyleBackColor = true;
+            this.btnActualizarRol.Click += new System.EventHandler(this.btnActualizarRol_Click);
+            // 
             // lblRolEmpleados
             // 
             this.lblRolEmpleados.AutoSize = true;
@@ -119,28 +145,10 @@ namespace _Plantilla_Sistema_facturación_
             this.lblRolEmpleados.TabIndex = 17;
             this.lblRolEmpleados.Text = "ROL EMPLEADOS";
             this.lblRolEmpleados.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            
             // 
-            // lblDescripcionRol
+            // errorProvider1
             // 
-            this.lblDescripcionRol.AutoSize = true;
-            this.lblDescripcionRol.Depth = 0;
-            this.lblDescripcionRol.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblDescripcionRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblDescripcionRol.Location = new System.Drawing.Point(52, 128);
-            this.lblDescripcionRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblDescripcionRol.Name = "lblDescripcionRol";
-            this.lblDescripcionRol.Size = new System.Drawing.Size(180, 19);
-            this.lblDescripcionRol.TabIndex = 20;
-            this.lblDescripcionRol.Text = "Descripcion detallada Rol";
-            // 
-            // txtDescripcionRol
-            // 
-            this.txtDescripcionRol.Location = new System.Drawing.Point(56, 164);
-            this.txtDescripcionRol.Multiline = true;
-            this.txtDescripcionRol.Name = "txtDescripcionRol";
-            this.txtDescripcionRol.Size = new System.Drawing.Size(420, 101);
-            this.txtDescripcionRol.TabIndex = 21;
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmRolEmpleados
             // 
@@ -157,6 +165,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Text = "frmRolEmpleados";
             this.grbRolEmpleados.ResumeLayout(false);
             this.grbRolEmpleados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +181,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizarRol;
         private System.Windows.Forms.TextBox txtDescripcionRol;
         private MaterialSkin.Controls.MaterialLabel lblDescripcionRol;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

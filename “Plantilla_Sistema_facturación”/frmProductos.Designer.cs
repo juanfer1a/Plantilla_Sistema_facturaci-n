@@ -29,6 +29,7 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.lblSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -44,7 +45,9 @@ namespace _Plantilla_Sistema_facturación_
             this.lblDetalleProduc = new MaterialSkin.Controls.MaterialLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.grbAdminProductos = new System.Windows.Forms.GroupBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbAdminProductos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdCliente
@@ -57,30 +60,34 @@ namespace _Plantilla_Sistema_facturación_
             // lblSalir
             // 
             this.lblSalir.AutoSize = true;
+            this.lblSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.lblSalir.Depth = 0;
             this.lblSalir.Icon = null;
             this.lblSalir.Location = new System.Drawing.Point(495, 388);
             this.lblSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Primary = true;
-            this.lblSalir.Size = new System.Drawing.Size(104, 36);
+            this.lblSalir.Size = new System.Drawing.Size(58, 36);
             this.lblSalir.TabIndex = 19;
             this.lblSalir.Text = "SALIR";
             this.lblSalir.UseVisualStyleBackColor = true;
+            this.lblSalir.Click += new System.EventHandler(this.lblSalir_Click);
             // 
             // btnActualizar
             // 
             this.btnActualizar.AutoSize = true;
+            this.btnActualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnActualizar.Depth = 0;
             this.btnActualizar.Icon = null;
             this.btnActualizar.Location = new System.Drawing.Point(310, 388);
             this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Primary = true;
-            this.btnActualizar.Size = new System.Drawing.Size(149, 36);
+            this.btnActualizar.Size = new System.Drawing.Size(103, 36);
             this.btnActualizar.TabIndex = 18;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // txtCantStock
             // 
@@ -258,6 +265,11 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminProductos.TabIndex = 26;
             this.grbAdminProductos.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeftChanged += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +284,7 @@ namespace _Plantilla_Sistema_facturación_
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.grbAdminProductos.ResumeLayout(false);
             this.grbAdminProductos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,5 +307,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialLabel lblDetalleProduc;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox grbAdminProductos;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -140,6 +140,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirPrincipal.TabIndex = 2;
             this.btnSalirPrincipal.Text = "Salir";
             this.btnSalirPrincipal.UseVisualStyleBackColor = true;
+            this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
             // 
             // pictureBox2
             // 
@@ -396,7 +397,6 @@ namespace _Plantilla_Sistema_facturación_
             this.button2.Text = "Ayuda";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
-            
             // 
             // button4
             // 
@@ -414,7 +414,6 @@ namespace _Plantilla_Sistema_facturación_
             this.button4.Text = "Acerca de";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
-            
             // 
             // pictureBox5
             // 

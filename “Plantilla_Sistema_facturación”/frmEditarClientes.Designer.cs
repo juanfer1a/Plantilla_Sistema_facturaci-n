@@ -29,6 +29,7 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitulo = new MaterialSkin.Controls.MaterialLabel();
             this.txtNombreCliente = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtDocumento = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -39,7 +40,9 @@ namespace _Plantilla_Sistema_facturación_
             this.lblSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.grbAdminClientes = new System.Windows.Forms.GroupBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbAdminClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -154,6 +157,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnActualizar.TabIndex = 9;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // lblSalir
             // 
@@ -193,7 +197,11 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminClientes.Size = new System.Drawing.Size(464, 339);
             this.grbAdminClientes.TabIndex = 12;
             this.grbAdminClientes.TabStop = false;
-            this.grbAdminClientes.Enter += new System.EventHandler(this.grbAdminClientes_Enter);
+            
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmEditarClientes
             // 
@@ -209,6 +217,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Load += new System.EventHandler(this.frmEditarClientes_Load);
             this.grbAdminClientes.ResumeLayout(false);
             this.grbAdminClientes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +235,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton lblSalir;
         private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.GroupBox grbAdminClientes;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

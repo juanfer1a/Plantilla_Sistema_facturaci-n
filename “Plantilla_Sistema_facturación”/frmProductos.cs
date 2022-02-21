@@ -19,5 +19,19 @@ namespace _Plantilla_Sistema_facturación_
             InitializeComponent();
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(txtCantStock, "Ingrese un valor");
+            errorProvider1.SetError(txtCodRef, "Ingrese un valor");
+            errorProvider1.SetError(txtIdCliente, "Ingrese un valor");
+            errorProvider1.SetError(txtNombreProducto, "Ingrese un valor");
+            errorProvider1.SetError(txtPrecioCompra, "Ingrese un valor");
+            errorProvider1.SetError(txtPrecioVenta, "Ingrese un valor");
+        }
+
+        private void lblSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

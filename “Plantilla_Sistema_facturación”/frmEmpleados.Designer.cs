@@ -29,9 +29,17 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnActuliazarEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalirEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdEmpleados = new System.Windows.Forms.TextBox();
+            this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtDocumentoEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtEmailEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtDireccionEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtTelefonoEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtDatosAdicionales = new System.Windows.Forms.TextBox();
             this.lblDatosAdicionales = new MaterialSkin.Controls.MaterialLabel();
             this.dtpFechaRetiro = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
@@ -40,43 +48,42 @@ namespace _Plantilla_Sistema_facturación_
             this.lblRolEmpleado = new MaterialSkin.Controls.MaterialLabel();
             this.lblFechaRetiro = new MaterialSkin.Controls.MaterialLabel();
             this.lblAdminEmpleados = new MaterialSkin.Controls.MaterialLabel();
-            this.txtDatosAdicionales = new System.Windows.Forms.TextBox();
-            this.txtIdEmpleados = new System.Windows.Forms.TextBox();
-            this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtDocumentoEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtEmailEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtDireccionEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtTelefonoEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActuliazarEmpleado
             // 
             this.btnActuliazarEmpleado.AutoSize = true;
+            this.btnActuliazarEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnActuliazarEmpleado.Depth = 0;
             this.btnActuliazarEmpleado.Icon = null;
             this.btnActuliazarEmpleado.Location = new System.Drawing.Point(267, 536);
             this.btnActuliazarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActuliazarEmpleado.Name = "btnActuliazarEmpleado";
             this.btnActuliazarEmpleado.Primary = true;
-            this.btnActuliazarEmpleado.Size = new System.Drawing.Size(145, 36);
+            this.btnActuliazarEmpleado.Size = new System.Drawing.Size(103, 36);
             this.btnActuliazarEmpleado.TabIndex = 12;
             this.btnActuliazarEmpleado.Text = "ACTUALIZAR";
             this.btnActuliazarEmpleado.UseVisualStyleBackColor = true;
+            this.btnActuliazarEmpleado.Click += new System.EventHandler(this.btnActuliazarEmpleado_Click);
             // 
             // btnSalirEmpleado
             // 
             this.btnSalirEmpleado.AutoSize = true;
+            this.btnSalirEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalirEmpleado.Depth = 0;
             this.btnSalirEmpleado.Icon = null;
             this.btnSalirEmpleado.Location = new System.Drawing.Point(560, 536);
             this.btnSalirEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalirEmpleado.Name = "btnSalirEmpleado";
             this.btnSalirEmpleado.Primary = true;
-            this.btnSalirEmpleado.Size = new System.Drawing.Size(92, 36);
+            this.btnSalirEmpleado.Size = new System.Drawing.Size(58, 36);
             this.btnSalirEmpleado.TabIndex = 13;
             this.btnSalirEmpleado.Text = "SALIR";
             this.btnSalirEmpleado.UseVisualStyleBackColor = true;
+            this.btnSalirEmpleado.Click += new System.EventHandler(this.btnSalirEmpleado_Click);
             // 
             // groupBox1
             // 
@@ -99,103 +106,6 @@ namespace _Plantilla_Sistema_facturación_
             this.groupBox1.Size = new System.Drawing.Size(811, 381);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            // 
-            // lblDatosAdicionales
-            // 
-            this.lblDatosAdicionales.AutoSize = true;
-            this.lblDatosAdicionales.Depth = 0;
-            this.lblDatosAdicionales.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblDatosAdicionales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblDatosAdicionales.Location = new System.Drawing.Point(486, 176);
-            this.lblDatosAdicionales.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblDatosAdicionales.Name = "lblDatosAdicionales";
-            this.lblDatosAdicionales.Size = new System.Drawing.Size(156, 19);
-            this.lblDatosAdicionales.TabIndex = 8;
-            this.lblDatosAdicionales.Text = "DATOS ADICIONALES";
-            // 
-            // dtpFechaRetiro
-            // 
-            this.dtpFechaRetiro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaRetiro.Location = new System.Drawing.Point(592, 125);
-            this.dtpFechaRetiro.Name = "dtpFechaRetiro";
-            this.dtpFechaRetiro.Size = new System.Drawing.Size(140, 20);
-            this.dtpFechaRetiro.TabIndex = 7;
-            // 
-            // dtpFechaIngreso
-            // 
-            this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(594, 81);
-            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(140, 20);
-            this.dtpFechaIngreso.TabIndex = 6;
-            // 
-            // cxbRolEmpleado
-            // 
-            this.cxbRolEmpleado.FormattingEnabled = true;
-            this.cxbRolEmpleado.Location = new System.Drawing.Point(594, 34);
-            this.cxbRolEmpleado.Name = "cxbRolEmpleado";
-            this.cxbRolEmpleado.Size = new System.Drawing.Size(121, 21);
-            this.cxbRolEmpleado.TabIndex = 5;
-            // 
-            // lblFechaIngreso
-            // 
-            this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Depth = 0;
-            this.lblFechaIngreso.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblFechaIngreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFechaIngreso.Location = new System.Drawing.Point(486, 81);
-            this.lblFechaIngreso.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblFechaIngreso.Name = "lblFechaIngreso";
-            this.lblFechaIngreso.Size = new System.Drawing.Size(75, 19);
-            this.lblFechaIngreso.TabIndex = 3;
-            this.lblFechaIngreso.Text = "F. Ingreso";
-            // 
-            // lblRolEmpleado
-            // 
-            this.lblRolEmpleado.AutoSize = true;
-            this.lblRolEmpleado.Depth = 0;
-            this.lblRolEmpleado.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblRolEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblRolEmpleado.Location = new System.Drawing.Point(486, 37);
-            this.lblRolEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblRolEmpleado.Name = "lblRolEmpleado";
-            this.lblRolEmpleado.Size = new System.Drawing.Size(102, 19);
-            this.lblRolEmpleado.TabIndex = 2;
-            this.lblRolEmpleado.Text = "Rol Empleado";
-            // 
-            // lblFechaRetiro
-            // 
-            this.lblFechaRetiro.AutoSize = true;
-            this.lblFechaRetiro.Depth = 0;
-            this.lblFechaRetiro.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblFechaRetiro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFechaRetiro.Location = new System.Drawing.Point(486, 125);
-            this.lblFechaRetiro.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblFechaRetiro.Name = "lblFechaRetiro";
-            this.lblFechaRetiro.Size = new System.Drawing.Size(65, 19);
-            this.lblFechaRetiro.TabIndex = 1;
-            this.lblFechaRetiro.Text = "F. Retiro";
-            // 
-            // lblAdminEmpleados
-            // 
-            this.lblAdminEmpleados.AutoSize = true;
-            this.lblAdminEmpleados.Depth = 0;
-            this.lblAdminEmpleados.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblAdminEmpleados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblAdminEmpleados.Location = new System.Drawing.Point(335, 73);
-            this.lblAdminEmpleados.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblAdminEmpleados.Name = "lblAdminEmpleados";
-            this.lblAdminEmpleados.Size = new System.Drawing.Size(224, 19);
-            this.lblAdminEmpleados.TabIndex = 10;
-            this.lblAdminEmpleados.Text = "ADMINISTRACION EMPLEADOS";
-            // 
-            // txtDatosAdicionales
-            // 
-            this.txtDatosAdicionales.Location = new System.Drawing.Point(490, 224);
-            this.txtDatosAdicionales.Multiline = true;
-            this.txtDatosAdicionales.Name = "txtDatosAdicionales";
-            this.txtDatosAdicionales.Size = new System.Drawing.Size(296, 138);
-            this.txtDatosAdicionales.TabIndex = 9;
             // 
             // txtIdEmpleados
             // 
@@ -289,6 +199,107 @@ namespace _Plantilla_Sistema_facturación_
             this.txtTelefonoEmpleado.TabStop = false;
             this.txtTelefonoEmpleado.UseSystemPasswordChar = false;
             // 
+            // txtDatosAdicionales
+            // 
+            this.txtDatosAdicionales.Location = new System.Drawing.Point(490, 224);
+            this.txtDatosAdicionales.Multiline = true;
+            this.txtDatosAdicionales.Name = "txtDatosAdicionales";
+            this.txtDatosAdicionales.Size = new System.Drawing.Size(296, 138);
+            this.txtDatosAdicionales.TabIndex = 9;
+            // 
+            // lblDatosAdicionales
+            // 
+            this.lblDatosAdicionales.AutoSize = true;
+            this.lblDatosAdicionales.Depth = 0;
+            this.lblDatosAdicionales.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblDatosAdicionales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblDatosAdicionales.Location = new System.Drawing.Point(486, 176);
+            this.lblDatosAdicionales.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblDatosAdicionales.Name = "lblDatosAdicionales";
+            this.lblDatosAdicionales.Size = new System.Drawing.Size(156, 19);
+            this.lblDatosAdicionales.TabIndex = 8;
+            this.lblDatosAdicionales.Text = "DATOS ADICIONALES";
+            // 
+            // dtpFechaRetiro
+            // 
+            this.dtpFechaRetiro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaRetiro.Location = new System.Drawing.Point(592, 125);
+            this.dtpFechaRetiro.Name = "dtpFechaRetiro";
+            this.dtpFechaRetiro.Size = new System.Drawing.Size(140, 20);
+            this.dtpFechaRetiro.TabIndex = 7;
+            // 
+            // dtpFechaIngreso
+            // 
+            this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(594, 81);
+            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(140, 20);
+            this.dtpFechaIngreso.TabIndex = 6;
+            // 
+            // cxbRolEmpleado
+            // 
+            this.cxbRolEmpleado.FormattingEnabled = true;
+            this.cxbRolEmpleado.Location = new System.Drawing.Point(594, 34);
+            this.cxbRolEmpleado.Name = "cxbRolEmpleado";
+            this.cxbRolEmpleado.Size = new System.Drawing.Size(121, 21);
+            this.cxbRolEmpleado.TabIndex = 5;
+            // 
+            // lblFechaIngreso
+            // 
+            this.lblFechaIngreso.AutoSize = true;
+            this.lblFechaIngreso.Depth = 0;
+            this.lblFechaIngreso.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblFechaIngreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblFechaIngreso.Location = new System.Drawing.Point(486, 81);
+            this.lblFechaIngreso.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblFechaIngreso.Name = "lblFechaIngreso";
+            this.lblFechaIngreso.Size = new System.Drawing.Size(75, 19);
+            this.lblFechaIngreso.TabIndex = 3;
+            this.lblFechaIngreso.Text = "F. Ingreso";
+            // 
+            // lblRolEmpleado
+            // 
+            this.lblRolEmpleado.AutoSize = true;
+            this.lblRolEmpleado.Depth = 0;
+            this.lblRolEmpleado.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblRolEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblRolEmpleado.Location = new System.Drawing.Point(486, 37);
+            this.lblRolEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblRolEmpleado.Name = "lblRolEmpleado";
+            this.lblRolEmpleado.Size = new System.Drawing.Size(102, 19);
+            this.lblRolEmpleado.TabIndex = 2;
+            this.lblRolEmpleado.Text = "Rol Empleado";
+            // 
+            // lblFechaRetiro
+            // 
+            this.lblFechaRetiro.AutoSize = true;
+            this.lblFechaRetiro.Depth = 0;
+            this.lblFechaRetiro.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblFechaRetiro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblFechaRetiro.Location = new System.Drawing.Point(486, 125);
+            this.lblFechaRetiro.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblFechaRetiro.Name = "lblFechaRetiro";
+            this.lblFechaRetiro.Size = new System.Drawing.Size(65, 19);
+            this.lblFechaRetiro.TabIndex = 1;
+            this.lblFechaRetiro.Text = "F. Retiro";
+            // 
+            // lblAdminEmpleados
+            // 
+            this.lblAdminEmpleados.AutoSize = true;
+            this.lblAdminEmpleados.Depth = 0;
+            this.lblAdminEmpleados.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAdminEmpleados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdminEmpleados.Location = new System.Drawing.Point(335, 73);
+            this.lblAdminEmpleados.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdminEmpleados.Name = "lblAdminEmpleados";
+            this.lblAdminEmpleados.Size = new System.Drawing.Size(224, 19);
+            this.lblAdminEmpleados.TabIndex = 10;
+            this.lblAdminEmpleados.Text = "ADMINISTRACION EMPLEADOS";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +315,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Text = "frmEmpleados";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,5 +341,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtEmailEmpleado;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtDireccionEmpleado;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTelefonoEmpleado;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

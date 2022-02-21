@@ -35,16 +35,18 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string nombre;
-            for (int i = 0; i < 10; i++)
-            {
-                nombre = dgClientes.Rows[i].ToString();
+            MessageBox.Show("Funcion en construccion");
+            //string nombre;
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    nombre = dgClientes.Rows[i].ToString();
 
-                if (txtBuscarClientes.Text == nombre)
-                {
+            //    if (txtBuscarClientes.Text == nombre)
+            //    {
+                    
 
-                }
-            }
+            //    }
+            //}
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

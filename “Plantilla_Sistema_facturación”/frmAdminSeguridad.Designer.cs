@@ -29,15 +29,18 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grbAdminUsuarioSeg = new System.Windows.Forms.GroupBox();
+            this.cxbEmpleadoUsuario = new System.Windows.Forms.ComboBox();
             this.txtClave = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblEmpleado = new MaterialSkin.Controls.MaterialLabel();
             this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.cxbEmpleadoUsuario = new System.Windows.Forms.ComboBox();
             this.lblSalirAdminUsuario = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizarUsuarioEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblAdminUsuarios = new MaterialSkin.Controls.MaterialLabel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbAdminUsuarioSeg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbAdminUsuarioSeg
@@ -51,6 +54,14 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminUsuarioSeg.Size = new System.Drawing.Size(541, 218);
             this.grbAdminUsuarioSeg.TabIndex = 0;
             this.grbAdminUsuarioSeg.TabStop = false;
+            // 
+            // cxbEmpleadoUsuario
+            // 
+            this.cxbEmpleadoUsuario.FormattingEnabled = true;
+            this.cxbEmpleadoUsuario.Location = new System.Drawing.Point(119, 42);
+            this.cxbEmpleadoUsuario.Name = "cxbEmpleadoUsuario";
+            this.cxbEmpleadoUsuario.Size = new System.Drawing.Size(324, 21);
+            this.cxbEmpleadoUsuario.TabIndex = 22;
             // 
             // txtClave
             // 
@@ -99,14 +110,6 @@ namespace _Plantilla_Sistema_facturación_
             this.txtUsuario.TabStop = false;
             this.txtUsuario.UseSystemPasswordChar = false;
             // 
-            // cxbEmpleadoUsuario
-            // 
-            this.cxbEmpleadoUsuario.FormattingEnabled = true;
-            this.cxbEmpleadoUsuario.Location = new System.Drawing.Point(119, 42);
-            this.cxbEmpleadoUsuario.Name = "cxbEmpleadoUsuario";
-            this.cxbEmpleadoUsuario.Size = new System.Drawing.Size(324, 21);
-            this.cxbEmpleadoUsuario.TabIndex = 22;
-            // 
             // lblSalirAdminUsuario
             // 
             this.lblSalirAdminUsuario.AutoSize = true;
@@ -121,6 +124,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblSalirAdminUsuario.TabIndex = 23;
             this.lblSalirAdminUsuario.Text = "SALIR";
             this.lblSalirAdminUsuario.UseVisualStyleBackColor = true;
+            this.lblSalirAdminUsuario.Click += new System.EventHandler(this.lblSalirAdminUsuario_Click);
             // 
             // btnActualizarUsuarioEmpleado
             // 
@@ -136,6 +140,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnActualizarUsuarioEmpleado.TabIndex = 22;
             this.btnActualizarUsuarioEmpleado.Text = "ACTUALIZAR";
             this.btnActualizarUsuarioEmpleado.UseVisualStyleBackColor = true;
+            this.btnActualizarUsuarioEmpleado.Click += new System.EventHandler(this.btnActualizarUsuarioEmpleado_Click);
             // 
             // lblAdminUsuarios
             // 
@@ -149,6 +154,10 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminUsuarios.Size = new System.Drawing.Size(329, 19);
             this.lblAdminUsuarios.TabIndex = 23;
             this.lblAdminUsuarios.Text = "ADMINISTRACIÓN DE USUARIOS DEL SISTEMA";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAdminSeguridad
             // 
@@ -164,6 +173,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Text = "frmAdminSeguridad";
             this.grbAdminUsuarioSeg.ResumeLayout(false);
             this.grbAdminUsuarioSeg.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +189,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton lblSalirAdminUsuario;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizarUsuarioEmpleado;
         private MaterialSkin.Controls.MaterialLabel lblAdminUsuarios;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

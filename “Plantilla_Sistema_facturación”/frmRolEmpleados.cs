@@ -17,6 +17,16 @@ namespace _Plantilla_Sistema_facturación_
             InitializeComponent();
         }
 
-     
+        private void btnActualizarRol_Click(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(txtDescripcionRol, "Ingrese un valor");
+            errorProvider1.SetError(txtIdRolEmpleado, "Ingrese un valor");
+            errorProvider1.SetError(txtNombreRol, "Ingrese un valor");
+        }
+
+        private void lblSalirRol_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
