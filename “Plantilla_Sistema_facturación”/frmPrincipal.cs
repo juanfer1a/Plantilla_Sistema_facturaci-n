@@ -38,19 +38,19 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            frmProductos productos = new frmProductos();
+            frmListaProductos productos = new frmListaProductos();
             AbrirForm(productos);
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
         {
-           frmCategoriasProductos Categorias = new frmCategoriasProductos();
+           frmListaCategoria Categorias = new frmListaCategoria();
             AbrirForm(Categorias);
         }
 
         private void btnFacturas_Click(object sender, EventArgs e)
         {
-            frmFacturas Facturas = new frmFacturas();
+            frmListaFacturas Facturas = new frmListaFacturas();
             AbrirForm(Facturas);
         }
 

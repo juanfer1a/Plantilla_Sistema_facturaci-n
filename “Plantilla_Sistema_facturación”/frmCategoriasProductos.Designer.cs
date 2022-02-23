@@ -137,6 +137,7 @@ namespace _Plantilla_Sistema_facturación_
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCategoriasProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmCategoriasProductos_Load);
             this.grbCategoriaProductos.ResumeLayout(false);
             this.grbCategoriaProductos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

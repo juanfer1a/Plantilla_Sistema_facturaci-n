@@ -38,7 +38,6 @@ namespace _Plantilla_Sistema_facturación_
             this.txtPrecioCompra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCodRef = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombreProducto = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblTituloProductos = new MaterialSkin.Controls.MaterialLabel();
             this.cxbCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -46,6 +45,7 @@ namespace _Plantilla_Sistema_facturación_
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.grbAdminProductos = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblTituloProducto = new MaterialSkin.Controls.MaterialLabel();
             this.grbAdminProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -174,19 +174,6 @@ namespace _Plantilla_Sistema_facturación_
             this.txtNombreProducto.TabStop = false;
             this.txtNombreProducto.UseSystemPasswordChar = false;
             // 
-            // lblTituloProductos
-            // 
-            this.lblTituloProductos.AutoSize = true;
-            this.lblTituloProductos.Depth = 0;
-            this.lblTituloProductos.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblTituloProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTituloProductos.Location = new System.Drawing.Point(353, 38);
-            this.lblTituloProductos.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblTituloProductos.Name = "lblTituloProductos";
-            this.lblTituloProductos.Size = new System.Drawing.Size(246, 19);
-            this.lblTituloProductos.TabIndex = 12;
-            this.lblTituloProductos.Text = "ADMINISTRACION DE PRODUCTOS";
-            // 
             // cxbCategoria
             // 
             this.cxbCategoria.FormattingEnabled = true;
@@ -270,14 +257,27 @@ namespace _Plantilla_Sistema_facturación_
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeftChanged += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // lblTituloProducto
+            // 
+            this.lblTituloProducto.AutoSize = true;
+            this.lblTituloProducto.Depth = 0;
+            this.lblTituloProducto.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblTituloProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTituloProducto.Location = new System.Drawing.Point(403, 38);
+            this.lblTituloProducto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblTituloProducto.Name = "lblTituloProducto";
+            this.lblTituloProducto.Size = new System.Drawing.Size(223, 19);
+            this.lblTituloProducto.TabIndex = 27;
+            this.lblTituloProducto.Text = "ADMINISTRACION PRODUCTOS";
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 446);
+            this.Controls.Add(this.lblTituloProducto);
             this.Controls.Add(this.grbAdminProductos);
             this.Controls.Add(this.lblSalir);
-            this.Controls.Add(this.lblTituloProductos);
             this.Controls.Add(this.btnActualizar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProductos";
@@ -300,7 +300,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPrecioCompra;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCodRef;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreProducto;
-        private MaterialSkin.Controls.MaterialLabel lblTituloProductos;
         private System.Windows.Forms.ComboBox cxbCategoria;
         private MaterialSkin.Controls.MaterialLabel lblCategoria;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
@@ -308,5 +307,6 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox grbAdminProductos;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private MaterialSkin.Controls.MaterialLabel lblTituloProducto;
     }
 }

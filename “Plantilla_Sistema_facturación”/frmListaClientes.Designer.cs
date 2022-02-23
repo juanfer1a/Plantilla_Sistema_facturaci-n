@@ -56,6 +56,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminClientes.Size = new System.Drawing.Size(206, 19);
             this.lblAdminClientes.TabIndex = 0;
             this.lblAdminClientes.Text = "ADMINISTRACION CLIENTES";
+          
             // 
             // txtBuscarClientes
             // 
@@ -73,6 +74,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtBuscarClientes.TabIndex = 3;
             this.txtBuscarClientes.TabStop = false;
             this.txtBuscarClientes.UseSystemPasswordChar = false;
+        
             // 
             // btnBuscar
             // 

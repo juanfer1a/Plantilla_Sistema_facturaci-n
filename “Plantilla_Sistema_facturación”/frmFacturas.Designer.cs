@@ -31,10 +31,10 @@ namespace _Plantilla_Sistema_facturación_
         {
             this.components = new System.ComponentModel.Container();
             this.grbAdminClientes = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaFactura = new System.Windows.Forms.DateTimePicker();
             this.cxbEstadoFactura = new System.Windows.Forms.ComboBox();
-            this.cxbEmpleado = new System.Windows.Forms.ComboBox();
-            this.cxbCliente = new System.Windows.Forms.ComboBox();
+            this.cxbEmpleadoFactura = new System.Windows.Forms.ComboBox();
+            this.cxbClienteFactura = new System.Windows.Forms.ComboBox();
             this.txtTotalIva = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtTotalFactura = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtDescuento = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -43,8 +43,8 @@ namespace _Plantilla_Sistema_facturación_
             this.lblFechaRegistro = new MaterialSkin.Controls.MaterialLabel();
             this.lblEstadoFactura = new MaterialSkin.Controls.MaterialLabel();
             this.lblNroFactura = new MaterialSkin.Controls.MaterialLabel();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
-            this.lblTitulo = new MaterialSkin.Controls.MaterialLabel();
+            this.txtNroFactura = new System.Windows.Forms.TextBox();
+            this.lblEditarFactura = new MaterialSkin.Controls.MaterialLabel();
             this.grbDetalleFactura = new System.Windows.Forms.GroupBox();
             this.txtDetalleFactura = new System.Windows.Forms.TextBox();
             this.lblSalir = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -57,10 +57,10 @@ namespace _Plantilla_Sistema_facturación_
             // 
             // grbAdminClientes
             // 
-            this.grbAdminClientes.Controls.Add(this.dateTimePicker1);
+            this.grbAdminClientes.Controls.Add(this.dtpFechaFactura);
             this.grbAdminClientes.Controls.Add(this.cxbEstadoFactura);
-            this.grbAdminClientes.Controls.Add(this.cxbEmpleado);
-            this.grbAdminClientes.Controls.Add(this.cxbCliente);
+            this.grbAdminClientes.Controls.Add(this.cxbEmpleadoFactura);
+            this.grbAdminClientes.Controls.Add(this.cxbClienteFactura);
             this.grbAdminClientes.Controls.Add(this.txtTotalIva);
             this.grbAdminClientes.Controls.Add(this.txtTotalFactura);
             this.grbAdminClientes.Controls.Add(this.txtDescuento);
@@ -69,20 +69,20 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminClientes.Controls.Add(this.lblFechaRegistro);
             this.grbAdminClientes.Controls.Add(this.lblEstadoFactura);
             this.grbAdminClientes.Controls.Add(this.lblNroFactura);
-            this.grbAdminClientes.Controls.Add(this.txtIdCliente);
+            this.grbAdminClientes.Controls.Add(this.txtNroFactura);
             this.grbAdminClientes.Location = new System.Drawing.Point(26, 64);
             this.grbAdminClientes.Name = "grbAdminClientes";
             this.grbAdminClientes.Size = new System.Drawing.Size(718, 311);
             this.grbAdminClientes.TabIndex = 0;
             this.grbAdminClientes.TabStop = false;
             // 
-            // dateTimePicker1
+            // dtpFechaFactura
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(512, 72);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(163, 20);
-            this.dateTimePicker1.TabIndex = 33;
+            this.dtpFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFactura.Location = new System.Drawing.Point(512, 72);
+            this.dtpFechaFactura.Name = "dtpFechaFactura";
+            this.dtpFechaFactura.Size = new System.Drawing.Size(163, 20);
+            this.dtpFechaFactura.TabIndex = 33;
             // 
             // cxbEstadoFactura
             // 
@@ -92,21 +92,21 @@ namespace _Plantilla_Sistema_facturación_
             this.cxbEstadoFactura.Size = new System.Drawing.Size(163, 21);
             this.cxbEstadoFactura.TabIndex = 32;
             // 
-            // cxbEmpleado
+            // cxbEmpleadoFactura
             // 
-            this.cxbEmpleado.FormattingEnabled = true;
-            this.cxbEmpleado.Location = new System.Drawing.Point(150, 114);
-            this.cxbEmpleado.Name = "cxbEmpleado";
-            this.cxbEmpleado.Size = new System.Drawing.Size(305, 21);
-            this.cxbEmpleado.TabIndex = 31;
+            this.cxbEmpleadoFactura.FormattingEnabled = true;
+            this.cxbEmpleadoFactura.Location = new System.Drawing.Point(150, 114);
+            this.cxbEmpleadoFactura.Name = "cxbEmpleadoFactura";
+            this.cxbEmpleadoFactura.Size = new System.Drawing.Size(305, 21);
+            this.cxbEmpleadoFactura.TabIndex = 31;
             // 
-            // cxbCliente
+            // cxbClienteFactura
             // 
-            this.cxbCliente.FormattingEnabled = true;
-            this.cxbCliente.Location = new System.Drawing.Point(150, 78);
-            this.cxbCliente.Name = "cxbCliente";
-            this.cxbCliente.Size = new System.Drawing.Size(305, 21);
-            this.cxbCliente.TabIndex = 30;
+            this.cxbClienteFactura.FormattingEnabled = true;
+            this.cxbClienteFactura.Location = new System.Drawing.Point(150, 78);
+            this.cxbClienteFactura.Name = "cxbClienteFactura";
+            this.cxbClienteFactura.Size = new System.Drawing.Size(305, 21);
+            this.cxbClienteFactura.TabIndex = 30;
             // 
             // txtTotalIva
             // 
@@ -224,25 +224,25 @@ namespace _Plantilla_Sistema_facturación_
             this.lblNroFactura.TabIndex = 19;
             this.lblNroFactura.Text = "Nro Factura";
             // 
-            // txtIdCliente
+            // txtNroFactura
             // 
-            this.txtIdCliente.Location = new System.Drawing.Point(150, 37);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(155, 20);
-            this.txtIdCliente.TabIndex = 18;
+            this.txtNroFactura.Location = new System.Drawing.Point(150, 37);
+            this.txtNroFactura.Name = "txtNroFactura";
+            this.txtNroFactura.Size = new System.Drawing.Size(155, 20);
+            this.txtNroFactura.TabIndex = 18;
             // 
-            // lblTitulo
+            // lblEditarFactura
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Depth = 0;
-            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitulo.Location = new System.Drawing.Point(398, 26);
-            this.lblTitulo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(206, 19);
-            this.lblTitulo.TabIndex = 12;
-            this.lblTitulo.Text = "ADMINISTRACION CLIENTES";
+            this.lblEditarFactura.AutoSize = true;
+            this.lblEditarFactura.Depth = 0;
+            this.lblEditarFactura.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblEditarFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblEditarFactura.Location = new System.Drawing.Point(398, 26);
+            this.lblEditarFactura.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblEditarFactura.Name = "lblEditarFactura";
+            this.lblEditarFactura.Size = new System.Drawing.Size(203, 19);
+            this.lblEditarFactura.TabIndex = 12;
+            this.lblEditarFactura.Text = "ADMINISTRACION FACTURA";
             // 
             // grbDetalleFactura
             // 
@@ -309,10 +309,11 @@ namespace _Plantilla_Sistema_facturación_
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.grbDetalleFactura);
             this.Controls.Add(this.grbAdminClientes);
-            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.lblEditarFactura);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFacturas";
             this.Text = "frmFacturas";
+            this.Load += new System.EventHandler(this.frmFacturas_Load);
             this.grbAdminClientes.ResumeLayout(false);
             this.grbAdminClientes.PerformLayout();
             this.grbDetalleFactura.ResumeLayout(false);
@@ -327,8 +328,8 @@ namespace _Plantilla_Sistema_facturación_
 
         private System.Windows.Forms.GroupBox grbAdminClientes;
         private MaterialSkin.Controls.MaterialLabel lblNroFactura;
-        private System.Windows.Forms.TextBox txtIdCliente;
-        private MaterialSkin.Controls.MaterialLabel lblTitulo;
+        private System.Windows.Forms.TextBox txtNroFactura;
+        private MaterialSkin.Controls.MaterialLabel lblEditarFactura;
         private System.Windows.Forms.GroupBox grbDetalleFactura;
         private MaterialSkin.Controls.MaterialLabel lblCliente;
         private MaterialSkin.Controls.MaterialLabel lblEmpleado;
@@ -337,10 +338,10 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTotalIva;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTotalFactura;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtDescuento;
-        private System.Windows.Forms.ComboBox cxbCliente;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cxbClienteFactura;
+        private System.Windows.Forms.DateTimePicker dtpFechaFactura;
         private System.Windows.Forms.ComboBox cxbEstadoFactura;
-        private System.Windows.Forms.ComboBox cxbEmpleado;
+        private System.Windows.Forms.ComboBox cxbEmpleadoFactura;
         private System.Windows.Forms.TextBox txtDetalleFactura;
         private MaterialSkin.Controls.MaterialRaisedButton lblSalir;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizar;

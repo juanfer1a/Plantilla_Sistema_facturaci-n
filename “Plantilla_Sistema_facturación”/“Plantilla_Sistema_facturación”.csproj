@@ -85,11 +85,29 @@
     <Compile Include="frmInformes.Designer.cs">
       <DependentUpon>frmInformes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaCategoria.Designer.cs">
+      <DependentUpon>frmListaCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmListaClientes.Designer.cs">
       <DependentUpon>frmListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaFacturas.Designer.cs">
+      <DependentUpon>frmListaFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaProductos.Designer.cs">
+      <DependentUpon>frmListaProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmlogin.cs">
       <SubType>Form</SubType>
@@ -135,8 +153,17 @@
     <EmbeddedResource Include="frmInformes.resx">
       <DependentUpon>frmInformes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListaCategoria.resx">
+      <DependentUpon>frmListaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListaClientes.resx">
       <DependentUpon>frmListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaFacturas.resx">
+      <DependentUpon>frmListaFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaProductos.resx">
+      <DependentUpon>frmListaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>

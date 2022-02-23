@@ -14,9 +14,28 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmProductos : Form
     {
+        public int IdProducto { get; set; }
         public frmProductos()
         {
             InitializeComponent();
+        }
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+
+            if (IdProducto == 0)
+            {//Registro nuevo
+                lblTituloProducto.Text = "INGRESO NUEVO PRODUCTO";
+            }
+            else
+            {//Actulizar Producto
+                lblTituloProducto.Text = "MODIFICAR PRODUCTO";
+                txtNombreProducto.Text = "NOMBRE PRODUCTO";
+                txtIdCliente.Text = IdProducto.ToString();
+                txtCodRef.Text = "12345";
+                txtPrecioCompra.Text = "345345435";
+                txtPrecioVenta.Text = "8768976587";
+                txtCantStock.Text = "234";
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -33,5 +52,6 @@ namespace _Plantilla_Sistema_facturación_
         {
             this.Close();
         }
+
     }
 }
