@@ -12,9 +12,27 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmEmpleados : Form
     {
+        public int idEmpleado { get; set; }
         public frmEmpleados()
         {
             InitializeComponent();
+        }
+        private void frmEmpleados_Load(object sender, EventArgs e)
+        {
+            if (idEmpleado == 0)
+            {
+                lblAdminEmpleados.Text = "CREAR EMPLEADOS";
+            }
+            else
+            {
+                lblAdminEmpleados.Text = "EDITAR EMPLEADOS";
+                txtNombreEmpleado.Text = "NOMBRE EMPLEADO";
+                txtDocumentoEmpleado.Text = "DOCUMENTO";
+                txtDireccionEmpleado.Text = "DIRECCION";
+                txtTelefonoEmpleado.Text = "TELEFONO";
+                txtEmailEmpleado.Text = "EMAIL";
+                
+            }
         }
 
         private void btnActuliazarEmpleado_Click(object sender, EventArgs e)
@@ -33,5 +51,6 @@ namespace _Plantilla_Sistema_facturación_
         {
             this.Close();
         }
+
     }
 }

@@ -52,8 +52,8 @@ namespace _Plantilla_Sistema_facturación_
             this.btnRoles = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Acerca = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAyuda = new System.Windows.Forms.Button();
+            this.btnAcercaDe = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabOpcionesMenu = new MaterialSkin.Controls.MaterialTabSelector();
             this.pnlPrincipal.SuspendLayout();
@@ -372,8 +372,8 @@ namespace _Plantilla_Sistema_facturación_
             // Acerca
             // 
             this.Acerca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Acerca.Controls.Add(this.button2);
-            this.Acerca.Controls.Add(this.button4);
+            this.Acerca.Controls.Add(this.btnAyuda);
+            this.Acerca.Controls.Add(this.btnAcercaDe);
             this.Acerca.Controls.Add(this.pictureBox5);
             this.Acerca.Location = new System.Drawing.Point(4, 22);
             this.Acerca.Name = "Acerca";
@@ -381,39 +381,41 @@ namespace _Plantilla_Sistema_facturación_
             this.Acerca.TabIndex = 4;
             this.Acerca.Text = "Acerca";
             // 
-            // button2
+            // btnAyuda
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(11, 230);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 39);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Ayuda";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAyuda.FlatAppearance.BorderSize = 0;
+            this.btnAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyuda.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAyuda.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
+            this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAyuda.Location = new System.Drawing.Point(11, 230);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(123, 39);
+            this.btnAyuda.TabIndex = 9;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
-            // button4
+            // btnAcercaDe
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(11, 294);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(155, 39);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Acerca de";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.FlatAppearance.BorderSize = 0;
+            this.btnAcercaDe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAcercaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcercaDe.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcercaDe.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btnAcercaDe.Image = ((System.Drawing.Image)(resources.GetObject("btnAcercaDe.Image")));
+            this.btnAcercaDe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAcercaDe.Location = new System.Drawing.Point(11, 294);
+            this.btnAcercaDe.Name = "btnAcercaDe";
+            this.btnAcercaDe.Size = new System.Drawing.Size(155, 39);
+            this.btnAcercaDe.TabIndex = 8;
+            this.btnAcercaDe.Text = "Acerca de";
+            this.btnAcercaDe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAcercaDe.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
             // pictureBox5
             // 
@@ -489,8 +491,8 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.Button btnSeguridad;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnRoles;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.Button btnAcercaDe;
         private System.Windows.Forms.Panel pnlContenedor;
     }
 }

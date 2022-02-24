@@ -62,8 +62,8 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-             frmEmpleados Empleados = new frmEmpleados();
-            AbrirForm(Empleados);
+             frmListaEmpleados   Empleados = new frmListaEmpleados();
+             AbrirForm(Empleados);
         }
 
         private void btnRoles_Click(object sender, EventArgs e)
@@ -81,6 +81,18 @@ namespace _Plantilla_Sistema_facturación_
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            frmAyuda ayuda = new frmAyuda();
+            AbrirForm(ayuda);
+        }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            frmAcercaDe acercaDe = new frmAcercaDe();
+            AbrirForm(acercaDe);
         }
     }
 }

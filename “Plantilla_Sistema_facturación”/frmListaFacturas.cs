@@ -16,17 +16,19 @@ namespace _Plantilla_Sistema_facturación_
         {
             InitializeComponent();
         }
-
-        private void frmListaCategoria_Load(object sender, EventArgs e)
+        private void frmListaFacturas_Load(object sender, EventArgs e)
         {
-           
             llenar_grid();
+
         }
 
+        
         public void llenar_grid()
         {
+
             for (int i = 0; i < 10; i++)
             {
+              
                 dgvFacturas.Rows.Add(i, $"CLIENTE {i}", $"EMPLEADO {i}", $"{i*0,01}", "9", $"{i*34342}", $"{DateTime.Now}");
             }
         }

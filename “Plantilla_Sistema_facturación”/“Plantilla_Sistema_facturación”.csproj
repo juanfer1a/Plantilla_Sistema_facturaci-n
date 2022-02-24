@@ -49,11 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcercaDe.Designer.cs">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminSeguridad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAdminSeguridad.Designer.cs">
       <DependentUpon>frmAdminSeguridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyuda.Designer.cs">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCategoriasProductos.cs">
       <SubType>Form</SubType>
@@ -97,6 +109,12 @@
     <Compile Include="frmListaClientes.Designer.cs">
       <DependentUpon>frmListaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaEmpleados.Designer.cs">
+      <DependentUpon>frmListaEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,8 +153,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAcercaDe.resx">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdminSeguridad.resx">
       <DependentUpon>frmAdminSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyuda.resx">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategoriasProductos.resx">
       <DependentUpon>frmCategoriasProductos.cs</DependentUpon>
@@ -158,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaClientes.resx">
       <DependentUpon>frmListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaEmpleados.resx">
+      <DependentUpon>frmListaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaFacturas.resx">
       <DependentUpon>frmListaFacturas.cs</DependentUpon>

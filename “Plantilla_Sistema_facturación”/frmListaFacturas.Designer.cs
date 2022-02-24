@@ -139,7 +139,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminProductos.Depth = 0;
             this.lblAdminProductos.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblAdminProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblAdminProductos.Location = new System.Drawing.Point(563, 86);
+            this.lblAdminProductos.Location = new System.Drawing.Point(367, 78);
             this.lblAdminProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblAdminProductos.Name = "lblAdminProductos";
             this.lblAdminProductos.Size = new System.Drawing.Size(212, 19);
@@ -227,6 +227,7 @@ namespace _Plantilla_Sistema_facturación_
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmListaFacturas";
             this.Text = "frmListaFacturas";
+            this.Load += new System.EventHandler(this.frmListaFacturas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

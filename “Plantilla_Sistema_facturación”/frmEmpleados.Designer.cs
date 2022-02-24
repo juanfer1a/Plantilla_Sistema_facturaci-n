@@ -313,6 +313,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Name = "frmEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEmpleados";
+            this.Load += new System.EventHandler(this.frmEmpleados_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
