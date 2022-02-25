@@ -82,6 +82,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             // pnlContenedor
             // 
+            this.pnlContenedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(200, 0);
             this.pnlContenedor.Name = "pnlContenedor";
@@ -449,6 +450,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SISTEMA DE FACTURACION";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);

@@ -16,5 +16,11 @@ namespace _Plantilla_Sistema_facturación_
         {
             InitializeComponent();
         }
+
+        private void frmAyuda_Load(object sender, EventArgs e)
+        {
+            webBrowser1.ScriptErrorsSuppressed = true;
+
+        }
     }
 }

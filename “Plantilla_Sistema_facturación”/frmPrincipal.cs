@@ -24,6 +24,7 @@ namespace _Plantilla_Sistema_facturación_
             if (this.pnlContenedor.Controls.Count > 0)
                 this.pnlContenedor.Controls.RemoveAt(0);
             formHijo.TopLevel = false;
+            formHijo.Dock = DockStyle.Fill;
             formHijo.FormBorderStyle = FormBorderStyle.None;
             formHijo.Dock = DockStyle.Fill;
             this.pnlContenedor.Controls.Add(formHijo);
@@ -93,6 +94,13 @@ namespace _Plantilla_Sistema_facturación_
         {
             frmAcercaDe acercaDe = new frmAcercaDe();
             AbrirForm(acercaDe);
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            //this.MaximumSize = SystemInformation.PrimaryMonitorMaximizedWindowSize;
+            //this.WindowState = FormWindowState.Maximized;
+            // pnlContenedor.MaximumSize
         }
     }
 }

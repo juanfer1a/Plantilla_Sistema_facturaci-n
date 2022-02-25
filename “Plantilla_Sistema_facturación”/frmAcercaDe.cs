@@ -15,6 +15,7 @@ namespace _Plantilla_Sistema_facturación_
         public frmAcercaDe()
         {
             InitializeComponent();
+            webBrowser1.ScriptErrorsSuppressed = true;
         }
     }
 }

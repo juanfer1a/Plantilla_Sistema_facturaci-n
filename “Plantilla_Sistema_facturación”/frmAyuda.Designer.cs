@@ -40,7 +40,7 @@ namespace _Plantilla_Sistema_facturación_
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(800, 450);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://visualstudio.microsoft.com/es/support/", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://support.google.com/?hl=es", System.UriKind.Absolute);
             // 
             // frmAyuda
             // 
@@ -51,6 +51,7 @@ namespace _Plantilla_Sistema_facturación_
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAyuda";
             this.Text = "frmAyuda";
+            this.Load += new System.EventHandler(this.frmAyuda_Load);
             this.ResumeLayout(false);
 
         }
