@@ -70,6 +70,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirRol.TabIndex = 25;
             this.btnSalirRol.Text = "SALIR";
             this.btnSalirRol.UseVisualStyleBackColor = true;
+            this.btnSalirRol.Click += new System.EventHandler(this.btnSalirRol_Click);
             // 
             // dgvRol
             // 
@@ -84,6 +85,7 @@ namespace _Plantilla_Sistema_facturación_
             this.dgvRol.Name = "dgvRol";
             this.dgvRol.Size = new System.Drawing.Size(639, 150);
             this.dgvRol.TabIndex = 24;
+            this.dgvRol.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRol_CellContentClick);
             // 
             // intIdRol
             // 
@@ -136,6 +138,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnRolNuevo.TabIndex = 23;
             this.btnRolNuevo.Text = "NUEVO";
             this.btnRolNuevo.UseVisualStyleBackColor = true;
+            this.btnRolNuevo.Click += new System.EventHandler(this.btnRolNuevo_Click);
             // 
             // btnBuscarRol
             // 
@@ -151,6 +154,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBuscarRol.TabIndex = 22;
             this.btnBuscarRol.Text = "BUSCAR";
             this.btnBuscarRol.UseVisualStyleBackColor = true;
+            this.btnBuscarRol.Click += new System.EventHandler(this.btnBuscarRol_Click);
             // 
             // txtBuscarRol
             // 

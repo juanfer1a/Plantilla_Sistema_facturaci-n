@@ -32,6 +32,41 @@ namespace _Plantilla_Sistema_facturación_
                 dgvRol.Rows.Add(i, $"ID {i}", $"ROL {i}", $"DESCRIPCION ROL {i}");
             }
         }
+        private void dgvRol_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvRol.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
+            {
+                int posActual = dgvRol.CurrentRow.Index;//Obtenemos el numero de la fila
+                if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvRol[0, posActual].Value.ToString()}");//Mostramos mensaje
+            }
+
+            if (dgvRol.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
+            {
+                int posActual = dgvRol.CurrentRow.Index;//Obtenemos el numero de la fila
+                frmFacturas Facturas = new frmFacturas();
+                Facturas.NroFactura = int.Parse(dgvRol[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Facturas.ShowDialog();//muestra el formulario de forma modal
+            }
+        }
+        private void btnRolNuevo_Click(object sender, EventArgs e)
+        {
+            frmRolEmpleados Rol = new frmRolEmpleados();
+            Rol.IdRol = 0;
+            Rol.ShowDialog();
+        }
+
+
+
+        private void btnBuscarRol_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Funcion en desarrollo");
+        }
+
+        private void btnSalirRol_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
     }
 }
