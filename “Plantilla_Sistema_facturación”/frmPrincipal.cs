@@ -69,7 +69,7 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            frmRolEmpleados Rol = new frmRolEmpleados();
+            frmListaRol Rol = new frmListaRol();
             AbrirForm(Rol);
         }
 

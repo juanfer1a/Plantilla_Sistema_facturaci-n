@@ -31,9 +31,9 @@ namespace _Plantilla_Sistema_facturación_
         {
             this.components = new System.ComponentModel.Container();
             this.grbRolEmpleados = new System.Windows.Forms.GroupBox();
-            this.txtDescripcionRol = new System.Windows.Forms.TextBox();
+            this.txbDescripcionRol = new System.Windows.Forms.TextBox();
             this.lblDescripcionRol = new MaterialSkin.Controls.MaterialLabel();
-            this.txtIdRolEmpleado = new System.Windows.Forms.TextBox();
+            this.txbIdRolEmpleado = new System.Windows.Forms.TextBox();
             this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblSalirRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizarRol = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -45,9 +45,9 @@ namespace _Plantilla_Sistema_facturación_
             // 
             // grbRolEmpleados
             // 
-            this.grbRolEmpleados.Controls.Add(this.txtDescripcionRol);
+            this.grbRolEmpleados.Controls.Add(this.txbDescripcionRol);
             this.grbRolEmpleados.Controls.Add(this.lblDescripcionRol);
-            this.grbRolEmpleados.Controls.Add(this.txtIdRolEmpleado);
+            this.grbRolEmpleados.Controls.Add(this.txbIdRolEmpleado);
             this.grbRolEmpleados.Controls.Add(this.txtNombreRol);
             this.grbRolEmpleados.Location = new System.Drawing.Point(39, 79);
             this.grbRolEmpleados.Name = "grbRolEmpleados";
@@ -55,13 +55,13 @@ namespace _Plantilla_Sistema_facturación_
             this.grbRolEmpleados.TabIndex = 0;
             this.grbRolEmpleados.TabStop = false;
             // 
-            // txtDescripcionRol
+            // txbDescripcionRol
             // 
-            this.txtDescripcionRol.Location = new System.Drawing.Point(56, 164);
-            this.txtDescripcionRol.Multiline = true;
-            this.txtDescripcionRol.Name = "txtDescripcionRol";
-            this.txtDescripcionRol.Size = new System.Drawing.Size(420, 101);
-            this.txtDescripcionRol.TabIndex = 21;
+            this.txbDescripcionRol.Location = new System.Drawing.Point(56, 164);
+            this.txbDescripcionRol.Multiline = true;
+            this.txbDescripcionRol.Name = "txbDescripcionRol";
+            this.txbDescripcionRol.Size = new System.Drawing.Size(420, 101);
+            this.txbDescripcionRol.TabIndex = 21;
             // 
             // lblDescripcionRol
             // 
@@ -76,12 +76,12 @@ namespace _Plantilla_Sistema_facturación_
             this.lblDescripcionRol.TabIndex = 20;
             this.lblDescripcionRol.Text = "Descripcion detallada Rol";
             // 
-            // txtIdRolEmpleado
+            // txbIdRolEmpleado
             // 
-            this.txtIdRolEmpleado.Location = new System.Drawing.Point(56, 36);
-            this.txtIdRolEmpleado.Name = "txtIdRolEmpleado";
-            this.txtIdRolEmpleado.Size = new System.Drawing.Size(36, 20);
-            this.txtIdRolEmpleado.TabIndex = 19;
+            this.txbIdRolEmpleado.Location = new System.Drawing.Point(56, 36);
+            this.txbIdRolEmpleado.Name = "txbIdRolEmpleado";
+            this.txbIdRolEmpleado.Size = new System.Drawing.Size(36, 20);
+            this.txbIdRolEmpleado.TabIndex = 19;
             // 
             // txtNombreRol
             // 
@@ -163,6 +163,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Name = "frmRolEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRolEmpleados";
+            this.Load += new System.EventHandler(this.frmRolEmpleados_Load);
             this.grbRolEmpleados.ResumeLayout(false);
             this.grbRolEmpleados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -174,12 +175,12 @@ namespace _Plantilla_Sistema_facturación_
         #endregion
 
         private System.Windows.Forms.GroupBox grbRolEmpleados;
-        private System.Windows.Forms.TextBox txtIdRolEmpleado;
+        private System.Windows.Forms.TextBox txbIdRolEmpleado;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRol;
         private MaterialSkin.Controls.MaterialLabel lblRolEmpleados;
         private MaterialSkin.Controls.MaterialRaisedButton lblSalirRol;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizarRol;
-        private System.Windows.Forms.TextBox txtDescripcionRol;
+        private System.Windows.Forms.TextBox txbDescripcionRol;
         private MaterialSkin.Controls.MaterialLabel lblDescripcionRol;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
