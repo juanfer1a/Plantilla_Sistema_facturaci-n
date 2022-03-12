@@ -12,6 +12,7 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmListaRol : Form
     {
+        Acceso_datos cn = new Acceso_datos();
         public int IdRol { get; set; }
         public frmListaRol()
         {
@@ -25,27 +26,33 @@ namespace _Plantilla_Sistema_facturación_
         }
         public void llenar_grid()
         {
+            cn.llenarTablas(dgvRol, "TBLROLES");
 
-            for (int i = 0; i < 10; i++)
-            {
-
-                dgvRol.Rows.Add(i, $"ID {i}", $"ROL {i}", $"DESCRIPCION ROL {i}");
-            }
         }
+        private void btnBuscarRol_Click(object sender, EventArgs e)
+        {
+            cn.buscarYLlenarTablas(dgvRol, "TBLROLES", "StrDescripcion", txtBuscarRol.Text);
+        }
+
         private void dgvRol_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvRol.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
             {
                 int posActual = dgvRol.CurrentRow.Index;//Obtenemos el numero de la fila
-                if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvRol[0, posActual].Value.ToString()}");//Mostramos mensaje
+                if (MessageBox.Show("Esta seguro de borrar, tenga en cuenta que se borrará las facturas realizadas por el empleado", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //Falta corregir el borrado
+                    int idRol = int.Parse(dgvRol[2, posActual].Value.ToString());
+                    cn.eliminarDeCualquierLista(idRol, "Eliminar_Rol", "@IdRol");
+                    llenar_grid();
+                }
             }
 
             if (dgvRol.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
             {
                 int posActual = dgvRol.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmFacturas Facturas = new frmFacturas();
-                Facturas.NroFactura = int.Parse(dgvRol[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Facturas.NroFactura = int.Parse(dgvRol[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 Facturas.ShowDialog();//muestra el formulario de forma modal
             }
         }
@@ -58,10 +65,7 @@ namespace _Plantilla_Sistema_facturación_
 
 
 
-        private void btnBuscarRol_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Funcion en desarrollo");
-        }
+       
 
         private void btnSalirRol_Click(object sender, EventArgs e)
         {

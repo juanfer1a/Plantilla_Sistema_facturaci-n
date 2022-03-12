@@ -12,6 +12,7 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmListaCategoria : Form
     {
+        Acceso_datos cn = new Acceso_datos();
         public frmListaCategoria()
         {
             InitializeComponent();
@@ -24,15 +25,13 @@ namespace _Plantilla_Sistema_facturación_
 
         public void llenar_grid()
         {
-            for (int i = 0; i < 10; i++)
-            {
-                dgvCategoria.Rows.Add(i, $"Categoria{i}");
-            }
+            cn.llenarTablas(dgvCategoria, "TBLCATEGORIA_PROD");
+
         }
 
         private void btnBuscarCategoria_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcion en desarrollo");
+            cn.buscarYLlenarTablas(dgvCategoria, "TBLCATEGORIA_PROD", "StrDescripcion", txtBuscarCategoria.Text);
         }
 
         private void btnNuevoCategoria_Click(object sender, EventArgs e)
@@ -52,15 +51,19 @@ namespace _Plantilla_Sistema_facturación_
             if (dgvCategoria.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
             {
                 int posActual = dgvCategoria.CurrentRow.Index;//Obtenemos el numero de la fila
-                if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvCategoria[0, posActual].Value.ToString()}");//Mostramos mensaje
+                if (MessageBox.Show("Esta seguro de borrar, tenga en cuenta que se borrará los productos asociados a este categoría", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int idCategoria = int.Parse(dgvCategoria[2, posActual].Value.ToString());
+                    cn.eliminarDeCualquierLista(idCategoria, "Eliminar_CategoriaProducto", "@IdCategoria");
+                    llenar_grid();
+                }
             }
 
             if (dgvCategoria.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
             {
                 int posActual = dgvCategoria.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmCategoriasProductos Categoria = new frmCategoriasProductos();
-                Categoria.IdCategoria = int.Parse(dgvCategoria[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Categoria.IdCategoria = int.Parse(dgvCategoria[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 Categoria.ShowDialog();//muestra el formulario de forma modal
             }
         }

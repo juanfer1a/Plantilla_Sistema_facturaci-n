@@ -35,8 +35,6 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBuscarCategoria = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtBuscarCategoria = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblAdminCategorias = new MaterialSkin.Controls.MaterialLabel();
-            this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
@@ -48,7 +46,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirCategoria.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalirCategoria.Depth = 0;
             this.btnSalirCategoria.Icon = null;
-            this.btnSalirCategoria.Location = new System.Drawing.Point(595, 369);
+            this.btnSalirCategoria.Location = new System.Drawing.Point(661, 336);
             this.btnSalirCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalirCategoria.Name = "btnSalirCategoria";
             this.btnSalirCategoria.Primary = true;
@@ -62,13 +60,11 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_Cliente,
-            this.strcliente,
             this.btnEditar,
             this.btnBorrar});
-            this.dgvCategoria.Location = new System.Drawing.Point(193, 213);
+            this.dgvCategoria.Location = new System.Drawing.Point(54, 180);
             this.dgvCategoria.Name = "dgvCategoria";
-            this.dgvCategoria.Size = new System.Drawing.Size(460, 150);
+            this.dgvCategoria.Size = new System.Drawing.Size(665, 150);
             this.dgvCategoria.TabIndex = 13;
             this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellContentClick);
             // 
@@ -78,7 +74,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnNuevoCategoria.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnNuevoCategoria.Depth = 0;
             this.btnNuevoCategoria.Icon = null;
-            this.btnNuevoCategoria.Location = new System.Drawing.Point(587, 171);
+            this.btnNuevoCategoria.Location = new System.Drawing.Point(653, 138);
             this.btnNuevoCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNuevoCategoria.Name = "btnNuevoCategoria";
             this.btnNuevoCategoria.Primary = true;
@@ -94,7 +90,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBuscarCategoria.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscarCategoria.Depth = 0;
             this.btnBuscarCategoria.Icon = null;
-            this.btnBuscarCategoria.Location = new System.Drawing.Point(432, 171);
+            this.btnBuscarCategoria.Location = new System.Drawing.Point(498, 138);
             this.btnBuscarCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscarCategoria.Name = "btnBuscarCategoria";
             this.btnBuscarCategoria.Primary = true;
@@ -108,7 +104,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtBuscarCategoria.Depth = 0;
             this.txtBuscarCategoria.Hint = "Buscar Categoria";
-            this.txtBuscarCategoria.Location = new System.Drawing.Point(193, 173);
+            this.txtBuscarCategoria.Location = new System.Drawing.Point(54, 151);
             this.txtBuscarCategoria.MaxLength = 32767;
             this.txtBuscarCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtBuscarCategoria.Name = "txtBuscarCategoria";
@@ -116,7 +112,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtBuscarCategoria.SelectedText = "";
             this.txtBuscarCategoria.SelectionLength = 0;
             this.txtBuscarCategoria.SelectionStart = 0;
-            this.txtBuscarCategoria.Size = new System.Drawing.Size(233, 23);
+            this.txtBuscarCategoria.Size = new System.Drawing.Size(348, 23);
             this.txtBuscarCategoria.TabIndex = 10;
             this.txtBuscarCategoria.TabStop = false;
             this.txtBuscarCategoria.UseSystemPasswordChar = false;
@@ -127,23 +123,12 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminCategorias.Depth = 0;
             this.lblAdminCategorias.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblAdminCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblAdminCategorias.Location = new System.Drawing.Point(315, 56);
+            this.lblAdminCategorias.Location = new System.Drawing.Point(275, 56);
             this.lblAdminCategorias.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblAdminCategorias.Name = "lblAdminCategorias";
             this.lblAdminCategorias.Size = new System.Drawing.Size(227, 19);
             this.lblAdminCategorias.TabIndex = 9;
             this.lblAdminCategorias.Text = "ADMINISTRACION CATEGORIAS";
-            // 
-            // id_Cliente
-            // 
-            this.id_Cliente.HeaderText = "CODIGO";
-            this.id_Cliente.Name = "id_Cliente";
-            // 
-            // strcliente
-            // 
-            this.strcliente.HeaderText = "CATEGORIA";
-            this.strcliente.Name = "strcliente";
-            this.strcliente.Width = 150;
             // 
             // btnEditar
             // 
@@ -194,8 +179,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarCategoria;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarCategoria;
         private MaterialSkin.Controls.MaterialLabel lblAdminCategorias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strcliente;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
     }

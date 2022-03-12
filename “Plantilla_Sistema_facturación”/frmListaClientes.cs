@@ -14,7 +14,7 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmListaClientes : Form
     {
-
+        Acceso_datos cn = new Acceso_datos();
         public frmListaClientes()
         {
             InitializeComponent();
@@ -27,26 +27,13 @@ namespace _Plantilla_Sistema_facturación_
 
         public void llenar_grid()
         {
-            for (int i = 0; i < 10; i++)
-            {
-                dgClientes.Rows.Add(i, $"Nombre{i} Apellido1 Apellido2", $"{i * 12345}", $"{i * 12345}");
-            }
+            cn.llenarTablas(dgvClientes, "TBLCLIENTES");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcion en construccion");
-            //string nombre;
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    nombre = dgClientes.Rows[i].ToString();
-
-            //    if (txtBuscarClientes.Text == nombre)
-            //    {
-                    
-
-            //    }
-            //}
+            cn.buscarYLlenarTablas(dgvClientes, "TBLCLIENTES","StrNombre",txtBuscarClientes.Text);
+            
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -58,19 +45,31 @@ namespace _Plantilla_Sistema_facturación_
 
         private void dgClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgClientes.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
+            
+            if (dgvClientes.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
             {
-                int posActual = dgClientes.CurrentRow.Index;//Obtenemos el numero de la fila
-                if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgClientes[0, posActual].Value.ToString()}");//Mostramos mensaje
+                int posActual = dgvClientes.CurrentRow.Index;//Obtenemos el numero de la fila
+                if (MessageBox.Show("Esta seguro de borrar, tenga en cuenta que también se borrará el registro de las facturas", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                   int idCliente = int.Parse(dgvClientes[2, posActual].Value.ToString());
+                    cn.eliminarDeCualquierLista(idCliente, "Eliminar_Cliente", "@IdCliente");
+                    llenar_grid();
+                }
+                   
             }
 
-            if (dgClientes.Columns[e.ColumnIndex].Name == "btnEditarCliente")//Obtenemos el nombre de la columna para comparar
+            if (dgvClientes.Columns[e.ColumnIndex].Name == "btnEditarCliente")//Obtenemos el nombre de la columna para comparar
             {
-                int posActual = dgClientes.CurrentRow.Index;//Obtenemos el numero de la fila
+                int posActual = dgvClientes.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmEditarClientes Cliente = new frmEditarClientes();
-                Cliente.IdCliente = int.Parse(dgClientes[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Cliente.IdCliente = int.Parse(dgvClientes[2, posActual].Value.ToString());
+                Cliente.Nombre = (dgvClientes[3, posActual].Value.ToString());
+                Cliente.Documento = int.Parse(dgvClientes[4, posActual].Value.ToString());
+                Cliente.Direccion = (dgvClientes[5, posActual].Value.ToString());
+                Cliente.Telefono = int.Parse(dgvClientes[6, posActual].Value.ToString());
+                Cliente.Email = (dgvClientes[7, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 Cliente.ShowDialog();//muestra el formulario de forma modal
+                
             }
         }
 

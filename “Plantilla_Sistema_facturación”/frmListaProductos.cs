@@ -12,6 +12,7 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmListaProductos : Form
     {
+        Acceso_datos cn = new Acceso_datos();
         public frmListaProductos()
         {
             InitializeComponent();
@@ -21,7 +22,14 @@ namespace _Plantilla_Sistema_facturación_
         {
             llenar_grid();
         }
-
+        public void llenar_grid()
+        {
+            cn.llenarTablas(dgvProductos, "TBLPRODUCTO");
+        }
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            cn.buscarYLlenarTablas(dgvProductos, "TBLPRODUCTO", "StrNombre", txtBuscarProductos.Text);
+        }
         private void btnProductoNuevo_Click(object sender, EventArgs e)
         {
                 frmProductos Producto = new frmProductos();
@@ -36,29 +44,25 @@ namespace _Plantilla_Sistema_facturación_
             {
                 int posActual = dgvProductos.CurrentRow.Index;//Obtenemos el numero de la fila
                 if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvProductos[0, posActual].Value.ToString()}");//Mostramos mensaje
+                {
+                    int idProducto = int.Parse(dgvProductos[2, posActual].Value.ToString());
+                    cn.eliminarDeCualquierLista(idProducto, "Eliminar_Producto", "@IdProducto");
+                    llenar_grid();
+                }
             }
 
             if (dgvProductos.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
             {
                 int posActual = dgvProductos.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmProductos Producto = new frmProductos();
-                Producto.IdProducto = int.Parse(dgvProductos[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Producto.IdProducto = int.Parse(dgvProductos[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 Producto.ShowDialog();//muestra el formulario de forma modal
+                
             }
         }
 
-        public void llenar_grid()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                dgvProductos.Rows.Add(i, $"Nombre{i}", $"{i * 12345}", $"{i * 12345}", $"{i * 12345}", $"{i * 12345}");
-            }
-        }
-        private void btnBuscarProducto_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Funcion en desarrollo.");
-        }
+       
+      
 
         private void btnSalirProducto_Click(object sender, EventArgs e)
         {

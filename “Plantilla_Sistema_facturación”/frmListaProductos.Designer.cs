@@ -31,18 +31,12 @@ namespace _Plantilla_Sistema_facturación_
         {
             this.btnSalirProducto = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnProductoNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBuscarProducto = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtBuscarProductos = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblAdminProductos = new MaterialSkin.Controls.MaterialLabel();
-            this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strNombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intReferenciaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intPrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intPrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +46,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirProducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalirProducto.Depth = 0;
             this.btnSalirProducto.Icon = null;
-            this.btnSalirProducto.Location = new System.Drawing.Point(848, 369);
+            this.btnSalirProducto.Location = new System.Drawing.Point(922, 413);
             this.btnSalirProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalirProducto.Name = "btnSalirProducto";
             this.btnSalirProducto.Primary = true;
@@ -66,19 +60,33 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_Cliente,
-            this.strNombreProducto,
-            this.intReferenciaProducto,
-            this.intPrecioCompra,
-            this.intPrecioVenta,
-            this.intStock,
             this.btnEditar,
             this.btnBorrar});
-            this.dgvProductos.Location = new System.Drawing.Point(12, 213);
+            this.dgvProductos.Location = new System.Drawing.Point(12, 152);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(968, 150);
+            this.dgvProductos.Size = new System.Drawing.Size(968, 255);
             this.dgvProductos.TabIndex = 13;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "EDITAR";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseColumnTextForButtonValue = true;
+            this.btnEditar.Width = 80;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.HeaderText = "BORRAR";
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.UseColumnTextForButtonValue = true;
+            this.btnBorrar.Width = 80;
             // 
             // btnProductoNuevo
             // 
@@ -86,7 +94,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnProductoNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnProductoNuevo.Depth = 0;
             this.btnProductoNuevo.Icon = null;
-            this.btnProductoNuevo.Location = new System.Drawing.Point(840, 171);
+            this.btnProductoNuevo.Location = new System.Drawing.Point(914, 110);
             this.btnProductoNuevo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnProductoNuevo.Name = "btnProductoNuevo";
             this.btnProductoNuevo.Primary = true;
@@ -102,7 +110,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBuscarProducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscarProducto.Depth = 0;
             this.btnBuscarProducto.Icon = null;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(625, 171);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(625, 110);
             this.btnBuscarProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Primary = true;
@@ -116,7 +124,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtBuscarProductos.Depth = 0;
             this.txtBuscarProductos.Hint = "Buscar Producto";
-            this.txtBuscarProductos.Location = new System.Drawing.Point(42, 184);
+            this.txtBuscarProductos.Location = new System.Drawing.Point(42, 123);
             this.txtBuscarProductos.MaxLength = 32767;
             this.txtBuscarProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtBuscarProductos.Name = "txtBuscarProductos";
@@ -141,61 +149,6 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminProductos.Size = new System.Drawing.Size(223, 19);
             this.lblAdminProductos.TabIndex = 9;
             this.lblAdminProductos.Text = "ADMINISTRACION PRODUCTOS";
-            // 
-            // id_Cliente
-            // 
-            this.id_Cliente.HeaderText = "ID";
-            this.id_Cliente.Name = "id_Cliente";
-            this.id_Cliente.Width = 50;
-            // 
-            // strNombreProducto
-            // 
-            this.strNombreProducto.HeaderText = " NOMBRE PRODUCTO";
-            this.strNombreProducto.Name = "strNombreProducto";
-            this.strNombreProducto.Width = 300;
-            // 
-            // intReferenciaProducto
-            // 
-            this.intReferenciaProducto.HeaderText = "REFERENCIA";
-            this.intReferenciaProducto.Name = "intReferenciaProducto";
-            // 
-            // intPrecioCompra
-            // 
-            this.intPrecioCompra.HeaderText = "PRECIO COMPRA";
-            this.intPrecioCompra.Name = "intPrecioCompra";
-            this.intPrecioCompra.Width = 130;
-            // 
-            // intPrecioVenta
-            // 
-            this.intPrecioVenta.HeaderText = "PRECIO VENTA";
-            this.intPrecioVenta.Name = "intPrecioVenta";
-            this.intPrecioVenta.Width = 110;
-            // 
-            // intStock
-            // 
-            this.intStock.HeaderText = "STOCK";
-            this.intStock.Name = "intStock";
-            this.intStock.Width = 70;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.HeaderText = "EDITAR";
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseColumnTextForButtonValue = true;
-            this.btnEditar.Width = 80;
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.HeaderText = "BORRAR";
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnBorrar.Text = "BORRAR";
-            this.btnBorrar.UseColumnTextForButtonValue = true;
-            this.btnBorrar.Width = 80;
             // 
             // frmListaProductos
             // 
@@ -226,12 +179,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarProducto;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarProductos;
         private MaterialSkin.Controls.MaterialLabel lblAdminProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strNombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intReferenciaProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intPrecioCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intPrecioVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intStock;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
     }

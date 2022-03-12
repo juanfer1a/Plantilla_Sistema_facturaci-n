@@ -12,6 +12,7 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmListaEmpleados : Form
     {
+        Acceso_datos cn = new Acceso_datos();
         public frmListaEmpleados()
         {
             InitializeComponent();
@@ -24,47 +25,46 @@ namespace _Plantilla_Sistema_facturación_
         }
         public void llenar_grid()
         {
-
-            for (int i = 0; i < 10; i++)
-            {
-
-                dgvListaEmpleados.Rows.Add(i, $"TRABAJADOR {i}", $"{i}@EMAIL.COM", $"ROL{i}", $"{DateTime.Now}", $"{DateTime.Now}",$"{i*234234}",$"CALLE{i}",$"{i*232}");
-            }
+            cn.llenarTablas(dgvEmpleados, "TBLEMPLEADO");
         }
-       
-        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        private void btnBuscarEmpleado_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcion en desarrollo");
+            cn.buscarYLlenarTablas(dgvEmpleados, "TBLEMPLEADO", "StrNombre", txtBuscarEmpleado.Text);
         }
-
-        private void btnSalirCliente_Click(object sender, EventArgs e)
+        private void btnSalirEmpleado_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        
         private void dgvListaEmpleados_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvListaEmpleados.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
+            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
             {
-                int posActual = dgvListaEmpleados.CurrentRow.Index;//Obtenemos el numero de la fila
-                if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvListaEmpleados[0, posActual].Value.ToString()}");//Mostramos mensaje
+                int posActual = dgvEmpleados.CurrentRow.Index;//Obtenemos el numero de la fila
+                if (MessageBox.Show("Esta seguro de borrar, tenga en cuenta que se borrará las facturas realizadas por el empleado", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int idEmpleado = int.Parse(dgvEmpleados[2, posActual].Value.ToString());
+                    cn.eliminarDeCualquierLista(idEmpleado, "Eliminar_Empleado", "@IdCliente");
+                    llenar_grid();
+                }
             }
 
-            if (dgvListaEmpleados.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
+            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
             {
-                int posActual = dgvListaEmpleados.CurrentRow.Index;//Obtenemos el numero de la fila
+                int posActual = dgvEmpleados.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmEmpleados empleados = new frmEmpleados();
-                empleados.idEmpleado = int.Parse(dgvListaEmpleados[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                empleados.idEmpleado = int.Parse(dgvEmpleados[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 empleados.ShowDialog();//muestra el formulario de forma modal
             }
         }
-
-        private void btnClienteNuevo_Click(object sender, EventArgs e)
+        
+        private void btnNuevoEmpleado_Click(object sender, EventArgs e)
         {
             frmEmpleados empleados = new frmEmpleados();
             empleados.idEmpleado = 0;
             empleados.ShowDialog();
         }
+
+        
     }
 }

@@ -33,15 +33,11 @@ namespace _Plantilla_Sistema_facturación_
             this.txtBuscarClientes = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.dgClientes = new System.Windows.Forms.DataGridView();
-            this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intDocumentoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intTelefonoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnEditarCliente = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAdminClientes
@@ -56,13 +52,12 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminClientes.Size = new System.Drawing.Size(206, 19);
             this.lblAdminClientes.TabIndex = 0;
             this.lblAdminClientes.Text = "ADMINISTRACION CLIENTES";
-          
             // 
             // txtBuscarClientes
             // 
             this.txtBuscarClientes.Depth = 0;
             this.txtBuscarClientes.Hint = "Buscar cliente";
-            this.txtBuscarClientes.Location = new System.Drawing.Point(68, 178);
+            this.txtBuscarClientes.Location = new System.Drawing.Point(30, 105);
             this.txtBuscarClientes.MaxLength = 32767;
             this.txtBuscarClientes.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtBuscarClientes.Name = "txtBuscarClientes";
@@ -70,11 +65,10 @@ namespace _Plantilla_Sistema_facturación_
             this.txtBuscarClientes.SelectedText = "";
             this.txtBuscarClientes.SelectionLength = 0;
             this.txtBuscarClientes.SelectionStart = 0;
-            this.txtBuscarClientes.Size = new System.Drawing.Size(420, 23);
+            this.txtBuscarClientes.Size = new System.Drawing.Size(600, 23);
             this.txtBuscarClientes.TabIndex = 3;
             this.txtBuscarClientes.TabStop = false;
             this.txtBuscarClientes.UseSystemPasswordChar = false;
-        
             // 
             // btnBuscar
             // 
@@ -82,7 +76,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBuscar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscar.Depth = 0;
             this.btnBuscar.Icon = null;
-            this.btnBuscar.Location = new System.Drawing.Point(651, 165);
+            this.btnBuscar.Location = new System.Drawing.Point(697, 92);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Primary = true;
@@ -98,7 +92,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnNuevo.Depth = 0;
             this.btnNuevo.Icon = null;
-            this.btnNuevo.Location = new System.Drawing.Point(811, 165);
+            this.btnNuevo.Location = new System.Drawing.Point(857, 92);
             this.btnNuevo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Primary = true;
@@ -108,44 +102,17 @@ namespace _Plantilla_Sistema_facturación_
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // dgClientes
+            // dgvClientes
             // 
-            this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_Cliente,
-            this.strcliente,
-            this.intDocumentoCliente,
-            this.intTelefonoCliente,
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnEditarCliente,
             this.btnBorrar});
-            this.dgClientes.Location = new System.Drawing.Point(68, 207);
-            this.dgClientes.Name = "dgClientes";
-            this.dgClientes.Size = new System.Drawing.Size(809, 150);
-            this.dgClientes.TabIndex = 7;
-            this.dgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentClick);
-            // 
-            // id_Cliente
-            // 
-            this.id_Cliente.HeaderText = "ID";
-            this.id_Cliente.Name = "id_Cliente";
-            this.id_Cliente.Width = 50;
-            // 
-            // strcliente
-            // 
-            this.strcliente.HeaderText = "CLIENTE";
-            this.strcliente.Name = "strcliente";
-            this.strcliente.Width = 300;
-            // 
-            // intDocumentoCliente
-            // 
-            this.intDocumentoCliente.HeaderText = "DOCUMENTO";
-            this.intDocumentoCliente.Name = "intDocumentoCliente";
-            // 
-            // intTelefonoCliente
-            // 
-            this.intTelefonoCliente.HeaderText = "TELEFONO";
-            this.intTelefonoCliente.Name = "intTelefonoCliente";
-            this.intTelefonoCliente.Width = 80;
+            this.dgvClientes.Location = new System.Drawing.Point(30, 134);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(893, 262);
+            this.dgvClientes.TabIndex = 7;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentClick);
             // 
             // btnEditarCliente
             // 
@@ -173,7 +140,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalir.Depth = 0;
             this.btnSalir.Icon = null;
-            this.btnSalir.Location = new System.Drawing.Point(819, 363);
+            this.btnSalir.Location = new System.Drawing.Point(865, 402);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -189,7 +156,7 @@ namespace _Plantilla_Sistema_facturación_
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 450);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dgClientes);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscarClientes);
@@ -199,7 +166,7 @@ namespace _Plantilla_Sistema_facturación_
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListaClientes";
             this.Load += new System.EventHandler(this.frmListaClientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,12 +178,8 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarClientes;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private MaterialSkin.Controls.MaterialRaisedButton btnNuevo;
-        private System.Windows.Forms.DataGridView dgClientes;
+        private System.Windows.Forms.DataGridView dgvClientes;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strcliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intDocumentoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intTelefonoCliente;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditarCliente;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
     }

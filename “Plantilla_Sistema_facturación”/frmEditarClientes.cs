@@ -16,6 +16,12 @@ namespace _Plantilla_Sistema_facturación_
     {
         public int IdCliente { get; set; }
 
+        public string Nombre { get; set; }
+        public int Documento { get; set; }
+        public string Direccion { get; set; }
+        public int Telefono { get; set; }
+        public string Email { get; set; }
+
         public frmEditarClientes()
         {
             InitializeComponent();
@@ -31,10 +37,12 @@ namespace _Plantilla_Sistema_facturación_
             {//Actulizar cliente
                 lblTitulo.Text = "MODIFICAR CLIENTE";
                 txtIdCliente.Text = IdCliente.ToString();
-                txtNombreCliente.Text = "Nombre Apellido1";
-                txtDocumento.Text = "345345435";
-                txtDireccion.Text = "Direccion del cliente";
-                txtTelefono.Text = "23452345";
+                txtNombreCliente.Text = Nombre;
+                txtDocumento.Text = Documento.ToString();
+                txtDireccion.Text = Direccion;
+                txtTelefono.Text = Text.ToString();
+                txtEmail.Text = Email;
+
             }
         }
 
@@ -47,6 +55,8 @@ namespace _Plantilla_Sistema_facturación_
             errorProvider1.SetError(txtEmail, "Ingrese un valor");
             errorProvider1.SetError(txtNombreCliente, "Ingrese un valor");
             errorProvider1.SetError(txtTelefono, "Ingrese un valor");
+
+
         }
 
         private void lblSalir_Click(object sender, EventArgs e)

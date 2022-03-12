@@ -32,14 +32,11 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminRol = new MaterialSkin.Controls.MaterialLabel();
             this.btnSalirRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvRol = new System.Windows.Forms.DataGridView();
-            this.intIdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strDescripcionRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnRolNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBuscarRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtBuscarRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +59,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirRol.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalirRol.Depth = 0;
             this.btnSalirRol.Icon = null;
-            this.btnSalirRol.Location = new System.Drawing.Point(604, 374);
+            this.btnSalirRol.Location = new System.Drawing.Point(519, 326);
             this.btnSalirRol.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalirRol.Name = "btnSalirRol";
             this.btnSalirRol.Primary = true;
@@ -76,33 +73,62 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.dgvRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.intIdRol,
-            this.strRol,
-            this.strDescripcionRol,
             this.btnEditar,
             this.btnBorrar});
-            this.dgvRol.Location = new System.Drawing.Point(23, 218);
+            this.dgvRol.Location = new System.Drawing.Point(86, 170);
             this.dgvRol.Name = "dgvRol";
-            this.dgvRol.Size = new System.Drawing.Size(639, 150);
+            this.dgvRol.Size = new System.Drawing.Size(491, 150);
             this.dgvRol.TabIndex = 24;
             this.dgvRol.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRol_CellContentClick);
             // 
-            // intIdRol
+            // btnRolNuevo
             // 
-            this.intIdRol.HeaderText = "ID";
-            this.intIdRol.Name = "intIdRol";
-            this.intIdRol.Width = 80;
+            this.btnRolNuevo.AutoSize = true;
+            this.btnRolNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRolNuevo.Depth = 0;
+            this.btnRolNuevo.Icon = null;
+            this.btnRolNuevo.Location = new System.Drawing.Point(511, 128);
+            this.btnRolNuevo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRolNuevo.Name = "btnRolNuevo";
+            this.btnRolNuevo.Primary = true;
+            this.btnRolNuevo.Size = new System.Drawing.Size(66, 36);
+            this.btnRolNuevo.TabIndex = 23;
+            this.btnRolNuevo.Text = "NUEVO";
+            this.btnRolNuevo.UseVisualStyleBackColor = true;
+            this.btnRolNuevo.Click += new System.EventHandler(this.btnRolNuevo_Click);
             // 
-            // strRol
+            // btnBuscarRol
             // 
-            this.strRol.HeaderText = "ROL";
-            this.strRol.Name = "strRol";
+            this.btnBuscarRol.AutoSize = true;
+            this.btnBuscarRol.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBuscarRol.Depth = 0;
+            this.btnBuscarRol.Icon = null;
+            this.btnBuscarRol.Location = new System.Drawing.Point(349, 128);
+            this.btnBuscarRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscarRol.Name = "btnBuscarRol";
+            this.btnBuscarRol.Primary = true;
+            this.btnBuscarRol.Size = new System.Drawing.Size(74, 36);
+            this.btnBuscarRol.TabIndex = 22;
+            this.btnBuscarRol.Text = "BUSCAR";
+            this.btnBuscarRol.UseVisualStyleBackColor = true;
+            this.btnBuscarRol.Click += new System.EventHandler(this.btnBuscarRol_Click);
             // 
-            // strDescripcionRol
+            // txtBuscarRol
             // 
-            this.strDescripcionRol.HeaderText = "DESCRIPCION";
-            this.strDescripcionRol.Name = "strDescripcionRol";
-            this.strDescripcionRol.Width = 250;
+            this.txtBuscarRol.Depth = 0;
+            this.txtBuscarRol.Hint = "Buscar Rol";
+            this.txtBuscarRol.Location = new System.Drawing.Point(86, 141);
+            this.txtBuscarRol.MaxLength = 32767;
+            this.txtBuscarRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBuscarRol.Name = "txtBuscarRol";
+            this.txtBuscarRol.PasswordChar = '\0';
+            this.txtBuscarRol.SelectedText = "";
+            this.txtBuscarRol.SelectionLength = 0;
+            this.txtBuscarRol.SelectionStart = 0;
+            this.txtBuscarRol.Size = new System.Drawing.Size(219, 23);
+            this.txtBuscarRol.TabIndex = 21;
+            this.txtBuscarRol.TabStop = false;
+            this.txtBuscarRol.UseSystemPasswordChar = false;
             // 
             // btnEditar
             // 
@@ -124,55 +150,6 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBorrar.UseColumnTextForButtonValue = true;
             this.btnBorrar.Width = 80;
             // 
-            // btnRolNuevo
-            // 
-            this.btnRolNuevo.AutoSize = true;
-            this.btnRolNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnRolNuevo.Depth = 0;
-            this.btnRolNuevo.Icon = null;
-            this.btnRolNuevo.Location = new System.Drawing.Point(596, 176);
-            this.btnRolNuevo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnRolNuevo.Name = "btnRolNuevo";
-            this.btnRolNuevo.Primary = true;
-            this.btnRolNuevo.Size = new System.Drawing.Size(66, 36);
-            this.btnRolNuevo.TabIndex = 23;
-            this.btnRolNuevo.Text = "NUEVO";
-            this.btnRolNuevo.UseVisualStyleBackColor = true;
-            this.btnRolNuevo.Click += new System.EventHandler(this.btnRolNuevo_Click);
-            // 
-            // btnBuscarRol
-            // 
-            this.btnBuscarRol.AutoSize = true;
-            this.btnBuscarRol.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnBuscarRol.Depth = 0;
-            this.btnBuscarRol.Icon = null;
-            this.btnBuscarRol.Location = new System.Drawing.Point(366, 176);
-            this.btnBuscarRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscarRol.Name = "btnBuscarRol";
-            this.btnBuscarRol.Primary = true;
-            this.btnBuscarRol.Size = new System.Drawing.Size(74, 36);
-            this.btnBuscarRol.TabIndex = 22;
-            this.btnBuscarRol.Text = "BUSCAR";
-            this.btnBuscarRol.UseVisualStyleBackColor = true;
-            this.btnBuscarRol.Click += new System.EventHandler(this.btnBuscarRol_Click);
-            // 
-            // txtBuscarRol
-            // 
-            this.txtBuscarRol.Depth = 0;
-            this.txtBuscarRol.Hint = "Buscar Rol";
-            this.txtBuscarRol.Location = new System.Drawing.Point(23, 189);
-            this.txtBuscarRol.MaxLength = 32767;
-            this.txtBuscarRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtBuscarRol.Name = "txtBuscarRol";
-            this.txtBuscarRol.PasswordChar = '\0';
-            this.txtBuscarRol.SelectedText = "";
-            this.txtBuscarRol.SelectionLength = 0;
-            this.txtBuscarRol.SelectionStart = 0;
-            this.txtBuscarRol.Size = new System.Drawing.Size(269, 23);
-            this.txtBuscarRol.TabIndex = 21;
-            this.txtBuscarRol.TabStop = false;
-            this.txtBuscarRol.UseSystemPasswordChar = false;
-            // 
             // frmListaRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +164,7 @@ namespace _Plantilla_Sistema_facturación_
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmListaRol";
             this.Text = "frmRol";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmListaRol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).EndInit();
             this.ResumeLayout(false);
@@ -199,13 +177,10 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialLabel lblAdminRol;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalirRol;
         private System.Windows.Forms.DataGridView dgvRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intIdRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strDescripcionRol;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
-        private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
         private MaterialSkin.Controls.MaterialRaisedButton btnRolNuevo;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarRol;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarRol;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
     }
 }
