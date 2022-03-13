@@ -76,13 +76,13 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBuscar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscar.Depth = 0;
             this.btnBuscar.Icon = null;
-            this.btnBuscar.Location = new System.Drawing.Point(697, 92);
+            this.btnBuscar.Location = new System.Drawing.Point(669, 92);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Primary = true;
-            this.btnBuscar.Size = new System.Drawing.Size(74, 36);
+            this.btnBuscar.Size = new System.Drawing.Size(161, 36);
             this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.Text = "BUSCAR/ACTUALIZAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 

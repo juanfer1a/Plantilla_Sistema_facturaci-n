@@ -63,7 +63,8 @@ namespace _Plantilla_Sistema_facturación_
             {
                 int posActual = dgvCategoria.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmCategoriasProductos Categoria = new frmCategoriasProductos();
-                Categoria.IdCategoria = int.Parse(dgvCategoria[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Categoria.IdCategoria = int.Parse(dgvCategoria[2, posActual].Value.ToString());
+                Categoria.Descripcion = dgvCategoria[3, posActual].Value.ToString();//pasamos al formulario el id del cliente seleccionado
                 Categoria.ShowDialog();//muestra el formulario de forma modal
             }
         }

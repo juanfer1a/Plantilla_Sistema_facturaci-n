@@ -14,11 +14,28 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmCategoriasProductos : Form
     {
-        public int IdCategoria;
+        public int IdCategoria { get; set; }
+
+        public string Descripcion { get; set; }
+
+        Acceso_datos cn = new Acceso_datos();
         public frmCategoriasProductos()
         {
             InitializeComponent();
         }
+
+        public void campoVacio(System.Windows.Forms.Control campo)
+        {
+            if (campo.Text == String.Empty)
+            {
+                errorProvider1.SetError(campo, "Se debe llenar este campo");
+            }
+            else
+            {
+                errorProvider1.SetError(campo, "");
+            }
+        }
+
         private void frmCategoriasProductos_Load(object sender, EventArgs e)
         {
             if (IdCategoria == 0)
@@ -29,19 +46,20 @@ namespace _Plantilla_Sistema_facturación_
             {//Actulizar categoria
                 lblCatProduc.Text = "MODIFICAR CATEGORIA";
                 txtIdCatProduc.Text = IdCategoria.ToString();
-                txtNombreCategoria.Text = "Nombre Categoria";
+                txtNombreCategoria.Text = Descripcion;
             }
 
         }
 
-
+      
 
         private void btnActualizarCatProduc_Click(object sender, EventArgs e)
         {
+            campoVacio(txtIdCatProduc);
+            campoVacio(txtNombreCategoria);
 
-            errorProvider1.SetError(txtIdCatProduc, "Ingrese un valor");
-            errorProvider1.SetError(txtNombreCategoria, "Ingrese un valor");
 
+            cn.actualizarCategoria(txtIdCatProduc.Text,txtNombreCategoria.Text);
 
         }
 

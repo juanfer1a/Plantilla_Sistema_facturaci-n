@@ -12,22 +12,27 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmFacturas : Form
     {
-        public int NroFactura { get; set; }
+        public int idFactura { get; set; }
         public frmFacturas()
         {
             InitializeComponent();
         }
 
+        Acceso_datos cn = new Acceso_datos();
+
         private void frmFacturas_Load(object sender, EventArgs e)
         {
-            if (NroFactura == 0)
+            cn.llenarComboCliente(cxbClienteFactura);
+            cn.llenarComboEmpleado(cxbEmpleadoFactura);
+            cn.llenarComboEstadoFactura(cxbEstadoFactura);
+            if (idFactura == 0)
             {//Registro nueva categiria
                 lblEditarFactura.Text = "NUEVA FACTURA";
             }
             else
             {//Actulizar categoria
                 lblEditarFactura.Text = "MODIFICAR FACTURA";
-                txtNroFactura.Text = NroFactura.ToString();
+                txtNroFactura.Text = idFactura.ToString();
                 txtDescuento.Text = "Descuento";
                 txtDetalleFactura.Text = "Detalle factura";
                 txtTotalFactura.Text = "Total factura";

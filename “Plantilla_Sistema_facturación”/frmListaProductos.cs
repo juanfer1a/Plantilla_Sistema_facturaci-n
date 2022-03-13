@@ -37,7 +37,6 @@ namespace _Plantilla_Sistema_facturación_
                 Producto.ShowDialog();//muestra el formulario de forma modal
         }
            
-
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvProductos.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
@@ -56,13 +55,17 @@ namespace _Plantilla_Sistema_facturación_
                 int posActual = dgvProductos.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmProductos Producto = new frmProductos();
                 Producto.IdProducto = int.Parse(dgvProductos[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Producto.Nombre = dgvProductos[3, posActual].Value.ToString();
+                Producto.Referencia = dgvProductos[4, posActual].Value.ToString();
+                Producto.PrecioCompra = float.Parse(dgvProductos[5, posActual].Value.ToString());
+                Producto.PrecioVenta = float.Parse(dgvProductos[6, posActual].Value.ToString());
+                Producto.Detalle = dgvProductos[8, posActual].Value.ToString();
+                Producto.Foto = dgvProductos[9, posActual].Value.ToString();
+                Producto.Cantidad = int.Parse(dgvProductos[10, posActual].Value.ToString());
                 Producto.ShowDialog();//muestra el formulario de forma modal
                 
             }
         }
-
-       
-      
 
         private void btnSalirProducto_Click(object sender, EventArgs e)
         {

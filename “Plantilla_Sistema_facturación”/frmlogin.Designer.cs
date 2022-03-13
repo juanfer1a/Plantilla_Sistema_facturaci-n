@@ -89,6 +89,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtUsuario.Size = new System.Drawing.Size(195, 23);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.TabStop = false;
+            this.txtUsuario.Text = "pepe";
             this.txtUsuario.UseSystemPasswordChar = false;
             // 
             // txtPassword
@@ -106,6 +107,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtPassword.Size = new System.Drawing.Size(195, 23);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.TabStop = false;
+            this.txtPassword.Text = "123";
             this.txtPassword.UseSystemPasswordChar = false;
             // 
             // btnValidar

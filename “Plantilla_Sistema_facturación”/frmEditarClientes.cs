@@ -15,16 +15,29 @@ namespace _Plantilla_Sistema_facturación_
     public partial class frmEditarClientes : Form
     {
         public int IdCliente { get; set; }
-
         public string Nombre { get; set; }
         public int Documento { get; set; }
         public string Direccion { get; set; }
         public int Telefono { get; set; }
         public string Email { get; set; }
 
+        Acceso_datos cn = new Acceso_datos();
+
         public frmEditarClientes()
         {
             InitializeComponent();
+        }
+
+        public void campoVacio(System.Windows.Forms.Control campo)
+        {
+            if (campo.Text == String.Empty)
+            {
+                errorProvider1.SetError(campo, "Se debe llenar este campo");
+            }
+            else
+            {
+                errorProvider1.SetError(campo, "");
+            }
         }
 
         private void frmEditarClientes_Load(object sender, EventArgs e)
@@ -49,14 +62,15 @@ namespace _Plantilla_Sistema_facturación_
         
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            errorProvider1.SetError(txtIdCliente, "Ingrese un valor");
-            errorProvider1.SetError(txtDireccion, "Ingrese un valor");
-            errorProvider1.SetError(txtDocumento, "Ingrese un valor");
-            errorProvider1.SetError(txtEmail, "Ingrese un valor");
-            errorProvider1.SetError(txtNombreCliente, "Ingrese un valor");
-            errorProvider1.SetError(txtTelefono, "Ingrese un valor");
+            campoVacio(txtIdCliente);
+            campoVacio(txtDireccion);
+            campoVacio(txtDocumento);
+            campoVacio(txtEmail);
+            campoVacio(txtNombreCliente);
+            campoVacio(txtTelefono);
 
-
+            cn.actualizarCliente(txtIdCliente.Text,txtNombreCliente.Text,txtDocumento.Text,txtDireccion.Text,txtTelefono.Text,txtEmail.Text);
+            
         }
 
         private void lblSalir_Click(object sender, EventArgs e)

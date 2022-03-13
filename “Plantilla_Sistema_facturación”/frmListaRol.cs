@@ -52,7 +52,7 @@ namespace _Plantilla_Sistema_facturación_
             {
                 int posActual = dgvRol.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmFacturas Facturas = new frmFacturas();
-                Facturas.NroFactura = int.Parse(dgvRol[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Facturas.idFactura = int.Parse(dgvRol[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 Facturas.ShowDialog();//muestra el formulario de forma modal
             }
         }

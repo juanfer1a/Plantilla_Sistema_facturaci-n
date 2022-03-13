@@ -33,15 +33,16 @@ namespace _Plantilla_Sistema_facturación_
             cn.buscarYLlenarTablas(dgvFacturas, "TBLFACTURA", "IdCliente", txtBuscarFactura.Text);
         }
 
-        private void btnProductoNuevo_Click(object sender, EventArgs e)
+        private void btnNuevoFactura_Click(object sender, EventArgs e)
         {
-            frmFacturas Facturas = new frmFacturas();
-            Facturas.NroFactura = 0;
-            Facturas.ShowDialog();
+            frmFacturas Categorias = new frmFacturas();
+            Categorias.idFactura = 0;
+            Categorias.ShowDialog();
         }
-        
 
-        
+
+
+
         private void dgvFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvFacturas.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
@@ -59,16 +60,12 @@ namespace _Plantilla_Sistema_facturación_
             {
                 int posActual = dgvFacturas.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmFacturas Facturas = new frmFacturas();
-                Facturas.NroFactura = int.Parse(dgvFacturas[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Facturas.idFactura = int.Parse(dgvFacturas[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 Facturas.ShowDialog();//muestra el formulario de forma modal
             }
         }
 
-        private void btnNuevoFactura_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
        
 
         private void btnSalirFactura_Click(object sender, EventArgs e)
