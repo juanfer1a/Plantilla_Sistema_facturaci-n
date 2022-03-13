@@ -30,6 +30,11 @@ namespace _Plantilla_Sistema_facturación_
         private void InitializeComponent()
         {
             this.dgvListaEmpleados = new System.Windows.Forms.DataGridView();
+            this.lblAdminEmpleados = new MaterialSkin.Controls.MaterialLabel();
+            this.txtBuscarEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnEmpleadoNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBuscarEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSalirListEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
             this.intIdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strNameEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,11 +46,6 @@ namespace _Plantilla_Sistema_facturación_
             this.intTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtBuscarEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnClienteNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnBuscarProducto = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnSalirCliente = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,84 @@ namespace _Plantilla_Sistema_facturación_
             this.dgvListaEmpleados.Size = new System.Drawing.Size(890, 177);
             this.dgvListaEmpleados.TabIndex = 0;
             this.dgvListaEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaEmpleados_CellContentClick_1);
+            // 
+            // lblAdminEmpleados
+            // 
+            this.lblAdminEmpleados.AutoSize = true;
+            this.lblAdminEmpleados.Depth = 0;
+            this.lblAdminEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminEmpleados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdminEmpleados.Location = new System.Drawing.Point(364, 52);
+            this.lblAdminEmpleados.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdminEmpleados.Name = "lblAdminEmpleados";
+            this.lblAdminEmpleados.Size = new System.Drawing.Size(255, 18);
+            this.lblAdminEmpleados.TabIndex = 1;
+            this.lblAdminEmpleados.Text = "ADMINISTRACION EMPLEADOS";
+            // 
+            // txtBuscarEmpleado
+            // 
+            this.txtBuscarEmpleado.Depth = 0;
+            this.txtBuscarEmpleado.Hint = "Buscar Empleado";
+            this.txtBuscarEmpleado.Location = new System.Drawing.Point(39, 151);
+            this.txtBuscarEmpleado.MaxLength = 32767;
+            this.txtBuscarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
+            this.txtBuscarEmpleado.PasswordChar = '\0';
+            this.txtBuscarEmpleado.SelectedText = "";
+            this.txtBuscarEmpleado.SelectionLength = 0;
+            this.txtBuscarEmpleado.SelectionStart = 0;
+            this.txtBuscarEmpleado.Size = new System.Drawing.Size(241, 23);
+            this.txtBuscarEmpleado.TabIndex = 5;
+            this.txtBuscarEmpleado.TabStop = false;
+            this.txtBuscarEmpleado.UseSystemPasswordChar = false;
+            // 
+            // btnEmpleadoNuevo
+            // 
+            this.btnEmpleadoNuevo.AutoSize = true;
+            this.btnEmpleadoNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEmpleadoNuevo.Depth = 0;
+            this.btnEmpleadoNuevo.Icon = null;
+            this.btnEmpleadoNuevo.Location = new System.Drawing.Point(849, 138);
+            this.btnEmpleadoNuevo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEmpleadoNuevo.Name = "btnEmpleadoNuevo";
+            this.btnEmpleadoNuevo.Primary = true;
+            this.btnEmpleadoNuevo.Size = new System.Drawing.Size(66, 36);
+            this.btnEmpleadoNuevo.TabIndex = 19;
+            this.btnEmpleadoNuevo.Text = "NUEVO";
+            this.btnEmpleadoNuevo.UseVisualStyleBackColor = true;
+            this.btnEmpleadoNuevo.Click += new System.EventHandler(this.btnClienteNuevo_Click);
+            // 
+            // btnBuscarEmpleado
+            // 
+            this.btnBuscarEmpleado.AutoSize = true;
+            this.btnBuscarEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBuscarEmpleado.Depth = 0;
+            this.btnBuscarEmpleado.Icon = null;
+            this.btnBuscarEmpleado.Location = new System.Drawing.Point(315, 138);
+            this.btnBuscarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
+            this.btnBuscarEmpleado.Primary = true;
+            this.btnBuscarEmpleado.Size = new System.Drawing.Size(74, 36);
+            this.btnBuscarEmpleado.TabIndex = 18;
+            this.btnBuscarEmpleado.Text = "BUSCAR";
+            this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            // 
+            // btnSalirListEmpleado
+            // 
+            this.btnSalirListEmpleado.AutoSize = true;
+            this.btnSalirListEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalirListEmpleado.Depth = 0;
+            this.btnSalirListEmpleado.Icon = null;
+            this.btnSalirListEmpleado.Location = new System.Drawing.Point(857, 366);
+            this.btnSalirListEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalirListEmpleado.Name = "btnSalirListEmpleado";
+            this.btnSalirListEmpleado.Primary = true;
+            this.btnSalirListEmpleado.Size = new System.Drawing.Size(58, 36);
+            this.btnSalirListEmpleado.TabIndex = 20;
+            this.btnSalirListEmpleado.Text = "SALIR";
+            this.btnSalirListEmpleado.UseVisualStyleBackColor = true;
+            this.btnSalirListEmpleado.Click += new System.EventHandler(this.btnSalirCliente_Click);
             // 
             // intIdEmpleado
             // 
@@ -119,102 +197,28 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.btnEditar.HeaderText = "EDITAR";
             this.btnEditar.Name = "btnEditar";
+            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseColumnTextForButtonValue = true;
             // 
             // btnBorrar
             // 
             this.btnBorrar.HeaderText = "BORRAR";
             this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.btnBorrar.Text = "BORRAR";
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(450, 45);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(108, 19);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "materialLabel1";
-            // 
-            // txtBuscarEmpleado
-            // 
-            this.txtBuscarEmpleado.Depth = 0;
-            this.txtBuscarEmpleado.Hint = "Buscar Empleado";
-            this.txtBuscarEmpleado.Location = new System.Drawing.Point(39, 151);
-            this.txtBuscarEmpleado.MaxLength = 32767;
-            this.txtBuscarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
-            this.txtBuscarEmpleado.PasswordChar = '\0';
-            this.txtBuscarEmpleado.SelectedText = "";
-            this.txtBuscarEmpleado.SelectionLength = 0;
-            this.txtBuscarEmpleado.SelectionStart = 0;
-            this.txtBuscarEmpleado.Size = new System.Drawing.Size(241, 23);
-            this.txtBuscarEmpleado.TabIndex = 5;
-            this.txtBuscarEmpleado.TabStop = false;
-            this.txtBuscarEmpleado.UseSystemPasswordChar = false;
-            // 
-            // btnClienteNuevo
-            // 
-            this.btnClienteNuevo.AutoSize = true;
-            this.btnClienteNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnClienteNuevo.Depth = 0;
-            this.btnClienteNuevo.Icon = null;
-            this.btnClienteNuevo.Location = new System.Drawing.Point(849, 138);
-            this.btnClienteNuevo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnClienteNuevo.Name = "btnClienteNuevo";
-            this.btnClienteNuevo.Primary = true;
-            this.btnClienteNuevo.Size = new System.Drawing.Size(66, 36);
-            this.btnClienteNuevo.TabIndex = 19;
-            this.btnClienteNuevo.Text = "NUEVO";
-            this.btnClienteNuevo.UseVisualStyleBackColor = true;
-            this.btnClienteNuevo.Click += new System.EventHandler(this.btnClienteNuevo_Click);
-            // 
-            // btnBuscarProducto
-            // 
-            this.btnBuscarProducto.AutoSize = true;
-            this.btnBuscarProducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnBuscarProducto.Depth = 0;
-            this.btnBuscarProducto.Icon = null;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(315, 138);
-            this.btnBuscarProducto.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Primary = true;
-            this.btnBuscarProducto.Size = new System.Drawing.Size(74, 36);
-            this.btnBuscarProducto.TabIndex = 18;
-            this.btnBuscarProducto.Text = "BUSCAR";
-            this.btnBuscarProducto.UseVisualStyleBackColor = true;
-            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
-            // 
-            // btnSalirCliente
-            // 
-            this.btnSalirCliente.AutoSize = true;
-            this.btnSalirCliente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSalirCliente.Depth = 0;
-            this.btnSalirCliente.Icon = null;
-            this.btnSalirCliente.Location = new System.Drawing.Point(857, 366);
-            this.btnSalirCliente.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSalirCliente.Name = "btnSalirCliente";
-            this.btnSalirCliente.Primary = true;
-            this.btnSalirCliente.Size = new System.Drawing.Size(58, 36);
-            this.btnSalirCliente.TabIndex = 20;
-            this.btnSalirCliente.Text = "SALIR";
-            this.btnSalirCliente.UseVisualStyleBackColor = true;
-            this.btnSalirCliente.Click += new System.EventHandler(this.btnSalirCliente_Click);
+            this.btnBorrar.UseColumnTextForButtonValue = true;
             // 
             // frmListaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 487);
-            this.Controls.Add(this.btnSalirCliente);
-            this.Controls.Add(this.btnClienteNuevo);
-            this.Controls.Add(this.btnBuscarProducto);
+            this.Controls.Add(this.btnSalirListEmpleado);
+            this.Controls.Add(this.btnEmpleadoNuevo);
+            this.Controls.Add(this.btnBuscarEmpleado);
             this.Controls.Add(this.txtBuscarEmpleado);
-            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.lblAdminEmpleados);
             this.Controls.Add(this.dgvListaEmpleados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmListaEmpleados";
@@ -229,11 +233,11 @@ namespace _Plantilla_Sistema_facturación_
         #endregion
 
         private System.Windows.Forms.DataGridView dgvListaEmpleados;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel lblAdminEmpleados;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarEmpleado;
-        private MaterialSkin.Controls.MaterialRaisedButton btnClienteNuevo;
-        private MaterialSkin.Controls.MaterialRaisedButton btnBuscarProducto;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSalirCliente;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEmpleadoNuevo;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBuscarEmpleado;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalirListEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn intIdEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn strNameEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn strEmail;

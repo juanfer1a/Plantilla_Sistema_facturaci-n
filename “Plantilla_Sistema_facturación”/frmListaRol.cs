@@ -44,9 +44,9 @@ namespace _Plantilla_Sistema_facturación_
             if (dgvRol.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
             {
                 int posActual = dgvRol.CurrentRow.Index;//Obtenemos el numero de la fila
-                frmFacturas Facturas = new frmFacturas();
-                Facturas.NroFactura = int.Parse(dgvRol[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
-                Facturas.ShowDialog();//muestra el formulario de forma modal
+                frmRolEmpleados Rol = new frmRolEmpleados();
+                Rol.IdRol = int.Parse(dgvRol[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Rol.ShowDialog();//muestra el formulario de forma modal
             }
         }
         private void btnRolNuevo_Click(object sender, EventArgs e)
