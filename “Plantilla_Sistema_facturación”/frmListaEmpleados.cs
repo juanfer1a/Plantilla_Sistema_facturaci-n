@@ -66,5 +66,11 @@ namespace _Plantilla_Sistema_facturación_
             empleados.idEmpleado = 0;
             empleados.ShowDialog();
         }
+
+        private void btnProbarConexion_Click(object sender, EventArgs e)
+        {
+            Acceso_datos acceso_Datos = new Acceso_datos();
+            acceso_Datos.AbrirBd();
+        }
     }
 }

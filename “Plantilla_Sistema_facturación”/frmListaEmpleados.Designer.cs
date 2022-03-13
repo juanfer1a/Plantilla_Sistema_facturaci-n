@@ -46,6 +46,7 @@ namespace _Plantilla_Sistema_facturación_
             this.intTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnProbarConexion = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,11 +210,28 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBorrar.Text = "BORRAR";
             this.btnBorrar.UseColumnTextForButtonValue = true;
             // 
+            // btnProbarConexion
+            // 
+            this.btnProbarConexion.AutoSize = true;
+            this.btnProbarConexion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnProbarConexion.Depth = 0;
+            this.btnProbarConexion.Icon = null;
+            this.btnProbarConexion.Location = new System.Drawing.Point(121, 52);
+            this.btnProbarConexion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnProbarConexion.Name = "btnProbarConexion";
+            this.btnProbarConexion.Primary = true;
+            this.btnProbarConexion.Size = new System.Drawing.Size(89, 36);
+            this.btnProbarConexion.TabIndex = 21;
+            this.btnProbarConexion.Text = "CONEXION";
+            this.btnProbarConexion.UseVisualStyleBackColor = true;
+            this.btnProbarConexion.Click += new System.EventHandler(this.btnProbarConexion_Click);
+            // 
             // frmListaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 487);
+            this.Controls.Add(this.btnProbarConexion);
             this.Controls.Add(this.btnSalirListEmpleado);
             this.Controls.Add(this.btnEmpleadoNuevo);
             this.Controls.Add(this.btnBuscarEmpleado);
@@ -249,5 +267,6 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.DataGridViewTextBoxColumn intTelefono;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnProbarConexion;
     }
 }

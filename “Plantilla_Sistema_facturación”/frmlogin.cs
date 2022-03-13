@@ -24,25 +24,48 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
-            string usuario = "";//Varible para validar con la BD el usuario
-            if (txtUsuario.Text=="admin" && txtPassword.Text=="123")//Valida usuario y contraseña 
+            string Respuesta = string.Empty;//variable para validar si la consulta devuelte un resultado
+
+            if (txtUsuario.Text != string.Empty && txtPassword.Text != string.Empty)//Valida que los campos tengan informacion
             {
-                usuario = "Juan Quiceno";
-                frmPrincipal frmPpal = new frmPrincipal();//objeto tipo formPrincipal 
-                this.Hide();//Hacemos invisible el login
-                frmPpal.Show();//Mostramos el principal
+                Acceso_datos ad = new Acceso_datos();//Instanciamos la clase acceso a datos
+                Respuesta = ad.ValidarUsuario(txtUsuario.Text, txtPassword.Text);//metodo de la clase que devuelve el nombre del usuario 
+                if (Respuesta != string.Empty)
+                {
+                    MessageBox.Show("Acceso concedido, Bienvenido " + Respuesta);
+                    frmPrincipal frmPpal = new frmPrincipal();//objeto tipo formPrincipal 
+                    this.Hide();//Hacemos invisible el login
+                    frmPpal.Show();//Mostramos el principal
+                }
+                else
+                {
+                    MessageBox.Show("USUARIO O CONTRASEÑA INVALIDA INTENTELO DE NUEVO");
+                    txtUsuario.Text = string.Empty;
+                    txtPassword.Text = string.Empty;
+                    txtUsuario.Focus();
+                }
+
             }
-            if (usuario != string.Empty)
-            {
-                MessageBox.Show("Usuario valido Bienvenido" + usuario);
-            }
-            else
-            {
-                MessageBox.Show("USUARIO O CONTRASEÑA INVALIDA INTENTELO DE NUEVO");
-                txtUsuario.Text = string.Empty;
-                txtPassword.Text = string.Empty;
-                txtUsuario.Focus();
-            }
+
+            //string usuario = "";//Varible para validar con la BD el usuario
+            //if (txtUsuario.Text=="admin" && txtPassword.Text=="123")//Valida usuario y contraseña 
+            //{
+            //    usuario = "Juan Quiceno";
+            //    frmPrincipal frmPpal = new frmPrincipal();//objeto tipo formPrincipal 
+            //    this.Hide();//Hacemos invisible el login
+            //    frmPpal.Show();//Mostramos el principal
+            //}
+            //if (usuario != string.Empty)
+            //{
+            //    MessageBox.Show("Usuario valido Bienvenido" + usuario);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("USUARIO O CONTRASEÑA INVALIDA INTENTELO DE NUEVO");
+            //    txtUsuario.Text = string.Empty;
+            //    txtPassword.Text = string.Empty;
+            //    txtUsuario.Focus();
+            //}
 
         }
     }

@@ -40,9 +40,9 @@ namespace _Plantilla_Sistema_facturación_
             this.lblSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.grbAdminClientes = new System.Windows.Forms.GroupBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbAdminClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -197,11 +197,10 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminClientes.Size = new System.Drawing.Size(464, 339);
             this.grbAdminClientes.TabIndex = 12;
             this.grbAdminClientes.TabStop = false;
-            
             // 
-            // errorProvider1
+            // MensajeError
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.MensajeError.ContainerControl = this;
             // 
             // frmEditarClientes
             // 
@@ -217,7 +216,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Load += new System.EventHandler(this.frmEditarClientes_Load);
             this.grbAdminClientes.ResumeLayout(false);
             this.grbAdminClientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,6 +234,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton lblSalir;
         private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.GroupBox grbAdminClientes;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }
