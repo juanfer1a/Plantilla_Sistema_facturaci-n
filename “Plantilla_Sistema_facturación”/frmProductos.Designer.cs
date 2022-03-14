@@ -40,14 +40,13 @@ namespace _Plantilla_Sistema_facturación_
             this.txtNombreProducto = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.cxbCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblDetalleProduc = new MaterialSkin.Controls.MaterialLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.grbAdminProductos = new System.Windows.Forms.GroupBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblTituloProducto = new MaterialSkin.Controls.MaterialLabel();
             this.grbAdminProductos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdCliente
@@ -195,23 +194,6 @@ namespace _Plantilla_Sistema_facturación_
             this.lblCategoria.TabIndex = 22;
             this.lblCategoria.Text = "Categoria";
             // 
-            // materialSingleLineTextField1
-            // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "Cantidad Stock";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(542, 102);
-            this.materialSingleLineTextField1.MaxLength = 32767;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(277, 23);
-            this.materialSingleLineTextField1.TabIndex = 23;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
-            // 
             // lblDetalleProduc
             // 
             this.lblDetalleProduc.AutoSize = true;
@@ -239,7 +221,6 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminProductos.Controls.Add(this.textBox1);
             this.grbAdminProductos.Controls.Add(this.lblDetalleProduc);
             this.grbAdminProductos.Controls.Add(this.txtCodRef);
-            this.grbAdminProductos.Controls.Add(this.materialSingleLineTextField1);
             this.grbAdminProductos.Controls.Add(this.txtPrecioCompra);
             this.grbAdminProductos.Controls.Add(this.cxbCategoria);
             this.grbAdminProductos.Controls.Add(this.lblCategoria);
@@ -252,10 +233,10 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminProductos.TabIndex = 26;
             this.grbAdminProductos.TabStop = false;
             // 
-            // errorProvider1
+            // MensajeError
             // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.RightToLeftChanged += new System.EventHandler(this.btnActualizar_Click);
+            this.MensajeError.ContainerControl = this;
+            this.MensajeError.RightToLeftChanged += new System.EventHandler(this.btnActualizar_Click);
             // 
             // lblTituloProducto
             // 
@@ -284,7 +265,7 @@ namespace _Plantilla_Sistema_facturación_
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.grbAdminProductos.ResumeLayout(false);
             this.grbAdminProductos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,11 +283,10 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreProducto;
         private System.Windows.Forms.ComboBox cxbCategoria;
         private MaterialSkin.Controls.MaterialLabel lblCategoria;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
         private MaterialSkin.Controls.MaterialLabel lblDetalleProduc;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox grbAdminProductos;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider MensajeError;
         private MaterialSkin.Controls.MaterialLabel lblTituloProducto;
     }
 }

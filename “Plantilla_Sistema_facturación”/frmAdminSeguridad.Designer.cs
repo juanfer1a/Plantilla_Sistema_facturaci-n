@@ -31,43 +31,46 @@ namespace _Plantilla_Sistema_facturación_
         {
             this.components = new System.ComponentModel.Container();
             this.grbAdminUsuarioSeg = new System.Windows.Forms.GroupBox();
-            this.cxbEmpleadoUsuario = new System.Windows.Forms.ComboBox();
+            this.cboEmpleadoUsuario = new System.Windows.Forms.ComboBox();
             this.txtClave = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblEmpleado = new MaterialSkin.Controls.MaterialLabel();
             this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblSalirAdminUsuario = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizarUsuarioEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblAdminUsuarios = new MaterialSkin.Controls.MaterialLabel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnNuevoUsuario = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEliminarUsuario = new MaterialSkin.Controls.MaterialRaisedButton();
             this.grbAdminUsuarioSeg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // grbAdminUsuarioSeg
             // 
-            this.grbAdminUsuarioSeg.Controls.Add(this.cxbEmpleadoUsuario);
+            this.grbAdminUsuarioSeg.Controls.Add(this.cboEmpleadoUsuario);
             this.grbAdminUsuarioSeg.Controls.Add(this.txtClave);
             this.grbAdminUsuarioSeg.Controls.Add(this.lblEmpleado);
             this.grbAdminUsuarioSeg.Controls.Add(this.txtUsuario);
             this.grbAdminUsuarioSeg.Location = new System.Drawing.Point(38, 73);
             this.grbAdminUsuarioSeg.Name = "grbAdminUsuarioSeg";
-            this.grbAdminUsuarioSeg.Size = new System.Drawing.Size(541, 218);
+            this.grbAdminUsuarioSeg.Size = new System.Drawing.Size(473, 190);
             this.grbAdminUsuarioSeg.TabIndex = 0;
             this.grbAdminUsuarioSeg.TabStop = false;
             // 
-            // cxbEmpleadoUsuario
+            // cboEmpleadoUsuario
             // 
-            this.cxbEmpleadoUsuario.FormattingEnabled = true;
-            this.cxbEmpleadoUsuario.Location = new System.Drawing.Point(119, 42);
-            this.cxbEmpleadoUsuario.Name = "cxbEmpleadoUsuario";
-            this.cxbEmpleadoUsuario.Size = new System.Drawing.Size(324, 21);
-            this.cxbEmpleadoUsuario.TabIndex = 22;
+            this.cboEmpleadoUsuario.FormattingEnabled = true;
+            this.cboEmpleadoUsuario.Location = new System.Drawing.Point(119, 45);
+            this.cboEmpleadoUsuario.Name = "cboEmpleadoUsuario";
+            this.cboEmpleadoUsuario.Size = new System.Drawing.Size(324, 21);
+            this.cboEmpleadoUsuario.TabIndex = 22;
+            this.cboEmpleadoUsuario.SelectionChangeCommitted += new System.EventHandler(this.cboEmpleadoUsuario_SelectionChangeCommitted);
             // 
             // txtClave
             // 
             this.txtClave.Depth = 0;
             this.txtClave.Hint = "Clave";
-            this.txtClave.Location = new System.Drawing.Point(23, 152);
+            this.txtClave.Location = new System.Drawing.Point(119, 138);
             this.txtClave.MaxLength = 32767;
             this.txtClave.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtClave.Name = "txtClave";
@@ -75,7 +78,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtClave.SelectedText = "";
             this.txtClave.SelectionLength = 0;
             this.txtClave.SelectionStart = 0;
-            this.txtClave.Size = new System.Drawing.Size(196, 23);
+            this.txtClave.Size = new System.Drawing.Size(235, 23);
             this.txtClave.TabIndex = 21;
             this.txtClave.TabStop = false;
             this.txtClave.UseSystemPasswordChar = false;
@@ -86,7 +89,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblEmpleado.Depth = 0;
             this.lblEmpleado.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEmpleado.Location = new System.Drawing.Point(21, 41);
+            this.lblEmpleado.Location = new System.Drawing.Point(19, 44);
             this.lblEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblEmpleado.Name = "lblEmpleado";
             this.lblEmpleado.Size = new System.Drawing.Size(76, 19);
@@ -97,7 +100,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtUsuario.Depth = 0;
             this.txtUsuario.Hint = "Usuario";
-            this.txtUsuario.Location = new System.Drawing.Point(25, 98);
+            this.txtUsuario.Location = new System.Drawing.Point(119, 94);
             this.txtUsuario.MaxLength = 32767;
             this.txtUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUsuario.Name = "txtUsuario";
@@ -105,7 +108,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtUsuario.SelectedText = "";
             this.txtUsuario.SelectionLength = 0;
             this.txtUsuario.SelectionStart = 0;
-            this.txtUsuario.Size = new System.Drawing.Size(194, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(235, 23);
             this.txtUsuario.TabIndex = 19;
             this.txtUsuario.TabStop = false;
             this.txtUsuario.UseSystemPasswordChar = false;
@@ -116,7 +119,7 @@ namespace _Plantilla_Sistema_facturación_
             this.lblSalirAdminUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.lblSalirAdminUsuario.Depth = 0;
             this.lblSalirAdminUsuario.Icon = null;
-            this.lblSalirAdminUsuario.Location = new System.Drawing.Point(342, 316);
+            this.lblSalirAdminUsuario.Location = new System.Drawing.Point(563, 304);
             this.lblSalirAdminUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSalirAdminUsuario.Name = "lblSalirAdminUsuario";
             this.lblSalirAdminUsuario.Primary = true;
@@ -132,7 +135,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnActualizarUsuarioEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnActualizarUsuarioEmpleado.Depth = 0;
             this.btnActualizarUsuarioEmpleado.Icon = null;
-            this.btnActualizarUsuarioEmpleado.Location = new System.Drawing.Point(157, 316);
+            this.btnActualizarUsuarioEmpleado.Location = new System.Drawing.Point(563, 154);
             this.btnActualizarUsuarioEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizarUsuarioEmpleado.Name = "btnActualizarUsuarioEmpleado";
             this.btnActualizarUsuarioEmpleado.Primary = true;
@@ -155,15 +158,49 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminUsuarios.TabIndex = 23;
             this.lblAdminUsuarios.Text = "ADMINISTRACIÓN DE USUARIOS DEL SISTEMA";
             // 
-            // errorProvider1
+            // MensajeError
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.MensajeError.ContainerControl = this;
+            // 
+            // btnNuevoUsuario
+            // 
+            this.btnNuevoUsuario.AutoSize = true;
+            this.btnNuevoUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNuevoUsuario.Depth = 0;
+            this.btnNuevoUsuario.Icon = null;
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(563, 82);
+            this.btnNuevoUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
+            this.btnNuevoUsuario.Primary = true;
+            this.btnNuevoUsuario.Size = new System.Drawing.Size(66, 36);
+            this.btnNuevoUsuario.TabIndex = 24;
+            this.btnNuevoUsuario.Text = "NUEVO";
+            this.btnNuevoUsuario.UseVisualStyleBackColor = true;
+            this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click_1);
+            // 
+            // btnEliminarUsuario
+            // 
+            this.btnEliminarUsuario.AutoSize = true;
+            this.btnEliminarUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarUsuario.Depth = 0;
+            this.btnEliminarUsuario.Icon = null;
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(563, 227);
+            this.btnEliminarUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.Primary = true;
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(83, 36);
+            this.btnEliminarUsuario.TabIndex = 25;
+            this.btnEliminarUsuario.Text = "ELIMINAR";
+            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click_1);
             // 
             // frmAdminSeguridad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 371);
+            this.ClientSize = new System.Drawing.Size(712, 371);
+            this.Controls.Add(this.btnEliminarUsuario);
+            this.Controls.Add(this.btnNuevoUsuario);
             this.Controls.Add(this.lblAdminUsuarios);
             this.Controls.Add(this.lblSalirAdminUsuario);
             this.Controls.Add(this.btnActualizarUsuarioEmpleado);
@@ -171,9 +208,10 @@ namespace _Plantilla_Sistema_facturación_
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdminSeguridad";
             this.Text = "frmAdminSeguridad";
+            this.Load += new System.EventHandler(this.frmAdminSeguridad_Load_1);
             this.grbAdminUsuarioSeg.ResumeLayout(false);
             this.grbAdminUsuarioSeg.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,10 +223,12 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtClave;
         private MaterialSkin.Controls.MaterialLabel lblEmpleado;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtUsuario;
-        private System.Windows.Forms.ComboBox cxbEmpleadoUsuario;
+        private System.Windows.Forms.ComboBox cboEmpleadoUsuario;
         private MaterialSkin.Controls.MaterialRaisedButton lblSalirAdminUsuario;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizarUsuarioEmpleado;
         private MaterialSkin.Controls.MaterialLabel lblAdminUsuarios;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider MensajeError;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEliminarUsuario;
+        private MaterialSkin.Controls.MaterialRaisedButton btnNuevoUsuario;
     }
 }

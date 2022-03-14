@@ -22,13 +22,22 @@ namespace _Plantilla_Sistema_facturación_
 
             llenar_grid();
         }
+
+        DataTable dt = new DataTable(); // CREAMOS EL OBJETO DE TIPO DATATABLE PARA ALMACENAR LO CONSULTADO
+        Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
+
+       
         public void llenar_grid()
         {
+            //ACTUALIZAR EL REGISTRO CON EL ID PASADO
+            string sentencia = $"select IdEmpleado,strNombre,NumDocumento,StrDireccion,StrTelefono,StrEmail,IdRolEmpleado," +
+                $"DtmIngreso,DtmRetiro from TBLEMPLEADO"; // CONSULTO REGISTRO DEL iDcLIENTE
 
-            for (int i = 0; i < 10; i++)
+            dt = Acceso.EjecutarComandoDatos(sentencia);
+            foreach (DataRow row in dt.Rows)
             {
-
-                dgvListaEmpleados.Rows.Add(i, $"TRABAJADOR {i}", $"{i}@EMAIL.COM", $"ROL{i}", $"{DateTime.Now}", $"{DateTime.Now}",$"{i*234234}",$"CALLE{i}",$"{i*232}");
+                // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                dgvListaEmpleados.Rows.Add(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]);
             }
         }
        

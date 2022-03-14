@@ -28,7 +28,7 @@ namespace _Plantilla_Sistema_facturación_
             else
             {//Actulizar categoria
                 lblCatProduc.Text = "MODIFICAR CATEGORIA";
-                txtIdCatProduc.Text = IdCategoria.ToString();
+                txtIdCategoria.Text = IdCategoria.ToString();
                 txtNombreCategoria.Text = "Nombre Categoria";
             }
 
@@ -39,12 +39,38 @@ namespace _Plantilla_Sistema_facturación_
         private void btnActualizarCatProduc_Click(object sender, EventArgs e)
         {
 
-            errorProvider1.SetError(txtIdCatProduc, "Ingrese un valor");
-            errorProvider1.SetError(txtNombreCategoria, "Ingrese un valor");
+            MensajeError.SetError(txtIdCategoria, "Ingrese un valor");
+            MensajeError.SetError(txtNombreCategoria, "Ingrese un valor");
 
 
         }
-
+        //FUNCIÓN QE PERMITE VALIDAR LOS CAMPOS DEL FORMULARIO
+        //private Boolean validar()
+        //{
+            //Boolean errorCampos = true;
+            //if (txtNombreCategoria.Text == string.Empty)
+            //{
+            //    MensajeError.SetError(txtNombreCategoria, "debeingresar el nombre del Cliente");
+            //    txtNombreCategoria.Focus();
+            //    errorCampos = false;
+            //}
+            //else { MensajeError.SetError(txtNombreCliente, ""); }
+            //if (txtDocumento.Text == "")
+            //{
+            //    MensajeError.SetError(txtDocumento, "debe ingresar el documento");
+            //    txtDocumento.Focus();
+            //    errorCampos = false;
+            //}
+            //else { MensajeError.SetError(txtDocumento, ""); }
+            //if (!esNumerico(txtDocumento.Text))
+            //{
+            //    MensajeError.SetError(txtDocumento, "El Documento debe ser numerico");
+            //    txtDocumento.Focus();
+            //    return false;
+            //}
+            //MensajeError.SetError(txtDocumento, "");
+            //return errorCampos;
+        //}
         private void lblSalirCatProduc_Click(object sender, EventArgs e)
         {
             this.Close();

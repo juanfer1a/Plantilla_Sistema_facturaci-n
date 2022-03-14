@@ -19,7 +19,24 @@ namespace _Plantilla_Sistema_facturación_
 
         private void frmListaProductos_Load(object sender, EventArgs e)
         {
-            llenar_grid();
+            Llenar_grid();
+        }
+
+        DataTable dt = new DataTable(); // CREAMOS EL OBJETO DE TIPO DATATABLE PARA ALMACENAR LO CONSULTADO
+        Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
+
+
+        public void Llenar_grid()
+        {
+            //ACTUALIZAR EL REGISTRO CON EL ID PASADO
+            string sentencia = $"select IdProducto,strNombre,Strcodigo,NumPrecioCompra,NumPrecioVenta,NumStock from TBLPRODUCTO"; // CONSULTO REGISTRO DEL iDcLIENTE
+
+            dt = Acceso.EjecutarComandoDatos(sentencia);
+            foreach (DataRow row in dt.Rows)
+            {
+                // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                dgvProductos.Rows.Add(row[0], row[1], row[2], row[3], row[4], row[5]);
+            }
         }
 
         private void btnProductoNuevo_Click(object sender, EventArgs e)
@@ -48,16 +65,30 @@ namespace _Plantilla_Sistema_facturación_
             }
         }
 
-        public void llenar_grid()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                dgvProductos.Rows.Add(i, $"Nombre{i}", $"{i * 12345}", $"{i * 12345}", $"{i * 12345}", $"{i * 12345}");
-            }
-        }
+       
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcion en desarrollo.");
+            string sentencia = $"select IdProducto,strNombre,Strcodigo,NumPrecioCompra,NumPrecioVenta,NumStock from TBLPRODUCTO " +
+                $"where StrNombre='{txtBuscarProductos.Text}'"; // CONSULTO REGISTRO DEL iDcLIENTE
+            
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvProductos.Rows.Clear();
+
+                dt = Acceso.EjecutarComandoDatos(sentencia);
+                foreach (DataRow row in dt.Rows)
+                {
+                    // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                    dgvProductos.Rows.Add(row[0], row[1], row[2], row[3], row[4], row[5]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra un usuario con el nuemero de documento ingresado");
+                Llenar_grid();
+
+            }
         }
 
         private void btnSalirProducto_Click(object sender, EventArgs e)

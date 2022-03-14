@@ -32,14 +32,13 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminRol = new MaterialSkin.Controls.MaterialLabel();
             this.btnSalirRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvRol = new System.Windows.Forms.DataGridView();
-            this.intIdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strDescripcionRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnRolNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBuscarRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtBuscarRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.intIdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strDescripcionRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +61,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirRol.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalirRol.Depth = 0;
             this.btnSalirRol.Icon = null;
-            this.btnSalirRol.Location = new System.Drawing.Point(604, 374);
+            this.btnSalirRol.Location = new System.Drawing.Point(511, 374);
             this.btnSalirRol.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalirRol.Name = "btnSalirRol";
             this.btnSalirRol.Primary = true;
@@ -77,52 +76,14 @@ namespace _Plantilla_Sistema_facturación_
             this.dgvRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.intIdRol,
-            this.strRol,
             this.strDescripcionRol,
             this.btnEditar,
             this.btnBorrar});
             this.dgvRol.Location = new System.Drawing.Point(23, 218);
             this.dgvRol.Name = "dgvRol";
-            this.dgvRol.Size = new System.Drawing.Size(639, 150);
+            this.dgvRol.Size = new System.Drawing.Size(546, 150);
             this.dgvRol.TabIndex = 24;
             this.dgvRol.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRol_CellContentClick);
-            // 
-            // intIdRol
-            // 
-            this.intIdRol.HeaderText = "ID";
-            this.intIdRol.Name = "intIdRol";
-            this.intIdRol.Width = 80;
-            // 
-            // strRol
-            // 
-            this.strRol.HeaderText = "ROL";
-            this.strRol.Name = "strRol";
-            // 
-            // strDescripcionRol
-            // 
-            this.strDescripcionRol.HeaderText = "DESCRIPCION";
-            this.strDescripcionRol.Name = "strDescripcionRol";
-            this.strDescripcionRol.Width = 250;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.HeaderText = "EDITAR";
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseColumnTextForButtonValue = true;
-            this.btnEditar.Width = 80;
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.HeaderText = "BORRAR";
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnBorrar.Text = "BORRAR";
-            this.btnBorrar.UseColumnTextForButtonValue = true;
-            this.btnBorrar.Width = 80;
             // 
             // btnRolNuevo
             // 
@@ -130,7 +91,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnRolNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRolNuevo.Depth = 0;
             this.btnRolNuevo.Icon = null;
-            this.btnRolNuevo.Location = new System.Drawing.Point(596, 176);
+            this.btnRolNuevo.Location = new System.Drawing.Point(503, 176);
             this.btnRolNuevo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRolNuevo.Name = "btnRolNuevo";
             this.btnRolNuevo.Primary = true;
@@ -173,6 +134,38 @@ namespace _Plantilla_Sistema_facturación_
             this.txtBuscarRol.TabStop = false;
             this.txtBuscarRol.UseSystemPasswordChar = false;
             // 
+            // intIdRol
+            // 
+            this.intIdRol.HeaderText = "ID";
+            this.intIdRol.Name = "intIdRol";
+            this.intIdRol.Width = 80;
+            // 
+            // strDescripcionRol
+            // 
+            this.strDescripcionRol.HeaderText = "DESCRIPCION";
+            this.strDescripcionRol.Name = "strDescripcionRol";
+            this.strDescripcionRol.Width = 250;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "EDITAR";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseColumnTextForButtonValue = true;
+            this.btnEditar.Width = 80;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.HeaderText = "BORRAR";
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.UseColumnTextForButtonValue = true;
+            this.btnBorrar.Width = 80;
+            // 
             // frmListaRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,13 +192,12 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialLabel lblAdminRol;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalirRol;
         private System.Windows.Forms.DataGridView dgvRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intIdRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strDescripcionRol;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
-        private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
         private MaterialSkin.Controls.MaterialRaisedButton btnRolNuevo;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarRol;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intIdRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strDescripcionRol;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
     }
 }

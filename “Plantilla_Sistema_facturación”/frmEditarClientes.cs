@@ -116,11 +116,12 @@ namespace _Plantilla_Sistema_facturación_
         }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+
             Guardar();
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
-        {
+        {   
             this.Close();
         }       
 

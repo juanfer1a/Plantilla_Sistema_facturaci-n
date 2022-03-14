@@ -23,15 +23,23 @@ namespace _Plantilla_Sistema_facturación_
         {
             llenar_grid();
         }
+        DataTable dt = new DataTable(); // CREAMOS EL OBJETO DE TIPO DATATABLE PARA ALMACENAR LO CONSULTADO
+        Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
+
+
         public void llenar_grid()
         {
+            //ACTUALIZAR EL REGISTRO CON EL ID PASADO
+            string sentencia = $"select IdRolEmpleado,StrDescripcion from TBLROLES"; // CONSULTO REGISTRO DEL iDcLIENTE
 
-            for (int i = 0; i < 10; i++)
+            dt = Acceso.EjecutarComandoDatos(sentencia);
+            foreach (DataRow row in dt.Rows)
             {
-
-                dgvRol.Rows.Add(i, $"ID {i}", $"ROL {i}", $"DESCRIPCION ROL {i}");
+                // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                dgvRol.Rows.Add(row[0], row[1]);
             }
         }
+
         private void dgvRol_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvRol.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar

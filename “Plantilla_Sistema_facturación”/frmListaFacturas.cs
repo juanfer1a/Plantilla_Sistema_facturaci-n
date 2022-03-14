@@ -22,14 +22,21 @@ namespace _Plantilla_Sistema_facturación_
 
         }
 
-        
+
+        DataTable dt = new DataTable(); // CREAMOS EL OBJETO DE TIPO DATATABLE PARA ALMACENAR LO CONSULTADO
+        Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
+
+
         public void llenar_grid()
         {
+            //ACTUALIZAR EL REGISTRO CON EL ID PASADO
+            string sentencia = $"EXEC SpConsultaFactura"; // CONSULTA TABLA DETALLE FACTURAS
 
-            for (int i = 0; i < 10; i++)
+            dt = Acceso.EjecutarComandoDatos(sentencia);
+            foreach (DataRow row in dt.Rows)
             {
-              
-                dgvFacturas.Rows.Add(i, $"CLIENTE {i}", $"EMPLEADO {i}", $"{i*0,01}", "9", $"{i*34342}", $"{DateTime.Now}");
+                // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                dgvFacturas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
             }
         }
 

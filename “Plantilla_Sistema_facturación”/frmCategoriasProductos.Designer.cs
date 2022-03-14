@@ -30,23 +30,23 @@ namespace _Plantilla_Sistema_facturación_
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtIdCatProduc = new System.Windows.Forms.TextBox();
+            this.txtIdCategoria = new System.Windows.Forms.TextBox();
             this.txtNombreCategoria = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblCatProduc = new MaterialSkin.Controls.MaterialLabel();
             this.lblSalirCatProduc = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizarCatProduc = new MaterialSkin.Controls.MaterialRaisedButton();
             this.grbCategoriaProductos = new System.Windows.Forms.GroupBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbCategoriaProductos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtIdCatProduc
+            // txtIdCategoria
             // 
-            this.txtIdCatProduc.Location = new System.Drawing.Point(22, 34);
-            this.txtIdCatProduc.Name = "txtIdCatProduc";
-            this.txtIdCatProduc.Size = new System.Drawing.Size(36, 20);
-            this.txtIdCatProduc.TabIndex = 14;
+            this.txtIdCategoria.Location = new System.Drawing.Point(22, 34);
+            this.txtIdCategoria.Name = "txtIdCategoria";
+            this.txtIdCategoria.Size = new System.Drawing.Size(36, 20);
+            this.txtIdCategoria.TabIndex = 14;
             // 
             // txtNombreCategoria
             // 
@@ -112,7 +112,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             // grbCategoriaProductos
             // 
-            this.grbCategoriaProductos.Controls.Add(this.txtIdCatProduc);
+            this.grbCategoriaProductos.Controls.Add(this.txtIdCategoria);
             this.grbCategoriaProductos.Controls.Add(this.lblSalirCatProduc);
             this.grbCategoriaProductos.Controls.Add(this.txtNombreCategoria);
             this.grbCategoriaProductos.Controls.Add(this.btnActualizarCatProduc);
@@ -122,10 +122,10 @@ namespace _Plantilla_Sistema_facturación_
             this.grbCategoriaProductos.TabIndex = 17;
             this.grbCategoriaProductos.TabStop = false;
             // 
-            // errorProvider1
+            // MensajeError
             // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.RightToLeftChanged += new System.EventHandler(this.btnActualizarCatProduc_Click);
+            this.MensajeError.ContainerControl = this;
+            this.MensajeError.RightToLeftChanged += new System.EventHandler(this.btnActualizarCatProduc_Click);
             // 
             // frmCategoriasProductos
             // 
@@ -140,7 +140,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Load += new System.EventHandler(this.frmCategoriasProductos_Load);
             this.grbCategoriaProductos.ResumeLayout(false);
             this.grbCategoriaProductos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,12 +148,12 @@ namespace _Plantilla_Sistema_facturación_
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtIdCatProduc;
+        private System.Windows.Forms.TextBox txtIdCategoria;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreCategoria;
         private MaterialSkin.Controls.MaterialLabel lblCatProduc;
         private MaterialSkin.Controls.MaterialRaisedButton lblSalirCatProduc;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizarCatProduc;
         private System.Windows.Forms.GroupBox grbCategoriaProductos;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }

@@ -35,18 +35,18 @@ namespace _Plantilla_Sistema_facturación_
             this.btnEmpleadoNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBuscarEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalirListEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnProbarConexion = new MaterialSkin.Controls.MaterialRaisedButton();
             this.intIdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strNameEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strFechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strFechaRetiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnProbarConexion = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,13 +56,13 @@ namespace _Plantilla_Sistema_facturación_
             this.dgvListaEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.intIdEmpleado,
             this.strNameEmpleado,
+            this.intDocumento,
+            this.strDireccion,
+            this.intTelefono,
             this.strEmail,
             this.strRol,
             this.strFechaIngreso,
             this.strFechaRetiro,
-            this.intDocumento,
-            this.strDireccion,
-            this.intTelefono,
             this.btnEditar,
             this.btnBorrar});
             this.dgvListaEmpleados.Location = new System.Drawing.Point(25, 183);
@@ -75,12 +75,12 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.lblAdminEmpleados.AutoSize = true;
             this.lblAdminEmpleados.Depth = 0;
-            this.lblAdminEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminEmpleados.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblAdminEmpleados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblAdminEmpleados.Location = new System.Drawing.Point(364, 52);
             this.lblAdminEmpleados.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblAdminEmpleados.Name = "lblAdminEmpleados";
-            this.lblAdminEmpleados.Size = new System.Drawing.Size(255, 18);
+            this.lblAdminEmpleados.Size = new System.Drawing.Size(224, 19);
             this.lblAdminEmpleados.TabIndex = 1;
             this.lblAdminEmpleados.Text = "ADMINISTRACION EMPLEADOS";
             // 
@@ -149,6 +149,22 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirListEmpleado.UseVisualStyleBackColor = true;
             this.btnSalirListEmpleado.Click += new System.EventHandler(this.btnSalirCliente_Click);
             // 
+            // btnProbarConexion
+            // 
+            this.btnProbarConexion.AutoSize = true;
+            this.btnProbarConexion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnProbarConexion.Depth = 0;
+            this.btnProbarConexion.Icon = null;
+            this.btnProbarConexion.Location = new System.Drawing.Point(121, 52);
+            this.btnProbarConexion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnProbarConexion.Name = "btnProbarConexion";
+            this.btnProbarConexion.Primary = true;
+            this.btnProbarConexion.Size = new System.Drawing.Size(89, 36);
+            this.btnProbarConexion.TabIndex = 21;
+            this.btnProbarConexion.Text = "CONEXION";
+            this.btnProbarConexion.UseVisualStyleBackColor = true;
+            this.btnProbarConexion.Click += new System.EventHandler(this.btnProbarConexion_Click);
+            // 
             // intIdEmpleado
             // 
             this.intIdEmpleado.HeaderText = "ID";
@@ -158,6 +174,21 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.strNameEmpleado.HeaderText = "NOMBRE";
             this.strNameEmpleado.Name = "strNameEmpleado";
+            // 
+            // intDocumento
+            // 
+            this.intDocumento.HeaderText = "DOCUMENTO";
+            this.intDocumento.Name = "intDocumento";
+            // 
+            // strDireccion
+            // 
+            this.strDireccion.HeaderText = "DIRECCION";
+            this.strDireccion.Name = "strDireccion";
+            // 
+            // intTelefono
+            // 
+            this.intTelefono.HeaderText = "TELEFONO";
+            this.intTelefono.Name = "intTelefono";
             // 
             // strEmail
             // 
@@ -179,21 +210,6 @@ namespace _Plantilla_Sistema_facturación_
             this.strFechaRetiro.HeaderText = "F.RETIRO";
             this.strFechaRetiro.Name = "strFechaRetiro";
             // 
-            // intDocumento
-            // 
-            this.intDocumento.HeaderText = "DOCUMENTO";
-            this.intDocumento.Name = "intDocumento";
-            // 
-            // strDireccion
-            // 
-            this.strDireccion.HeaderText = "DIRECCION";
-            this.strDireccion.Name = "strDireccion";
-            // 
-            // intTelefono
-            // 
-            this.intTelefono.HeaderText = "TELEFONO";
-            this.intTelefono.Name = "intTelefono";
-            // 
             // btnEditar
             // 
             this.btnEditar.HeaderText = "EDITAR";
@@ -209,22 +225,6 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.btnBorrar.Text = "BORRAR";
             this.btnBorrar.UseColumnTextForButtonValue = true;
-            // 
-            // btnProbarConexion
-            // 
-            this.btnProbarConexion.AutoSize = true;
-            this.btnProbarConexion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProbarConexion.Depth = 0;
-            this.btnProbarConexion.Icon = null;
-            this.btnProbarConexion.Location = new System.Drawing.Point(121, 52);
-            this.btnProbarConexion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnProbarConexion.Name = "btnProbarConexion";
-            this.btnProbarConexion.Primary = true;
-            this.btnProbarConexion.Size = new System.Drawing.Size(89, 36);
-            this.btnProbarConexion.TabIndex = 21;
-            this.btnProbarConexion.Text = "CONEXION";
-            this.btnProbarConexion.UseVisualStyleBackColor = true;
-            this.btnProbarConexion.Click += new System.EventHandler(this.btnProbarConexion_Click);
             // 
             // frmListaEmpleados
             // 
@@ -256,17 +256,17 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton btnEmpleadoNuevo;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarEmpleado;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalirListEmpleado;
+        private MaterialSkin.Controls.MaterialRaisedButton btnProbarConexion;
         private System.Windows.Forms.DataGridViewTextBoxColumn intIdEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn strNameEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strDireccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn strEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn strRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn strFechaIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn strFechaRetiro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strDireccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intTelefono;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
-        private MaterialSkin.Controls.MaterialRaisedButton btnProbarConexion;
     }
 }

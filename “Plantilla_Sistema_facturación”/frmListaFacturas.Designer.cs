@@ -36,13 +36,13 @@ namespace _Plantilla_Sistema_facturación_
             this.txtBuscarProductos = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblAdminProductos = new MaterialSkin.Controls.MaterialLabel();
             this.intNroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strFechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intIva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strFechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
@@ -69,13 +69,13 @@ namespace _Plantilla_Sistema_facturación_
             this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.intNroFactura,
+            this.strFechaRegistro,
             this.strCliente,
             this.strEmpleado,
+            this.strEstado,
             this.intDescuento,
             this.intIva,
             this.intFactura,
-            this.strFechaRegistro,
-            this.strEstado,
             this.btnEditar,
             this.btnBorrar});
             this.dgvFacturas.Location = new System.Drawing.Point(28, 257);
@@ -152,6 +152,12 @@ namespace _Plantilla_Sistema_facturación_
             this.intNroFactura.Name = "intNroFactura";
             this.intNroFactura.Width = 80;
             // 
+            // strFechaRegistro
+            // 
+            this.strFechaRegistro.HeaderText = "FECHA REGISTRO";
+            this.strFechaRegistro.Name = "strFechaRegistro";
+            this.strFechaRegistro.Width = 120;
+            // 
             // strCliente
             // 
             this.strCliente.HeaderText = "CLIENTE";
@@ -163,6 +169,11 @@ namespace _Plantilla_Sistema_facturación_
             this.strEmpleado.HeaderText = "EMPLEADO";
             this.strEmpleado.Name = "strEmpleado";
             this.strEmpleado.Width = 220;
+            // 
+            // strEstado
+            // 
+            this.strEstado.HeaderText = "ESTADO FACTURA";
+            this.strEstado.Name = "strEstado";
             // 
             // intDescuento
             // 
@@ -181,17 +192,6 @@ namespace _Plantilla_Sistema_facturación_
             this.intFactura.HeaderText = "TOTAL FACTURA";
             this.intFactura.Name = "intFactura";
             this.intFactura.Width = 80;
-            // 
-            // strFechaRegistro
-            // 
-            this.strFechaRegistro.HeaderText = "FECHA REGISTRO";
-            this.strFechaRegistro.Name = "strFechaRegistro";
-            this.strFechaRegistro.Width = 120;
-            // 
-            // strEstado
-            // 
-            this.strEstado.HeaderText = "ESTADO FACTURA";
-            this.strEstado.Name = "strEstado";
             // 
             // btnEditar
             // 
@@ -243,13 +243,13 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarProductos;
         private MaterialSkin.Controls.MaterialLabel lblAdminProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn intNroFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strFechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn strCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn strEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn intDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn intIva;
         private System.Windows.Forms.DataGridViewTextBoxColumn intFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strFechaRegistro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strEstado;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
     }

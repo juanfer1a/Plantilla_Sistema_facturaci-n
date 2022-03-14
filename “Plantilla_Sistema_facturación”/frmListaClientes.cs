@@ -22,31 +22,31 @@ namespace _Plantilla_Sistema_facturación_
 
         private void frmListaClientes_Load(object sender, EventArgs e)
         {
-            llenar_grid();
+            Llenar_grid();
         }
 
-        public void llenar_grid()
+        DataTable dt = new DataTable(); // CREAMOS EL OBJETO DE TIPO DATATABLE PARA ALMACENAR LO CONSULTADO
+        Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
+
+        public void Llenar_grid()
         {
-            for (int i = 0; i < 10; i++)
-            {
-                dgClientes.Rows.Add(i, $"Nombre{i} Apellido1 Apellido2", $"{i * 12345}", $"{i * 12345}");
-            }
+                //ACTUALIZAR EL REGISTRO CON EL ID PASADO
+                string sentencia = $"select IdCliente,StrNombre,NumDocumento,StrTelefono from TBLCLIENTES"; // CONSULTO REGISTRO DEL iDcLIENTE
+
+                dt = Acceso.EjecutarComandoDatos(sentencia);
+                foreach (DataRow row in dt.Rows)
+                {
+                // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                dgClientes.Rows.Add(row[0], row[1], row[2], row[3]);
+                }
+            
         }
+
+      
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcion en construccion");
-            //string nombre;
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    nombre = dgClientes.Rows[i].ToString();
-
-            //    if (txtBuscarClientes.Text == nombre)
-            //    {
-                    
-
-            //    }
-            //}
+            Consultar();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -63,6 +63,12 @@ namespace _Plantilla_Sistema_facturación_
                 int posActual = dgClientes.CurrentRow.Index;//Obtenemos el numero de la fila
                 if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgClientes[0, posActual].Value.ToString()}");//Mostramos mensaje
+                int IdCliente = Convert.ToInt32(dgClientes[0, posActual].Value.ToString());
+                string sentencia = $"EXEC Eliminar_Cliente {IdCliente}";
+                string mensaje = Acceso.EjecutarComando(sentencia);
+                dgClientes.Rows.Clear();
+                Llenar_grid();
+
             }
 
             if (dgClientes.Columns[e.ColumnIndex].Name == "btnEditarCliente")//Obtenemos el nombre de la columna para comparar
@@ -71,6 +77,28 @@ namespace _Plantilla_Sistema_facturación_
                 frmEditarClientes Cliente = new frmEditarClientes();
                 Cliente.idCliente = int.Parse(dgClientes[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 Cliente.ShowDialog();//muestra el formulario de forma modal
+            }
+        }
+
+        public void Consultar()
+        {
+            string sentencia = $"select IdCliente,StrNombre,NumDocumento,StrTelefono from TBLCLIENTES where NumDocumento={txtBuscarClientes.Text}"; // CONSULTO REGISTRO DEL iDcLIENTE
+
+            if (dt.Rows.Count > 0)
+            {
+                dgClientes.Rows.Clear();
+                dt = Acceso.EjecutarComandoDatos(sentencia);
+                foreach (DataRow row in dt.Rows)
+                {
+                    // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                    dgClientes.Rows.Add(row[0], row[1], row[2], row[3]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra un usuario con el nuemero de documento ingresado");
+                Llenar_grid();
+               
             }
         }
 
