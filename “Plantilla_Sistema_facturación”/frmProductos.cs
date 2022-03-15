@@ -54,7 +54,7 @@ namespace _Plantilla_Sistema_facturación_
         }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            
+            Guardar();
         }
 
         // *************************************** ACTUALIZACIONES ********* ********************
@@ -62,8 +62,8 @@ namespace _Plantilla_Sistema_facturación_
         public bool Guardar()
         {
             Boolean actualizado = false;
-           // if (validar())
-            //{
+            if (validar())
+            {
                 try
                 {
                     Acceso_datos Acceso = new Acceso_datos();
@@ -76,36 +76,51 @@ namespace _Plantilla_Sistema_facturación_
                     MessageBox.Show("falló inserción: " + ex);
                     actualizado = false;
                 }
-           // }
+            }
             return actualizado;
         }
         //FUNCIÓN QE PERMITE VALIDAR LOS CAMPOS DEL FORMULARIO
-        //private Boolean validar()
-        //{
-        //    Boolean errorCampos = true;
-        //    if (txtNombreProducto.Text == string.Empty)
-        //    {
-        //        MensajeError.SetError(txtNombreProducto, "Debe ingresar el nombre del producto");
-        //        txtNombreProducto.Focus();
-        //        errorCampos = false;
-        //    }
-        //    else { MensajeError.SetError(txtNombreProducto, ""); }
-        //    if (txtCodRef.Text == "")
-        //    {
-        //        MensajeError.SetError(, "debe ingresar el codigo de referencia del producto");
-        //        txtCodRef.Focus();
-        //        errorCampos = false;
-        //    }
-        //    else { MensajeError.SetError(txtCodRef, ""); }
-        //    if (!esNumerico(txtDocumento.Text))
-        //    {
-        //        MensajeError.SetError(txtDocumento, "El Documento debe ser numerico");
-        //        txtDocumento.Focus();
-        //        return false;
-        //    }
-        //    MensajeError.SetError(txtDocumento, "");
-        //    return errorCampos;
-        //}
+        private Boolean validar()
+        {
+            Boolean errorCampos = true;
+            if (txtNombreProducto.Text == string.Empty)
+            {
+                MensajeError.SetError(txtNombreProducto, "Debe ingresar el nombre del producto");
+                txtNombreProducto.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtNombreProducto, string.Empty); }
+            if (txtCodRef.Text == string.Empty)
+            {
+                MensajeError.SetError(txtCodRef, "Debe ingresar el codigo de referencia del producto");
+                txtCodRef.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtCodRef, string.Empty); }
+            if (!esNumerico(txtPrecioCompra.Text))
+            {
+                MensajeError.SetError(txtPrecioCompra, "Debe ingresar valores numericos");
+                txtPrecioCompra.Focus();
+                return false;
+            }
+            else { MensajeError.SetError(txtPrecioCompra, string.Empty); }
+            if (!esNumerico(txtPrecioVenta.Text))
+            {
+                MensajeError.SetError(txtPrecioVenta, "Debe ingresar valores numericos");
+                txtPrecioVenta.Focus();
+                return false;
+            }
+            else { MensajeError.SetError(txtPrecioVenta, string.Empty); }
+            if (!esNumerico(txtCantStock.Text))
+            {
+                MensajeError.SetError(txtCantStock, "Debe ingresar valores numericos");
+                txtCantStock.Focus();
+                return false;
+            }
+            else { MensajeError.SetError(txtCantStock, string.Empty); }
+
+            return errorCampos;
+        }
 
         //función para validar si un valor dado es numerico
         private bool esNumerico(string num)
