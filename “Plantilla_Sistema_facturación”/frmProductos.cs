@@ -19,11 +19,7 @@ namespace _Plantilla_Sistema_facturación_
         {
             InitializeComponent();
         }
-        private void frmProductos_Load(object sender, EventArgs e)
-        {
-
-            
-        }
+       
 
         DataTable dt = new DataTable(); // CREAMOS EL OBJETO DE TIPO DATATABLE PARA ALMACENAR LO CONSULTADO
         Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
@@ -36,19 +32,21 @@ namespace _Plantilla_Sistema_facturación_
             else
             {//Actulizar cliente
              //ACTUALIZAR EL REGISTRO CON EL ID PASADO
-                string sentencia = $"select * from TBLPRODUCTOS where IdProducto = {IdProducto}"; // CONSULTO REGISTRO DEL iDcLIENTE
+                string sentencia = $"EXEC CargaProducto {IdProducto}"; // CONSULTO REGISTRO DEL iDcLIENTE
 
                 dt = Acceso.EjecutarComandoDatos(sentencia);
                 foreach (DataRow row in dt.Rows)
                 {
                     // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
 
+                    txbIdProducto.Text = row[0].ToString();
                     txtNombreProducto.Text = row[1].ToString();
                     txtCodRef.Text = row[2].ToString();
                     txtPrecioCompra.Text = row[3].ToString();
                     txtPrecioVenta.Text = row[4].ToString();
                     txtCantStock.Text = row[5].ToString();
-                    cxbCategoria.Text = row[8].ToString();
+                    cboCategoria.Text = row[6].ToString();
+                    txbDetalle.Text= row[7].ToString();
                 }
             }
         }
@@ -66,8 +64,15 @@ namespace _Plantilla_Sistema_facturación_
             {
                 try
                 {
+                    if (txbIdProducto.Text == string.Empty)
+                    {
+                        txbIdProducto.Text = "0";
+                    }
+                    ;
                     Acceso_datos Acceso = new Acceso_datos();
-                    string sentencia = $"Exec actualizar_Producto '{txtNombreProducto.Text}',{txtCodRef.Text} ,'{txtPrecioCompra.Text}','{txtPrecioVenta.Text}', '{txtCantStock.Text}','Juan','{DateTime.Now.ToShortDateString()}'";
+                    string sentencia = $"Exec actualizar_Producto {txbIdProducto.Text},'{txtNombreProducto.Text}','{txtCodRef.Text}'," +
+                        $"{txtPrecioCompra.Text},{txtPrecioVenta.Text},'{cboCategoria.Text}','{txbDetalle.Text}'," +
+                        $"'Ninguna',{txtCantStock.Text},'Juan','{DateTime.Now.ToShortDateString()}'";
                     MessageBox.Show(Acceso.EjecutarComando(sentencia));
                     actualizado = true;
                 }
@@ -83,6 +88,25 @@ namespace _Plantilla_Sistema_facturación_
         private Boolean validar()
         {
             Boolean errorCampos = true;
+            //if (!esNumerico(txbIdProducto.Text))
+            //{
+            //    MensajeError.SetError(txtNombreProducto, "Debe ingresar un valor numerico");
+            //    txbIdProducto.Text = string.Empty;
+            //    txtNombreProducto.Focus();
+            //    errorCampos = false;
+            //}
+            //else
+            //{
+                
+            //    MensajeError.SetError(txbIdProducto, string.Empty);
+            //    //if (Convert.ToInt32(txbIdProducto.Text) < 1 )
+            //    //{
+            //    //    txbIdProducto.Text = "0";
+            //    //}
+            
+            //}
+
+            
             if (txtNombreProducto.Text == string.Empty)
             {
                 MensajeError.SetError(txtNombreProducto, "Debe ingresar el nombre del producto");
@@ -90,6 +114,7 @@ namespace _Plantilla_Sistema_facturación_
                 errorCampos = false;
             }
             else { MensajeError.SetError(txtNombreProducto, string.Empty); }
+
             if (txtCodRef.Text == string.Empty)
             {
                 MensajeError.SetError(txtCodRef, "Debe ingresar el codigo de referencia del producto");
@@ -104,6 +129,7 @@ namespace _Plantilla_Sistema_facturación_
                 return false;
             }
             else { MensajeError.SetError(txtPrecioCompra, string.Empty); }
+
             if (!esNumerico(txtPrecioVenta.Text))
             {
                 MensajeError.SetError(txtPrecioVenta, "Debe ingresar valores numericos");
@@ -111,14 +137,14 @@ namespace _Plantilla_Sistema_facturación_
                 return false;
             }
             else { MensajeError.SetError(txtPrecioVenta, string.Empty); }
+
             if (!esNumerico(txtCantStock.Text))
             {
                 MensajeError.SetError(txtCantStock, "Debe ingresar valores numericos");
                 txtCantStock.Focus();
                 return false;
             }
-            else { MensajeError.SetError(txtCantStock, string.Empty); }
-
+            MensajeError.SetError(txtCantStock, string.Empty);
             return errorCampos;
         }
 
@@ -136,11 +162,28 @@ namespace _Plantilla_Sistema_facturación_
             }
         }
 
+        private void llenar_combo_categoria()
+        {
+            DataTable dt = new DataTable();
+            Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
+            dt = Acceso.cargartabla("TBLCATEGORIA_PROD", "");
+            cboCategoria.DataSource = dt;
+            cboCategoria.DisplayMember = "strNombre";
+            cboCategoria.ValueMember = "StrDescripcion";
+            
+            Acceso.CerrarBd();
+        }
+
 
         private void lblSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+            llenar_combo_categoria();
+            Llenar_Productos();
+        }
     }
 }

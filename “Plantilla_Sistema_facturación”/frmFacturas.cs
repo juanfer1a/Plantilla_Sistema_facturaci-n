@@ -27,28 +27,28 @@ namespace _Plantilla_Sistema_facturación_
             else
             {//Actulizar categoria
                 lblEditarFactura.Text = "MODIFICAR FACTURA";
-                txtNroFactura.Text = NroFactura.ToString();
+                txbNroFactura.Text = NroFactura.ToString();
                 txtDescuento.Text = "Descuento";
                 txtDetalleFactura.Text = "Detalle factura";
                 txtTotalFactura.Text = "Total factura";
                 txtTotalIva.Text = "Total iva";
-                cxbClienteFactura.Text = "Cliente factura";
-                cxbEmpleadoFactura.Text = "Empleado factura";
-                cxbEstadoFactura.Text = "Estado factura";
+                cboClienteFactura.Text = "Cliente factura";
+                cboEmpleadoFactura.Text = "Empleado factura";
+                cboEstadoFactura.Text = "Estado factura";
             }
         }
        
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            errorProvider1.SetError(txtDescuento, "Ingrese un valor");
-            errorProvider1.SetError(txtDetalleFactura, "Ingrese un valor");
-            errorProvider1.SetError(txtNroFactura, "Ingrese un valor");
-            errorProvider1.SetError(txtTotalFactura, "Ingrese un valor");
-            errorProvider1.SetError(txtTotalIva, "Ingrese un valor");
-            errorProvider1.SetError(cxbClienteFactura, "Ingrese un valor");
-            errorProvider1.SetError(cxbEmpleadoFactura, "Ingrese un valor");
-            errorProvider1.SetError(cxbEstadoFactura, "Ingrese un valor");
+            MensajeError.SetError(txtDescuento, "Ingrese un valor");
+            MensajeError.SetError(txtDetalleFactura, "Ingrese un valor");
+            MensajeError.SetError(txbNroFactura, "Ingrese un valor");
+            MensajeError.SetError(txtTotalFactura, "Ingrese un valor");
+            MensajeError.SetError(txtTotalIva, "Ingrese un valor");
+            MensajeError.SetError(cboClienteFactura, "Ingrese un valor");
+            MensajeError.SetError(cboEmpleadoFactura, "Ingrese un valor");
+            MensajeError.SetError(cboEstadoFactura, "Ingrese un valor");
         }
 
         private void lblSalir_Click(object sender, EventArgs e)

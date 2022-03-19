@@ -54,14 +54,20 @@ namespace _Plantilla_Sistema_facturación_
                 int posActual = dgvProductos.CurrentRow.Index;//Obtenemos el numero de la fila
                 if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvProductos[0, posActual].Value.ToString()}");//Mostramos mensaje
+                int IdProducto = Convert.ToInt32(dgvProductos[0, posActual].Value.ToString());
+                string sentencia = $"EXEC Eliminar_Producto {IdProducto}";
+                string mensaje = Acceso.EjecutarComando(sentencia);
+                dgvProductos.Rows.Clear();
+                Llenar_grid();
+
             }
 
-            if (dgvProductos.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
+            if (dgvProductos.Columns[e.ColumnIndex].Name == "btnEditarProducto")//Obtenemos el nombre de la columna para comparar
             {
                 int posActual = dgvProductos.CurrentRow.Index;//Obtenemos el numero de la fila
-                frmProductos Producto = new frmProductos();
-                Producto.IdProducto = int.Parse(dgvProductos[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
-                Producto.ShowDialog();//muestra el formulario de forma modal
+                frmProductos productos = new frmProductos();
+                productos.IdProducto = int.Parse(dgvProductos[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                productos.ShowDialog();//muestra el formulario de forma modal
             }
         }
 

@@ -41,7 +41,7 @@ namespace _Plantilla_Sistema_facturación_
             this.intPrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intPrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnEditarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@ namespace _Plantilla_Sistema_facturación_
             this.intPrecioCompra,
             this.intPrecioVenta,
             this.intStock,
-            this.btnEditar,
+            this.btnEditarProducto,
             this.btnBorrar});
             this.dgvProductos.Location = new System.Drawing.Point(12, 213);
             this.dgvProductos.Name = "dgvProductos";
@@ -177,15 +177,15 @@ namespace _Plantilla_Sistema_facturación_
             this.intStock.Name = "intStock";
             this.intStock.Width = 70;
             // 
-            // btnEditar
+            // btnEditarProducto
             // 
-            this.btnEditar.HeaderText = "EDITAR";
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseColumnTextForButtonValue = true;
-            this.btnEditar.Width = 80;
+            this.btnEditarProducto.HeaderText = "EDITAR";
+            this.btnEditarProducto.Name = "btnEditarProducto";
+            this.btnEditarProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEditarProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEditarProducto.Text = "EDITAR";
+            this.btnEditarProducto.UseColumnTextForButtonValue = true;
+            this.btnEditarProducto.Width = 80;
             // 
             // btnBorrar
             // 
@@ -232,7 +232,7 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.DataGridViewTextBoxColumn intPrecioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn intPrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn intStock;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEditarProducto;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
     }
 }

@@ -32,9 +32,9 @@ namespace _Plantilla_Sistema_facturación_
             this.components = new System.ComponentModel.Container();
             this.grbAdminClientes = new System.Windows.Forms.GroupBox();
             this.dtpFechaFactura = new System.Windows.Forms.DateTimePicker();
-            this.cxbEstadoFactura = new System.Windows.Forms.ComboBox();
-            this.cxbEmpleadoFactura = new System.Windows.Forms.ComboBox();
-            this.cxbClienteFactura = new System.Windows.Forms.ComboBox();
+            this.cboEstadoFactura = new System.Windows.Forms.ComboBox();
+            this.cboEmpleadoFactura = new System.Windows.Forms.ComboBox();
+            this.cboClienteFactura = new System.Windows.Forms.ComboBox();
             this.txtTotalIva = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtTotalFactura = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtDescuento = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -43,24 +43,24 @@ namespace _Plantilla_Sistema_facturación_
             this.lblFechaRegistro = new MaterialSkin.Controls.MaterialLabel();
             this.lblEstadoFactura = new MaterialSkin.Controls.MaterialLabel();
             this.lblNroFactura = new MaterialSkin.Controls.MaterialLabel();
-            this.txtNroFactura = new System.Windows.Forms.TextBox();
+            this.txbNroFactura = new System.Windows.Forms.TextBox();
             this.lblEditarFactura = new MaterialSkin.Controls.MaterialLabel();
             this.grbDetalleFactura = new System.Windows.Forms.GroupBox();
             this.txtDetalleFactura = new System.Windows.Forms.TextBox();
-            this.lblSalir = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblSalirFactura = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnActualizarFactura = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbAdminClientes.SuspendLayout();
             this.grbDetalleFactura.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // grbAdminClientes
             // 
             this.grbAdminClientes.Controls.Add(this.dtpFechaFactura);
-            this.grbAdminClientes.Controls.Add(this.cxbEstadoFactura);
-            this.grbAdminClientes.Controls.Add(this.cxbEmpleadoFactura);
-            this.grbAdminClientes.Controls.Add(this.cxbClienteFactura);
+            this.grbAdminClientes.Controls.Add(this.cboEstadoFactura);
+            this.grbAdminClientes.Controls.Add(this.cboEmpleadoFactura);
+            this.grbAdminClientes.Controls.Add(this.cboClienteFactura);
             this.grbAdminClientes.Controls.Add(this.txtTotalIva);
             this.grbAdminClientes.Controls.Add(this.txtTotalFactura);
             this.grbAdminClientes.Controls.Add(this.txtDescuento);
@@ -69,7 +69,7 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminClientes.Controls.Add(this.lblFechaRegistro);
             this.grbAdminClientes.Controls.Add(this.lblEstadoFactura);
             this.grbAdminClientes.Controls.Add(this.lblNroFactura);
-            this.grbAdminClientes.Controls.Add(this.txtNroFactura);
+            this.grbAdminClientes.Controls.Add(this.txbNroFactura);
             this.grbAdminClientes.Location = new System.Drawing.Point(26, 64);
             this.grbAdminClientes.Name = "grbAdminClientes";
             this.grbAdminClientes.Size = new System.Drawing.Size(718, 311);
@@ -84,29 +84,29 @@ namespace _Plantilla_Sistema_facturación_
             this.dtpFechaFactura.Size = new System.Drawing.Size(163, 20);
             this.dtpFechaFactura.TabIndex = 33;
             // 
-            // cxbEstadoFactura
+            // cboEstadoFactura
             // 
-            this.cxbEstadoFactura.FormattingEnabled = true;
-            this.cxbEstadoFactura.Location = new System.Drawing.Point(512, 148);
-            this.cxbEstadoFactura.Name = "cxbEstadoFactura";
-            this.cxbEstadoFactura.Size = new System.Drawing.Size(163, 21);
-            this.cxbEstadoFactura.TabIndex = 32;
+            this.cboEstadoFactura.FormattingEnabled = true;
+            this.cboEstadoFactura.Location = new System.Drawing.Point(512, 148);
+            this.cboEstadoFactura.Name = "cboEstadoFactura";
+            this.cboEstadoFactura.Size = new System.Drawing.Size(163, 21);
+            this.cboEstadoFactura.TabIndex = 32;
             // 
-            // cxbEmpleadoFactura
+            // cboEmpleadoFactura
             // 
-            this.cxbEmpleadoFactura.FormattingEnabled = true;
-            this.cxbEmpleadoFactura.Location = new System.Drawing.Point(150, 114);
-            this.cxbEmpleadoFactura.Name = "cxbEmpleadoFactura";
-            this.cxbEmpleadoFactura.Size = new System.Drawing.Size(305, 21);
-            this.cxbEmpleadoFactura.TabIndex = 31;
+            this.cboEmpleadoFactura.FormattingEnabled = true;
+            this.cboEmpleadoFactura.Location = new System.Drawing.Point(150, 114);
+            this.cboEmpleadoFactura.Name = "cboEmpleadoFactura";
+            this.cboEmpleadoFactura.Size = new System.Drawing.Size(305, 21);
+            this.cboEmpleadoFactura.TabIndex = 31;
             // 
-            // cxbClienteFactura
+            // cboClienteFactura
             // 
-            this.cxbClienteFactura.FormattingEnabled = true;
-            this.cxbClienteFactura.Location = new System.Drawing.Point(150, 78);
-            this.cxbClienteFactura.Name = "cxbClienteFactura";
-            this.cxbClienteFactura.Size = new System.Drawing.Size(305, 21);
-            this.cxbClienteFactura.TabIndex = 30;
+            this.cboClienteFactura.FormattingEnabled = true;
+            this.cboClienteFactura.Location = new System.Drawing.Point(150, 78);
+            this.cboClienteFactura.Name = "cboClienteFactura";
+            this.cboClienteFactura.Size = new System.Drawing.Size(305, 21);
+            this.cboClienteFactura.TabIndex = 30;
             // 
             // txtTotalIva
             // 
@@ -224,12 +224,12 @@ namespace _Plantilla_Sistema_facturación_
             this.lblNroFactura.TabIndex = 19;
             this.lblNroFactura.Text = "Nro Factura";
             // 
-            // txtNroFactura
+            // txbNroFactura
             // 
-            this.txtNroFactura.Location = new System.Drawing.Point(150, 37);
-            this.txtNroFactura.Name = "txtNroFactura";
-            this.txtNroFactura.Size = new System.Drawing.Size(155, 20);
-            this.txtNroFactura.TabIndex = 18;
+            this.txbNroFactura.Location = new System.Drawing.Point(150, 37);
+            this.txbNroFactura.Name = "txbNroFactura";
+            this.txbNroFactura.Size = new System.Drawing.Size(155, 20);
+            this.txbNroFactura.TabIndex = 18;
             // 
             // lblEditarFactura
             // 
@@ -264,49 +264,49 @@ namespace _Plantilla_Sistema_facturación_
             this.txtDetalleFactura.Size = new System.Drawing.Size(671, 150);
             this.txtDetalleFactura.TabIndex = 0;
             // 
-            // lblSalir
+            // lblSalirFactura
             // 
-            this.lblSalir.AutoSize = true;
-            this.lblSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.lblSalir.Depth = 0;
-            this.lblSalir.Icon = null;
-            this.lblSalir.Location = new System.Drawing.Point(789, 469);
-            this.lblSalir.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblSalir.Name = "lblSalir";
-            this.lblSalir.Primary = true;
-            this.lblSalir.Size = new System.Drawing.Size(58, 36);
-            this.lblSalir.TabIndex = 12;
-            this.lblSalir.Text = "SALIR";
-            this.lblSalir.UseVisualStyleBackColor = true;
-            this.lblSalir.Click += new System.EventHandler(this.lblSalir_Click);
+            this.lblSalirFactura.AutoSize = true;
+            this.lblSalirFactura.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.lblSalirFactura.Depth = 0;
+            this.lblSalirFactura.Icon = null;
+            this.lblSalirFactura.Location = new System.Drawing.Point(789, 469);
+            this.lblSalirFactura.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSalirFactura.Name = "lblSalirFactura";
+            this.lblSalirFactura.Primary = true;
+            this.lblSalirFactura.Size = new System.Drawing.Size(58, 36);
+            this.lblSalirFactura.TabIndex = 12;
+            this.lblSalirFactura.Text = "SALIR";
+            this.lblSalirFactura.UseVisualStyleBackColor = true;
+            this.lblSalirFactura.Click += new System.EventHandler(this.lblSalir_Click);
             // 
-            // btnActualizar
+            // btnActualizarFactura
             // 
-            this.btnActualizar.AutoSize = true;
-            this.btnActualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnActualizar.Depth = 0;
-            this.btnActualizar.Icon = null;
-            this.btnActualizar.Location = new System.Drawing.Point(789, 151);
-            this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Primary = true;
-            this.btnActualizar.Size = new System.Drawing.Size(103, 36);
-            this.btnActualizar.TabIndex = 11;
-            this.btnActualizar.Text = "ACTUALIZAR";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnActualizarFactura.AutoSize = true;
+            this.btnActualizarFactura.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarFactura.Depth = 0;
+            this.btnActualizarFactura.Icon = null;
+            this.btnActualizarFactura.Location = new System.Drawing.Point(789, 151);
+            this.btnActualizarFactura.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarFactura.Name = "btnActualizarFactura";
+            this.btnActualizarFactura.Primary = true;
+            this.btnActualizarFactura.Size = new System.Drawing.Size(103, 36);
+            this.btnActualizarFactura.TabIndex = 11;
+            this.btnActualizarFactura.Text = "ACTUALIZAR";
+            this.btnActualizarFactura.UseVisualStyleBackColor = true;
+            this.btnActualizarFactura.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // errorProvider1
+            // MensajeError
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.MensajeError.ContainerControl = this;
             // 
             // frmFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 607);
-            this.Controls.Add(this.lblSalir);
-            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.lblSalirFactura);
+            this.Controls.Add(this.btnActualizarFactura);
             this.Controls.Add(this.grbDetalleFactura);
             this.Controls.Add(this.grbAdminClientes);
             this.Controls.Add(this.lblEditarFactura);
@@ -318,7 +318,7 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminClientes.PerformLayout();
             this.grbDetalleFactura.ResumeLayout(false);
             this.grbDetalleFactura.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,7 +328,7 @@ namespace _Plantilla_Sistema_facturación_
 
         private System.Windows.Forms.GroupBox grbAdminClientes;
         private MaterialSkin.Controls.MaterialLabel lblNroFactura;
-        private System.Windows.Forms.TextBox txtNroFactura;
+        private System.Windows.Forms.TextBox txbNroFactura;
         private MaterialSkin.Controls.MaterialLabel lblEditarFactura;
         private System.Windows.Forms.GroupBox grbDetalleFactura;
         private MaterialSkin.Controls.MaterialLabel lblCliente;
@@ -338,13 +338,13 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTotalIva;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTotalFactura;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtDescuento;
-        private System.Windows.Forms.ComboBox cxbClienteFactura;
+        private System.Windows.Forms.ComboBox cboClienteFactura;
         private System.Windows.Forms.DateTimePicker dtpFechaFactura;
-        private System.Windows.Forms.ComboBox cxbEstadoFactura;
-        private System.Windows.Forms.ComboBox cxbEmpleadoFactura;
+        private System.Windows.Forms.ComboBox cboEstadoFactura;
+        private System.Windows.Forms.ComboBox cboEmpleadoFactura;
         private System.Windows.Forms.TextBox txtDetalleFactura;
-        private MaterialSkin.Controls.MaterialRaisedButton lblSalir;
-        private MaterialSkin.Controls.MaterialRaisedButton btnActualizar;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private MaterialSkin.Controls.MaterialRaisedButton lblSalirFactura;
+        private MaterialSkin.Controls.MaterialRaisedButton btnActualizarFactura;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }
