@@ -60,7 +60,15 @@ namespace _Plantilla_Sistema_facturación_
             {
                 int posActual = dgvFacturas.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmFacturas Facturas = new frmFacturas();
-                Facturas.idFactura = int.Parse(dgvFacturas[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                Facturas.idFactura = int.Parse(dgvFacturas[2, posActual].Value.ToString());
+                Facturas.fecha = dgvFacturas[3, posActual].Value.ToString();
+                Facturas.idcliente = int.Parse(dgvFacturas[4, posActual].Value.ToString());
+                Facturas.empleadoFactura = int.Parse(dgvFacturas[5, posActual].Value.ToString());
+                Facturas.descuento = int.Parse(dgvFacturas[6, posActual].Value.ToString());
+                Facturas.totalIva = int.Parse(dgvFacturas[7, posActual].Value.ToString());
+                Facturas.totalFactura = int.Parse(dgvFacturas[8, posActual].Value.ToString());
+                Facturas.estadoFactura = int.Parse(dgvFacturas[9, posActual].Value.ToString());
+                //pasamos al formulario el id del cliente seleccionado
                 Facturas.ShowDialog();//muestra el formulario de forma modal
             }
         }

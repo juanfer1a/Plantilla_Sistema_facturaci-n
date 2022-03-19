@@ -75,6 +75,7 @@ namespace _Plantilla_Sistema_facturación_
             this.grbAdminClientes.Size = new System.Drawing.Size(718, 311);
             this.grbAdminClientes.TabIndex = 0;
             this.grbAdminClientes.TabStop = false;
+            this.grbAdminClientes.Text = " ";
             // 
             // dtpFechaFactura
             // 
@@ -228,7 +229,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.txtNroFactura.Location = new System.Drawing.Point(150, 37);
             this.txtNroFactura.Name = "txtNroFactura";
-            this.txtNroFactura.Size = new System.Drawing.Size(155, 20);
+            this.txtNroFactura.Size = new System.Drawing.Size(110, 20);
             this.txtNroFactura.TabIndex = 18;
             // 
             // lblEditarFactura
@@ -312,7 +313,8 @@ namespace _Plantilla_Sistema_facturación_
             this.Controls.Add(this.lblEditarFactura);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFacturas";
-            this.Text = "frmFacturas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "q1|";
             this.Load += new System.EventHandler(this.frmFacturas_Load);
             this.grbAdminClientes.ResumeLayout(false);
             this.grbAdminClientes.PerformLayout();

@@ -62,6 +62,8 @@ namespace _Plantilla_Sistema_facturación_
             this.cxbEmpleadoUsuario.Name = "cxbEmpleadoUsuario";
             this.cxbEmpleadoUsuario.Size = new System.Drawing.Size(324, 21);
             this.cxbEmpleadoUsuario.TabIndex = 22;
+            this.cxbEmpleadoUsuario.SelectedIndexChanged += new System.EventHandler(this.cxbEmpleadoUsuario_SelectedIndexChanged);
+            this.cxbEmpleadoUsuario.SelectionChangeCommitted += new System.EventHandler(this.cxbEmpleadoUsuario_SelectionChangeCommitted);
             // 
             // txtClave
             // 
@@ -171,6 +173,7 @@ namespace _Plantilla_Sistema_facturación_
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdminSeguridad";
             this.Text = "frmAdminSeguridad";
+            this.Load += new System.EventHandler(this.frmAdminSeguridad_Load);
             this.grbAdminUsuarioSeg.ResumeLayout(false);
             this.grbAdminUsuarioSeg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

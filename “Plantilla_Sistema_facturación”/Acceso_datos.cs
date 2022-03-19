@@ -21,6 +21,10 @@ namespace _Plantilla_Sistema_facturación_
         //Guardamos el Usuario que realizo el login
         public static string UsuarioActivo;
 
+        //public static string usuario;
+
+        //public static string clave;
+
         //R
         #region conexión
         private void conectar()
@@ -206,13 +210,13 @@ namespace _Plantilla_Sistema_facturación_
             catch (Exception ec)
             {
                 connection.Close();
-                MessageBox.Show("Error al actualizar el cliente " );
+                MessageBox.Show("Error al actualizar el cliente ");
             }
 
         }
 
         public void actualizarProductos(string identificador, string nombre, string referencia, string precioCompra, string precioVenta,
-            string idcategoria,string cantidad, string detalle, string foto)
+            string idcategoria, string cantidad, string detalle, string foto)
         {
 
             conectar();
@@ -243,7 +247,7 @@ namespace _Plantilla_Sistema_facturación_
                 connection.Close();
                 MessageBox.Show("Actualización Exitosa");
             }
-            catch (Exception )
+            catch (Exception)
             {
                 connection.Close();
                 MessageBox.Show("Error al actualizar el producto");
@@ -287,7 +291,7 @@ namespace _Plantilla_Sistema_facturación_
         }
 
         public void actualizarCategoria(string identificador, string descripcion)
-            {
+        {
 
             conectar();
             try
@@ -313,7 +317,7 @@ namespace _Plantilla_Sistema_facturación_
             catch (Exception ec)
             {
                 connection.Close();
-                MessageBox.Show("Error al actualizar la categoria"+ec);
+                MessageBox.Show("Error al actualizar la categoria" + ec);
             }
 
         }
@@ -421,6 +425,206 @@ namespace _Plantilla_Sistema_facturación_
                 MessageBox.Show("Error al cargar los proveedores a los combo");
 
             }
+        }
+
+        public void actualizarFactura(string identificador, string fecha2, string cliente, string empleado, string descuento, string impuesto,
+            string valorTotal, string estado)
+        {
+
+            conectar();
+            try
+            {
+                DateTime fecha = DateTime.Now.Date;
+                //Utilizamos Sp
+                command = new SqlCommand("actualizar_Factura", connection);
+                //Tipo de proceso
+                command.CommandType = CommandType.StoredProcedure;
+
+                //Asignamos los datos
+                command.Parameters.Add("@IdFactura", SqlDbType.Int).Value = int.Parse(identificador);
+                command.Parameters.Add("@DtmFecha", SqlDbType.DateTime).Value = fecha2;
+                command.Parameters.Add("@IdCliente", SqlDbType.Int).Value = cliente;
+                command.Parameters.Add("@IdEmpleado", SqlDbType.Int).Value = int.Parse(empleado);
+                command.Parameters.Add("@NumDescuento", SqlDbType.Float).Value = float.Parse(descuento);
+                command.Parameters.Add("@NumImpuesto", SqlDbType.Float).Value = float.Parse(impuesto);
+                command.Parameters.Add("@NumValorTotal", SqlDbType.Float).Value = valorTotal;
+                command.Parameters.Add("@IdEstado", SqlDbType.Int).Value = int.Parse(estado);
+                command.Parameters.Add("@StrUsuarioModifica", SqlDbType.VarChar).Value = UsuarioActivo;
+                command.Parameters.Add("@DtmFechaModifica", SqlDbType.DateTime).Value = fecha;
+
+                //Ejecutamos el Query
+                command.ExecuteNonQuery();
+
+                connection.Close();
+                MessageBox.Show("Actualización Exitosa");
+            }
+            catch (Exception)
+            {
+                connection.Close();
+                MessageBox.Show("Error al actualizar el producto");
+            }
+
+        }
+
+        public void llenarComboRol(ComboBox box)
+        {
+            conectar();
+            try
+            {
+                //---------------------OTRA FORMA DE HACERLO
+
+                command = new SqlCommand(" Select * from TBLROLES", connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+                //Almacenamos dt
+                box.DataSource = dt;
+
+                //Mostamos los datos de la tabla que contiene esta nombre
+                box.DisplayMember = "StrDescripcion";
+
+                //Asignamos los datos de la tabla que contiene esta nombre
+                box.ValueMember = "IdRolEmpleado";
+
+                connection.Close();
+
+            }
+            catch (Exception)
+            {
+                connection.Close();
+                MessageBox.Show("Error al cargar los proveedores a los combo");
+
+            }
+        }
+
+        public void actualizarEmpleado(string identificador, string nombre, string documento, string direccion, string telefono,
+            string email,string rol, string fechaingreso, string fecharetiro, string datosAdicionales)
+        {
+
+            conectar();
+            try
+            {
+                DateTime fecha = DateTime.Now.Date;
+                //Utilizamos Sp
+                command = new SqlCommand("actualizar_Empleado", connection);
+                //Tipo de proceso
+                command.CommandType = CommandType.StoredProcedure;
+
+                //Asignamos los datos
+                command.Parameters.Add("@IdEmpleado", SqlDbType.Int).Value = int.Parse(identificador);
+                command.Parameters.Add("@strNombre", SqlDbType.VarChar).Value = nombre;
+                command.Parameters.Add("@NumDocumento", SqlDbType.BigInt).Value = long.Parse(documento);
+                command.Parameters.Add("@StrDireccion", SqlDbType.VarChar).Value = direccion;
+                command.Parameters.Add("@StrTelefono", SqlDbType.VarChar).Value = telefono;
+                command.Parameters.Add("@StrEmail", SqlDbType.VarChar).Value = email;
+                command.Parameters.Add("@IdRolEmpleado", SqlDbType.Int).Value = int.Parse(rol);
+                command.Parameters.Add("@DtmIngreso", SqlDbType.DateTime).Value = fechaingreso;
+                command.Parameters.Add("@DtmRetiro", SqlDbType.DateTime).Value = fecharetiro;
+                command.Parameters.Add("@strDatosAdicionales", SqlDbType.VarChar).Value = datosAdicionales;
+                command.Parameters.Add("@StrUsuarioModifico", SqlDbType.VarChar).Value = UsuarioActivo;
+                command.Parameters.Add("@DtmFechaModifica", SqlDbType.DateTime).Value = fecha;
+
+                //Ejecutamos el Query
+                command.ExecuteNonQuery();
+
+                connection.Close();
+                MessageBox.Show("Actualización Exitosa");
+            }
+            catch (Exception rxr)
+            {
+                connection.Close();
+                MessageBox.Show("Error al actualizar el empleado" +rxr);
+            }
+
+        }
+
+        public void llenarComboSeguridad(ComboBox box)
+        {
+            conectar();
+            try
+            {
+                //---------------------OTRA FORMA DE HACERLO
+
+                command = new SqlCommand(" Select * from TBLSEGURIDAD", connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+                //Almacenamos dt
+                box.DataSource = dt;
+
+                //Mostamos los datos de la tabla que contiene esta nombre
+                box.DisplayMember = "StrDescripcion";
+
+                //Asignamos los datos de la tabla que contiene esta nombre
+                box.ValueMember = "IdRolEmpleado";
+
+                connection.Close();
+
+            }
+            catch (Exception)
+            {
+                connection.Close();
+                MessageBox.Show("Error al cargar los proveedores a los combo");
+
+            }
+        }
+        public bool traerDatosSeguridad(int empleado)
+        {
+            
+            conectar();
+            try
+            {
+
+                //Utilizamos Sp
+                command = new SqlCommand(" Select * from TBLSEGURIDAD where IdEmpleado =" + empleado +"",connection);
+
+                //Asignamos los datos
+                //command.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = Usuario.Trim();
+                //command.Parameters.Add("@Clave", SqlDbType.VarChar).Value = Contra.Trim();
+
+                ////Hacemos la conexión
+                //command.Connection = connection;
+                //Ejecutamos el Query
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Si existe alguna linea retorna true
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        frmAdminSeguridad.usuario = reader.GetString(2);
+                        frmAdminSeguridad.clave = reader.GetString(3);
+
+                    }
+                    connection.Close();
+                    return true;
+                }
+                else
+                {
+                    connection.Close();
+
+                    return false;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show("" + ex);
+                return false;
+                
+
+            }
+
         }
 
         //public void eliminarProducto(int identificador)

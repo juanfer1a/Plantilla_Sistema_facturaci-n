@@ -53,7 +53,16 @@ namespace _Plantilla_Sistema_facturación_
             {
                 int posActual = dgvEmpleados.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmEmpleados empleados = new frmEmpleados();
-                empleados.idEmpleado = int.Parse(dgvEmpleados[2, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                empleados.idEmpleado = int.Parse(dgvEmpleados[2, posActual].Value.ToString());
+                empleados.nombre = dgvEmpleados[3, posActual].Value.ToString();
+                empleados.documento = long.Parse(dgvEmpleados[4, posActual].Value.ToString());
+                empleados.direccion = dgvEmpleados[5, posActual].Value.ToString();
+                empleados.telefono = dgvEmpleados[6, posActual].Value.ToString();
+                empleados.email = dgvEmpleados[7, posActual].Value.ToString();
+                empleados.rol = int.Parse(dgvEmpleados[8, posActual].Value.ToString());
+                empleados.fechaIngreso= dgvEmpleados[9, posActual].Value.ToString();
+                empleados.fechaRetiro = dgvEmpleados[10, posActual].Value.ToString();
+                empleados.datosAdicionales = dgvEmpleados[11, posActual].Value.ToString();//pasamos al formulario el id del cliente seleccionado
                 empleados.ShowDialog();//muestra el formulario de forma modal
             }
         }
