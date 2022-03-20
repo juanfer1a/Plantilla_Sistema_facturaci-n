@@ -19,7 +19,12 @@ namespace _Plantilla_Sistema_facturación_
         {
             InitializeComponent();
         }
-       
+
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+            llenar_combo_categoria();
+            Llenar_Productos();
+        }
 
         DataTable dt = new DataTable(); // CREAMOS EL OBJETO DE TIPO DATATABLE PARA ALMACENAR LO CONSULTADO
         Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
@@ -32,21 +37,20 @@ namespace _Plantilla_Sistema_facturación_
             else
             {//Actulizar cliente
              //ACTUALIZAR EL REGISTRO CON EL ID PASADO
-                string sentencia = $"EXEC CargaProducto {IdProducto}"; // CONSULTO REGISTRO DEL iDcLIENTE
+                string sentencia = $"select * from TBLPRODUCTO where IdProducto = { IdProducto}"; // CONSULTO REGISTRO DEL iDcLIENTE
 
                 dt = Acceso.EjecutarComandoDatos(sentencia);
                 foreach (DataRow row in dt.Rows)
                 {
                     // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
 
-                    txbIdProducto.Text = row[0].ToString();
                     txtNombreProducto.Text = row[1].ToString();
                     txtCodRef.Text = row[2].ToString();
                     txtPrecioCompra.Text = row[3].ToString();
                     txtPrecioVenta.Text = row[4].ToString();
-                    txtCantStock.Text = row[5].ToString();
-                    cboCategoria.Text = row[6].ToString();
-                    txbDetalle.Text= row[7].ToString();
+                    txtCantStock.Text = row[8].ToString();
+                    cboCategoria.SelectedValue = row[5].ToString();
+                    txbDetalle.Text = row[6].ToString();
                 }
             }
         }
@@ -64,14 +68,9 @@ namespace _Plantilla_Sistema_facturación_
             {
                 try
                 {
-                    if (txbIdProducto.Text == string.Empty)
-                    {
-                        txbIdProducto.Text = "0";
-                    }
-                    ;
                     Acceso_datos Acceso = new Acceso_datos();
-                    string sentencia = $"Exec actualizar_Producto {txbIdProducto.Text},'{txtNombreProducto.Text}','{txtCodRef.Text}'," +
-                        $"{txtPrecioCompra.Text},{txtPrecioVenta.Text},'{cboCategoria.Text}','{txbDetalle.Text}'," +
+                    string sentencia = $"Exec actualizar_Producto {IdProducto},'{txtNombreProducto.Text}','{txtCodRef.Text}'," +
+                        $"{txtPrecioCompra.Text},{txtPrecioVenta.Text},'{cboCategoria.SelectedValue}','{txbDetalle.Text}'," +
                         $"'Ninguna',{txtCantStock.Text},'Juan','{DateTime.Now.ToShortDateString()}'";
                     MessageBox.Show(Acceso.EjecutarComando(sentencia));
                     actualizado = true;
@@ -88,25 +87,7 @@ namespace _Plantilla_Sistema_facturación_
         private Boolean validar()
         {
             Boolean errorCampos = true;
-            //if (!esNumerico(txbIdProducto.Text))
-            //{
-            //    MensajeError.SetError(txtNombreProducto, "Debe ingresar un valor numerico");
-            //    txbIdProducto.Text = string.Empty;
-            //    txtNombreProducto.Focus();
-            //    errorCampos = false;
-            //}
-            //else
-            //{
-                
-            //    MensajeError.SetError(txbIdProducto, string.Empty);
-            //    //if (Convert.ToInt32(txbIdProducto.Text) < 1 )
-            //    //{
-            //    //    txbIdProducto.Text = "0";
-            //    //}
-            
-            //}
-
-            
+           
             if (txtNombreProducto.Text == string.Empty)
             {
                 MensajeError.SetError(txtNombreProducto, "Debe ingresar el nombre del producto");
@@ -168,9 +149,9 @@ namespace _Plantilla_Sistema_facturación_
             Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
             dt = Acceso.cargartabla("TBLCATEGORIA_PROD", "");
             cboCategoria.DataSource = dt;
-            cboCategoria.DisplayMember = "strNombre";
-            cboCategoria.ValueMember = "StrDescripcion";
-            
+            cboCategoria.DisplayMember = "StrDescripcion";
+            cboCategoria.ValueMember = "IdCategoria";
+
             Acceso.CerrarBd();
         }
 
@@ -180,10 +161,5 @@ namespace _Plantilla_Sistema_facturación_
             this.Close();
         }
 
-        private void frmProductos_Load(object sender, EventArgs e)
-        {
-            llenar_combo_categoria();
-            Llenar_Productos();
-        }
     }
 }

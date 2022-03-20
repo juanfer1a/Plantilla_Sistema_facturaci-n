@@ -186,7 +186,7 @@ namespace _Plantilla_Sistema_facturación_
             // txtBuscarFactura
             // 
             this.txtBuscarFactura.Depth = 0;
-            this.txtBuscarFactura.Hint = "Buscar Factura";
+            this.txtBuscarFactura.Hint = "Buscar Factura por Cliente";
             this.txtBuscarFactura.Location = new System.Drawing.Point(28, 228);
             this.txtBuscarFactura.MaxLength = 32767;
             this.txtBuscarFactura.MouseState = MaterialSkin.MouseState.HOVER;
@@ -217,7 +217,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 500);
+            this.ClientSize = new System.Drawing.Size(982, 500);
             this.Controls.Add(this.lblAdminProductos);
             this.Controls.Add(this.btnSalirFactura);
             this.Controls.Add(this.dgvFacturas);

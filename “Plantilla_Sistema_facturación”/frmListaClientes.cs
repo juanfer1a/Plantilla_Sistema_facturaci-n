@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
+
 namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmListaClientes : Form
@@ -30,19 +31,19 @@ namespace _Plantilla_Sistema_facturación_
 
         public void Llenar_grid()
         {
-                //ACTUALIZAR EL REGISTRO CON EL ID PASADO
-                string sentencia = $"select IdCliente,StrNombre,NumDocumento,StrTelefono from TBLCLIENTES"; // CONSULTO REGISTRO DEL iDcLIENTE
+            //ACTUALIZAR EL REGISTRO CON EL ID PASADO
+            string sentencia = $"select IdCliente,StrNombre,NumDocumento,StrTelefono from TBLCLIENTES"; // CONSULTO REGISTRO DEL iDcLIENTE
 
-                dt = Acceso.EjecutarComandoDatos(sentencia);
-                foreach (DataRow row in dt.Rows)
-                {
+            dt = Acceso.EjecutarComandoDatos(sentencia);
+            foreach (DataRow row in dt.Rows)
+            {
                 // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
                 dgClientes.Rows.Add(row[0], row[1], row[2], row[3]);
-                }
-            
+            }
+
         }
 
-      
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -60,14 +61,19 @@ namespace _Plantilla_Sistema_facturación_
         {
             if (dgClientes.Columns[e.ColumnIndex].Name == "btnBorrar")//Obtenemos el nombre de la columna para comparar
             {
-                int posActual = dgClientes.CurrentRow.Index;//Obtenemos el numero de la fila
-                if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgClientes[0, posActual].Value.ToString()}");//Mostramos mensaje
-                int IdCliente = Convert.ToInt32(dgClientes[0, posActual].Value.ToString());
-                string sentencia = $"EXEC Eliminar_Cliente {IdCliente}";
-                string mensaje = Acceso.EjecutarComando(sentencia);
-                dgClientes.Rows.Clear();
-                Llenar_grid();
+               
+                
+
+                    int posActual = dgClientes.CurrentRow.Index;//Obtenemos el numero de la fila
+                    if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        MessageBox.Show($"BORRANDO indice {e.RowIndex} ID {dgClientes[0, posActual].Value.ToString()}");//Mostramos mensaje
+                    int IdCliente = Convert.ToInt32(dgClientes[0, posActual].Value.ToString());
+                    string sentencia = $"EXEC Eliminar_Cliente {IdCliente}";
+                    string mensaje = Acceso.EjecutarComando(sentencia);
+                    dgClientes.Rows.Clear();
+                    Llenar_grid();
+               
+               
 
             }
 
@@ -82,7 +88,8 @@ namespace _Plantilla_Sistema_facturación_
 
         public void Consultar()
         {
-            string sentencia = $"select IdCliente,StrNombre,NumDocumento,StrTelefono from TBLCLIENTES where NumDocumento={txtBuscarClientes.Text}"; // CONSULTO REGISTRO DEL iDcLIENTE
+            string sentencia = $"select IdCliente,StrNombre,NumDocumento,StrTelefono from TBLCLIENTES where NumDocumento='{txtBuscarClientes.Text}'"; // CONSULTO REGISTRO DEL iDcLIENTE
+
 
             if (dt.Rows.Count > 0)
             {
@@ -98,14 +105,16 @@ namespace _Plantilla_Sistema_facturación_
             {
                 MessageBox.Show("No se encuentra un usuario con el nuemero de documento ingresado");
                 Llenar_grid();
-               
+
             }
+
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-                      
+
     }
 }

@@ -18,7 +18,7 @@ namespace _Plantilla_Sistema_facturación_
         }
         private void frmListaFacturas_Load(object sender, EventArgs e)
         {
-            llenar_grid();
+            Llenar_grid();
 
         }
 
@@ -27,7 +27,7 @@ namespace _Plantilla_Sistema_facturación_
         Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
 
 
-        public void llenar_grid()
+        public void Llenar_grid()
         {
             //ACTUALIZAR EL REGISTRO CON EL ID PASADO
             string sentencia = $"EXEC SpConsultaFactura"; // CONSULTA TABLA DETALLE FACTURAS
@@ -47,10 +47,30 @@ namespace _Plantilla_Sistema_facturación_
             Facturas.ShowDialog();
         }
 
-       
+
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcion en desarrollo");
+            string sentencia = $"EXEC SpConsultaFactura";
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvFacturas.Rows.Clear();
+
+                dt = Acceso.EjecutarComandoDatos(sentencia);
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row[2].Equals(txtBuscarFactura.Text))
+                    {
+                        // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                        dgvFacturas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+                    }
+                    else MessageBox.Show($"No hay una factura asociada al cliente {txtBuscarFactura.Text}");
+                    break;
+                                     
+                }
+            }
+            Llenar_grid();
+          
         }
         private void dgvFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -59,6 +79,11 @@ namespace _Plantilla_Sistema_facturación_
                 int posActual = dgvFacturas.CurrentRow.Index;//Obtenemos el numero de la fila
                 if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvFacturas[0, posActual].Value.ToString()}");//Mostramos mensaje
+                int IdFactura = Convert.ToInt32(dgvFacturas[0, posActual].Value.ToString());
+                string sentencia = $"Delete TBLFACTURA WHERE IdFactura = {IdFactura}";
+                string mensaje = Acceso.EjecutarComando(sentencia);
+                dgvFacturas.Rows.Clear();
+                Llenar_grid();
             }
 
             if (dgvFacturas.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar

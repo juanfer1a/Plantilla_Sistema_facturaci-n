@@ -56,12 +56,11 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminClientes.Size = new System.Drawing.Size(206, 19);
             this.lblAdminClientes.TabIndex = 0;
             this.lblAdminClientes.Text = "ADMINISTRACION CLIENTES";
-          
             // 
             // txtBuscarClientes
             // 
             this.txtBuscarClientes.Depth = 0;
-            this.txtBuscarClientes.Hint = "Buscar cliente";
+            this.txtBuscarClientes.Hint = "Buscar cliente por numero de documento";
             this.txtBuscarClientes.Location = new System.Drawing.Point(68, 178);
             this.txtBuscarClientes.MaxLength = 32767;
             this.txtBuscarClientes.MouseState = MaterialSkin.MouseState.HOVER;
@@ -74,7 +73,6 @@ namespace _Plantilla_Sistema_facturación_
             this.txtBuscarClientes.TabIndex = 3;
             this.txtBuscarClientes.TabStop = false;
             this.txtBuscarClientes.UseSystemPasswordChar = false;
-        
             // 
             // btnBuscar
             // 

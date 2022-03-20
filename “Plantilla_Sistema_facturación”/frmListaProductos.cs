@@ -29,7 +29,8 @@ namespace _Plantilla_Sistema_facturación_
         public void Llenar_grid()
         {
             //ACTUALIZAR EL REGISTRO CON EL ID PASADO
-            string sentencia = $"select IdProducto,strNombre,Strcodigo,NumPrecioCompra,NumPrecioVenta,NumStock from TBLPRODUCTO"; // CONSULTO REGISTRO DEL iDcLIENTE
+            string sentencia = $"select IdProducto,strNombre,Strcodigo,NumPrecioCompra,NumPrecioVenta,NumStock " +
+                $"from TBLPRODUCTO"; // CONSULTO REGISTRO DEL iDcLIENTE
 
             dt = Acceso.EjecutarComandoDatos(sentencia);
             foreach (DataRow row in dt.Rows)
@@ -74,9 +75,14 @@ namespace _Plantilla_Sistema_facturación_
        
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
+            consultar();
+        }
+
+        public void consultar()
+        {
             string sentencia = $"select IdProducto,strNombre,Strcodigo,NumPrecioCompra,NumPrecioVenta,NumStock from TBLPRODUCTO " +
-                $"where StrNombre='{txtBuscarProductos.Text}'"; // CONSULTO REGISTRO DEL iDcLIENTE
-            
+               $"where StrNombre ='{txtBuscarProductos.Text}'"; // CONSULTO REGISTRO DEL iDcLIENTE
+
 
             if (dt.Rows.Count > 0)
             {
