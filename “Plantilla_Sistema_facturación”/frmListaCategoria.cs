@@ -41,7 +41,7 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnBuscarCategoria_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcion en desarrollo");
+            consultar();
         }
 
         private void btnNuevoCategoria_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace _Plantilla_Sistema_facturación_
                 if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvCategoria[0, posActual].Value.ToString()}");//Mostramos mensaje
                 int IdCategoria = Convert.ToInt32(dgvCategoria[0, posActual].Value.ToString());
-                string sentencia = $"EXEC Eliminar_Producto {IdCategoria}";
+                string sentencia = $"EXEC Eliminar_CategoriaProducto {IdCategoria}";
                 string mensaje = Acceso.EjecutarComando(sentencia);
                 dgvCategoria.Rows.Clear();
                 llenar_grid();
@@ -78,5 +78,31 @@ namespace _Plantilla_Sistema_facturación_
                 Categoria.ShowDialog();//muestra el formulario de forma modal
             }
         }
+
+        public void consultar()
+        {
+            string sentencia = $"select *  from TBLCATEGORIA_PROD where StrDescripcion ='{txtBuscarCategoria.Text}'"; // CONSULTO REGISTRO DEL iDcLIENTE
+
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvCategoria.Rows.Clear();
+                txtBuscarCategoria.Clear();
+
+                dt = Acceso.EjecutarComandoDatos(sentencia);
+                foreach (DataRow row in dt.Rows)
+                {
+                    // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                    dgvCategoria.Rows.Add(row[0], row[1]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra un usuario con el nuemero de documento ingresado");
+                llenar_grid();
+
+            }
+        }
+
     }
 }

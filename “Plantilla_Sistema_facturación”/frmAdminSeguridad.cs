@@ -92,8 +92,8 @@ namespace _Plantilla_Sistema_facturación_
             Acceso_datos Acceso = new Acceso_datos();
             string sentencia = $"Exec Eliminar_Seguridad '{ Convert.ToInt32(cboEmpleadoUsuario.SelectedValue)}'";
             MessageBox.Show(Acceso.EjecutarComando(sentencia));
-            txtUsuario.Text = "";
-            txtClave.Text = "";
+            txtUsuario.Text = string.Empty;
+            txtClave.Text = string.Empty;
         }
         // función que permite consultar los datos de ingreso de un usuario
         public void Consultar()

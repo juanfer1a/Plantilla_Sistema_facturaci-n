@@ -43,14 +43,14 @@ namespace _Plantilla_Sistema_facturación_
             this.lblDatosAdicionales = new MaterialSkin.Controls.MaterialLabel();
             this.dtpFechaRetiro = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
-            this.cxbRolEmpleado = new System.Windows.Forms.ComboBox();
+            this.cboRolEmpleado = new System.Windows.Forms.ComboBox();
             this.lblFechaIngreso = new MaterialSkin.Controls.MaterialLabel();
             this.lblRolEmpleado = new MaterialSkin.Controls.MaterialLabel();
             this.lblFechaRetiro = new MaterialSkin.Controls.MaterialLabel();
             this.lblAdminEmpleados = new MaterialSkin.Controls.MaterialLabel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActuliazarEmpleado
@@ -97,7 +97,7 @@ namespace _Plantilla_Sistema_facturación_
             this.groupBox1.Controls.Add(this.lblDatosAdicionales);
             this.groupBox1.Controls.Add(this.dtpFechaRetiro);
             this.groupBox1.Controls.Add(this.dtpFechaIngreso);
-            this.groupBox1.Controls.Add(this.cxbRolEmpleado);
+            this.groupBox1.Controls.Add(this.cboRolEmpleado);
             this.groupBox1.Controls.Add(this.lblFechaIngreso);
             this.groupBox1.Controls.Add(this.lblRolEmpleado);
             this.groupBox1.Controls.Add(this.lblFechaRetiro);
@@ -236,13 +236,13 @@ namespace _Plantilla_Sistema_facturación_
             this.dtpFechaIngreso.Size = new System.Drawing.Size(140, 20);
             this.dtpFechaIngreso.TabIndex = 6;
             // 
-            // cxbRolEmpleado
+            // cboRolEmpleado
             // 
-            this.cxbRolEmpleado.FormattingEnabled = true;
-            this.cxbRolEmpleado.Location = new System.Drawing.Point(594, 34);
-            this.cxbRolEmpleado.Name = "cxbRolEmpleado";
-            this.cxbRolEmpleado.Size = new System.Drawing.Size(121, 21);
-            this.cxbRolEmpleado.TabIndex = 5;
+            this.cboRolEmpleado.FormattingEnabled = true;
+            this.cboRolEmpleado.Location = new System.Drawing.Point(594, 34);
+            this.cboRolEmpleado.Name = "cboRolEmpleado";
+            this.cboRolEmpleado.Size = new System.Drawing.Size(121, 21);
+            this.cboRolEmpleado.TabIndex = 5;
             // 
             // lblFechaIngreso
             // 
@@ -296,9 +296,9 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminEmpleados.TabIndex = 10;
             this.lblAdminEmpleados.Text = "ADMINISTRACION EMPLEADOS";
             // 
-            // errorProvider1
+            // MensajeError
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.MensajeError.ContainerControl = this;
             // 
             // frmEmpleados
             // 
@@ -316,7 +316,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,7 +329,7 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtpFechaRetiro;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
-        private System.Windows.Forms.ComboBox cxbRolEmpleado;
+        private System.Windows.Forms.ComboBox cboRolEmpleado;
         private MaterialSkin.Controls.MaterialLabel lblFechaIngreso;
         private MaterialSkin.Controls.MaterialLabel lblRolEmpleado;
         private MaterialSkin.Controls.MaterialLabel lblFechaRetiro;
@@ -342,6 +342,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialSingleLineTextField txtEmailEmpleado;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtDireccionEmpleado;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTelefonoEmpleado;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }

@@ -58,13 +58,18 @@ namespace _Plantilla_Sistema_facturación_
                 int posActual = dgvListaEmpleados.CurrentRow.Index;//Obtenemos el numero de la fila
                 if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvListaEmpleados[0, posActual].Value.ToString()}");//Mostramos mensaje
+                int IdEmpleado = Convert.ToInt32(dgvListaEmpleados[0, posActual].Value.ToString());
+                string sentencia = $"EXEC Eliminar_Empleado {IdEmpleado}";
+                string mensaje = Acceso.EjecutarComando(sentencia);
+                dgvListaEmpleados.Rows.Clear();
+                llenar_grid();
             }
 
             if (dgvListaEmpleados.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
             {
                 int posActual = dgvListaEmpleados.CurrentRow.Index;//Obtenemos el numero de la fila
                 frmEmpleados empleados = new frmEmpleados();
-                empleados.idEmpleado = int.Parse(dgvListaEmpleados[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
+                empleados.IdEmpleado = int.Parse(dgvListaEmpleados[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 empleados.ShowDialog();//muestra el formulario de forma modal
             }
         }
@@ -72,14 +77,9 @@ namespace _Plantilla_Sistema_facturación_
         private void btnClienteNuevo_Click(object sender, EventArgs e)
         {
             frmEmpleados empleados = new frmEmpleados();
-            empleados.idEmpleado = 0;
+            empleados.IdEmpleado = 0;
             empleados.ShowDialog();
         }
-
-        private void btnProbarConexion_Click(object sender, EventArgs e)
-        {
-            Acceso_datos acceso_Datos = new Acceso_datos();
-            acceso_Datos.AbrirBd();
-        }
+               
     }
 }

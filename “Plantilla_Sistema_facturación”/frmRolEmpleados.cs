@@ -19,26 +19,56 @@ namespace _Plantilla_Sistema_facturación_
         }
         private void frmRolEmpleados_Load(object sender, EventArgs e)
         {
-            if (IdRol == 0)
-            {//Registro nuevo rol
-                lblRolEmpleados.Text = "NUEVO ROL";
-            }
-            else
-            {//Actulizar rol
-                lblRolEmpleados.Text = "MODIFICAR ROL";
-                txbDescripcionRol.Text = "DESCRIPCION ROL";
-                txtNombreRol.Text = "NOMBRE ROL";
-                txbIdRolEmpleado.Text = "ID";
-            }
+            
 
         }
+
+
 
         private void btnActualizarRol_Click(object sender, EventArgs e)
         {
-            errorProvider1.SetError(txbDescripcionRol, "Ingrese un valor");
-            errorProvider1.SetError(txbIdRolEmpleado, "Ingrese un valor");
-            errorProvider1.SetError(txtNombreRol, "Ingrese un valor");
+            Guardar();
         }
+
+        // *************************************** ACTUALIZACIONES ********* ********************
+        // ------- funciones que permiten el ingreso , retiro y actualización de la información de Clientes en la base de datos
+        public bool Guardar()
+        {
+            Boolean actualizado = false;
+            if (validar())
+            {
+                try
+                {
+                    Acceso_datos Acceso = new Acceso_datos();
+                    string sentencia = $"Exec actualizar_Rol '{IdRol}','{txtNombreRol.Text}'";
+                    MessageBox.Show(Acceso.EjecutarComando(sentencia));
+                    actualizado = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("falló inserción: " + ex);
+                    actualizado = false;
+                }
+            }
+            return actualizado;
+        }
+        //FUNCIÓN QE PERMITE VALIDAR LOS CAMPOS DEL FORMULARIO
+        private Boolean validar()
+        {
+            Boolean errorCampos = true;
+
+            if (txtNombreRol.Text == string.Empty)
+            {
+                MensajeError.SetError(txtNombreRol, "Debe ingresar el nombre del producto");
+                txtNombreRol.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtNombreRol, string.Empty); }
+
+            
+            return errorCampos;
+        }
+
 
         private void lblSalirRol_Click(object sender, EventArgs e)
         {

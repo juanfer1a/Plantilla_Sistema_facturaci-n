@@ -12,39 +12,149 @@ namespace _Plantilla_Sistema_facturación_
 {
     public partial class frmEmpleados : Form
     {
-        public int idEmpleado { get; set; }
+        public int IdEmpleado { get; set; }
         public frmEmpleados()
         {
             InitializeComponent();
         }
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
-            if (idEmpleado == 0)
-            {
-                lblAdminEmpleados.Text = "CREAR EMPLEADOS";
+            Cargar_ComboRol();
+            Llenar_Categoria();
+        }
+
+        DataTable dt = new DataTable(); // CREAMOS EL OBJETO DE TIPO DATATABLE PARA ALMACENAR LO CONSULTADO
+        Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
+        public void Llenar_Categoria()
+        {
+            if (IdEmpleado == 0)
+            {//Registro nuevo
+                lblAdminEmpleados.Text = "INGRESO NUEVO PRODUCTO";
             }
             else
-            {
-                lblAdminEmpleados.Text = "EDITAR EMPLEADOS";
-                txtNombreEmpleado.Text = "NOMBRE EMPLEADO";
-                txtDocumentoEmpleado.Text = "DOCUMENTO";
-                txtDireccionEmpleado.Text = "DIRECCION";
-                txtTelefonoEmpleado.Text = "TELEFONO";
-                txtEmailEmpleado.Text = "EMAIL";
-                
+            {//Actulizar cliente
+             //ACTUALIZAR EL REGISTRO CON EL ID PASADO
+                string sentencia = $"select * from TBLEMPLEADO where IdEmpleado = { IdEmpleado}"; // CONSULTO REGISTRO DEL iDcLIENTE
+
+                dt = Acceso.EjecutarComandoDatos(sentencia);
+                foreach (DataRow row in dt.Rows)
+                {
+                    // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+
+                    txtNombreEmpleado.Text = row[1].ToString();
+                    txtDocumentoEmpleado.Text = row[2].ToString();
+                    txtDireccionEmpleado.Text = row[3].ToString();
+                    txtTelefonoEmpleado.Text = row[4].ToString();
+                    txtEmailEmpleado.Text = row[5].ToString();
+                    cboRolEmpleado.SelectedValue = row[6].ToString(); 
+                    dtpFechaIngreso.Text = row[7].ToString();
+                    dtpFechaRetiro.Text = row[8].ToString();
+                    txtDatosAdicionales.Text = row[9].ToString();
+                }
             }
         }
 
+        // *************************************** ACTUALIZACIONES ********* ********************
+        // ------- funciones que permiten el ingreso , retiro y actualización de la información de Clientes en la base de datos
+        public bool Guardar()
+        {
+            Boolean actualizado = false;
+            if (validar())
+            {
+   //             @IdEmpleado int,
+   //         @strNombre varchar(50), 
+			// @NumDocumento bigint,
+   //          @StrDireccion varchar(50)
+			//,@StrTelefono varchar(20)   
+			//,@StrEmail varchar(50)   
+			//,@IdRolEmpleado int
+
+   //         , @DtmIngreso  datetime
+			//,@DtmRetiro datetime
+   //         , @strDatosAdicionales  nvarchar(250)
+			//,@DtmFechaModifica datetime
+   //         , @StrUsuarioModifico  varchar(20)
+
+                try
+                {
+                    Acceso_datos Acceso = new Acceso_datos();
+                    string sentencia = $"Exec actualizar_Empleado {IdEmpleado},'{txtNombreEmpleado.Text}','{txtDocumentoEmpleado.Text}'," +
+                        $"'{txtDireccionEmpleado.Text}','{txtTelefonoEmpleado.Text}','{txtEmailEmpleado.Text}','{cboRolEmpleado.SelectedValue}','{dtpFechaIngreso.Text}'," +
+                        $"'{dtpFechaRetiro.Text}','{txtDatosAdicionales.Text}','{DateTime.Now.ToShortDateString()}','Juan'";
+                    MessageBox.Show(Acceso.EjecutarComando(sentencia));
+                    actualizado = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("falló inserción: " + ex);
+                    actualizado = false;
+                }
+            }
+            return actualizado;
+        }
+
+        //FUNCIÓN QE PERMITE VALIDAR LOS CAMPOS DEL FORMULARIO
+        private Boolean validar()
+        {
+            Boolean errorCampos = true;
+
+            if (txtNombreEmpleado.Text == string.Empty)
+            {
+                MensajeError.SetError(txtNombreEmpleado, "Debe ingresar el nombre del producto");
+                txtNombreEmpleado.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtDocumentoEmpleado, string.Empty); }
+
+            if (txtDocumentoEmpleado.Text == string.Empty)
+            {
+                MensajeError.SetError(txtDocumentoEmpleado, "Debe ingresar el codigo de referencia del producto");
+                txtDocumentoEmpleado.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtDocumentoEmpleado, string.Empty); }
+            if (txtDireccionEmpleado.Text == string.Empty)
+            {
+                MensajeError.SetError(txtDireccionEmpleado, "Debe ingresar el codigo de referencia del producto");
+                txtDocumentoEmpleado.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtDireccionEmpleado, string.Empty); }
+
+            if (txtTelefonoEmpleado.Text == string.Empty)
+            {
+                MensajeError.SetError(txtTelefonoEmpleado, "Debe ingresar el codigo de referencia del producto");
+                txtTelefonoEmpleado.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtTelefonoEmpleado, string.Empty); }
+
+            if (txtEmailEmpleado.Text == string.Empty)
+            {
+                MensajeError.SetError(txtEmailEmpleado, "Debe ingresar el codigo de referencia del producto");
+                txtEmailEmpleado.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtEmailEmpleado, string.Empty); }
+            return errorCampos;
+        }
+
+        public void Cargar_ComboRol()
+        {
+            //DataTable dt = new DataTable();
+           // Acceso_datos Acceso = new Acceso_datos(); // creamos un objeto con la clase Acceso_datos
+            dt = Acceso.cargartabla("TBLROLES", "");
+            cboRolEmpleado.DataSource = dt;
+            cboRolEmpleado.DisplayMember = "StrDescripcion";
+            cboRolEmpleado.ValueMember = "IdRolEmpleado";
+
+            Acceso.CerrarBd();
+        }
+
+
         private void btnActuliazarEmpleado_Click(object sender, EventArgs e)
         {
-            errorProvider1.SetError(cxbRolEmpleado, "Ingrese un valor");
-            errorProvider1.SetError(txtDatosAdicionales, "Ingrese un valor");
-            errorProvider1.SetError(txtDireccionEmpleado, "Ingrese un valor");
-            errorProvider1.SetError(txtDocumentoEmpleado, "Ingrese un valor");
-            errorProvider1.SetError(txtEmailEmpleado, "Ingrese un valor");
-            errorProvider1.SetError(txtIdEmpleados, "Ingrese un valor");
-            errorProvider1.SetError(txtNombreEmpleado, "Ingrese un valor");
-            errorProvider1.SetError(txtTelefonoEmpleado, "Ingrese un valor");
+            Guardar();
         }
 
         private void btnSalirEmpleado_Click(object sender, EventArgs e)

@@ -83,6 +83,8 @@ namespace _Plantilla_Sistema_facturación_
                 frmEditarClientes Cliente = new frmEditarClientes();
                 Cliente.idCliente = int.Parse(dgClientes[0, posActual].Value.ToString());//pasamos al formulario el id del cliente seleccionado
                 Cliente.ShowDialog();//muestra el formulario de forma modal
+                dgClientes.Rows.Clear();
+                Llenar_grid();
             }
         }
 
@@ -94,6 +96,7 @@ namespace _Plantilla_Sistema_facturación_
             if (dt.Rows.Count > 0)
             {
                 dgClientes.Rows.Clear();
+                txtBuscarClientes.Clear();
                 dt = Acceso.EjecutarComandoDatos(sentencia);
                 foreach (DataRow row in dt.Rows)
                 {

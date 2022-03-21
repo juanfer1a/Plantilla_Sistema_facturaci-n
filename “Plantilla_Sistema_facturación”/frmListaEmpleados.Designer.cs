@@ -30,12 +30,6 @@ namespace _Plantilla_Sistema_facturación_
         private void InitializeComponent()
         {
             this.dgvListaEmpleados = new System.Windows.Forms.DataGridView();
-            this.lblAdminEmpleados = new MaterialSkin.Controls.MaterialLabel();
-            this.txtBuscarEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnEmpleadoNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnBuscarEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnSalirListEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnProbarConexion = new MaterialSkin.Controls.MaterialRaisedButton();
             this.intIdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strNameEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +41,11 @@ namespace _Plantilla_Sistema_facturación_
             this.strFechaRetiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.lblAdminEmpleados = new MaterialSkin.Controls.MaterialLabel();
+            this.txtBuscarEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnEmpleadoNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBuscarEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSalirListEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +69,67 @@ namespace _Plantilla_Sistema_facturación_
             this.dgvListaEmpleados.Size = new System.Drawing.Size(890, 177);
             this.dgvListaEmpleados.TabIndex = 0;
             this.dgvListaEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaEmpleados_CellContentClick_1);
+            // 
+            // intIdEmpleado
+            // 
+            this.intIdEmpleado.HeaderText = "ID";
+            this.intIdEmpleado.Name = "intIdEmpleado";
+            // 
+            // strNameEmpleado
+            // 
+            this.strNameEmpleado.HeaderText = "NOMBRE";
+            this.strNameEmpleado.Name = "strNameEmpleado";
+            // 
+            // intDocumento
+            // 
+            this.intDocumento.HeaderText = "DOCUMENTO";
+            this.intDocumento.Name = "intDocumento";
+            // 
+            // strDireccion
+            // 
+            this.strDireccion.HeaderText = "DIRECCION";
+            this.strDireccion.Name = "strDireccion";
+            // 
+            // intTelefono
+            // 
+            this.intTelefono.HeaderText = "TELEFONO";
+            this.intTelefono.Name = "intTelefono";
+            // 
+            // strEmail
+            // 
+            this.strEmail.HeaderText = "EMAIL";
+            this.strEmail.Name = "strEmail";
+            // 
+            // strRol
+            // 
+            this.strRol.HeaderText = "ROL";
+            this.strRol.Name = "strRol";
+            // 
+            // strFechaIngreso
+            // 
+            this.strFechaIngreso.HeaderText = "F. INGRESO";
+            this.strFechaIngreso.Name = "strFechaIngreso";
+            // 
+            // strFechaRetiro
+            // 
+            this.strFechaRetiro.HeaderText = "F.RETIRO";
+            this.strFechaRetiro.Name = "strFechaRetiro";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "EDITAR";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseColumnTextForButtonValue = true;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.HeaderText = "BORRAR";
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.UseColumnTextForButtonValue = true;
             // 
             // lblAdminEmpleados
             // 
@@ -149,89 +209,11 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirListEmpleado.UseVisualStyleBackColor = true;
             this.btnSalirListEmpleado.Click += new System.EventHandler(this.btnSalirCliente_Click);
             // 
-            // btnProbarConexion
-            // 
-            this.btnProbarConexion.AutoSize = true;
-            this.btnProbarConexion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProbarConexion.Depth = 0;
-            this.btnProbarConexion.Icon = null;
-            this.btnProbarConexion.Location = new System.Drawing.Point(121, 52);
-            this.btnProbarConexion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnProbarConexion.Name = "btnProbarConexion";
-            this.btnProbarConexion.Primary = true;
-            this.btnProbarConexion.Size = new System.Drawing.Size(89, 36);
-            this.btnProbarConexion.TabIndex = 21;
-            this.btnProbarConexion.Text = "CONEXION";
-            this.btnProbarConexion.UseVisualStyleBackColor = true;
-            this.btnProbarConexion.Click += new System.EventHandler(this.btnProbarConexion_Click);
-            // 
-            // intIdEmpleado
-            // 
-            this.intIdEmpleado.HeaderText = "ID";
-            this.intIdEmpleado.Name = "intIdEmpleado";
-            // 
-            // strNameEmpleado
-            // 
-            this.strNameEmpleado.HeaderText = "NOMBRE";
-            this.strNameEmpleado.Name = "strNameEmpleado";
-            // 
-            // intDocumento
-            // 
-            this.intDocumento.HeaderText = "DOCUMENTO";
-            this.intDocumento.Name = "intDocumento";
-            // 
-            // strDireccion
-            // 
-            this.strDireccion.HeaderText = "DIRECCION";
-            this.strDireccion.Name = "strDireccion";
-            // 
-            // intTelefono
-            // 
-            this.intTelefono.HeaderText = "TELEFONO";
-            this.intTelefono.Name = "intTelefono";
-            // 
-            // strEmail
-            // 
-            this.strEmail.HeaderText = "EMAIL";
-            this.strEmail.Name = "strEmail";
-            // 
-            // strRol
-            // 
-            this.strRol.HeaderText = "ROL";
-            this.strRol.Name = "strRol";
-            // 
-            // strFechaIngreso
-            // 
-            this.strFechaIngreso.HeaderText = "F. INGRESO";
-            this.strFechaIngreso.Name = "strFechaIngreso";
-            // 
-            // strFechaRetiro
-            // 
-            this.strFechaRetiro.HeaderText = "F.RETIRO";
-            this.strFechaRetiro.Name = "strFechaRetiro";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.HeaderText = "EDITAR";
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseColumnTextForButtonValue = true;
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.HeaderText = "BORRAR";
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnBorrar.Text = "BORRAR";
-            this.btnBorrar.UseColumnTextForButtonValue = true;
-            // 
             // frmListaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 487);
-            this.Controls.Add(this.btnProbarConexion);
             this.Controls.Add(this.btnSalirListEmpleado);
             this.Controls.Add(this.btnEmpleadoNuevo);
             this.Controls.Add(this.btnBuscarEmpleado);
@@ -256,7 +238,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton btnEmpleadoNuevo;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarEmpleado;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalirListEmpleado;
-        private MaterialSkin.Controls.MaterialRaisedButton btnProbarConexion;
         private System.Windows.Forms.DataGridViewTextBoxColumn intIdEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn strNameEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn intDocumento;

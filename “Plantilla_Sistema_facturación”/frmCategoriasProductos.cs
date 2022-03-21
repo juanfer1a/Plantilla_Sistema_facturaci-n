@@ -71,6 +71,7 @@ namespace _Plantilla_Sistema_facturación_
                     string sentencia = $"Exec actualizar_CategoriaProd {IdCategoria},'{txtNombreCategoria.Text}','{DateTime.Now.ToShortDateString()}','Juan'";
                     MessageBox.Show(Acceso.EjecutarComando(sentencia));
                     actualizado = true;
+                    txtNombreCategoria.Clear();
                 }
                 catch (Exception ex)
                 {

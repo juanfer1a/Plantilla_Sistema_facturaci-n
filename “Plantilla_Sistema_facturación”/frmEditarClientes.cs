@@ -62,9 +62,12 @@ namespace _Plantilla_Sistema_facturación_
                 try
                 {
                     Acceso_datos Acceso = new Acceso_datos();
-                    string sentencia = $"Exec actualizar_Cliente {idCliente},'{txtNombreCliente.Text}',{txtDocumento.Text} ,'{txtDireccion.Text}','{txtTelefono.Text}', '{txtEmail.Text}','Javier','{DateTime.Now.ToShortDateString()}'";
+                    string sentencia = $"Exec actualizar_Cliente {idCliente},'{txtNombreCliente.Text}','{txtDocumento.Text}' ,'{txtDireccion.Text}'," +
+                        $"'{txtTelefono.Text}', '{txtEmail.Text}','Juan','{DateTime.Now.ToShortDateString()}'";
                     MessageBox.Show(Acceso.EjecutarComando(sentencia));
                     actualizado = true;
+                    
+
                 }
                 catch (Exception ex)
                 {

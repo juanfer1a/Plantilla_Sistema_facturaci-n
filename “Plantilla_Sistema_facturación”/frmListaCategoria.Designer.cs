@@ -31,14 +31,14 @@ namespace _Plantilla_Sistema_facturación_
         {
             this.btnSalirCategoria = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvCategoria = new System.Windows.Forms.DataGridView();
-            this.btnNuevoCategoria = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnBuscarCategoria = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtBuscarCategoria = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblAdminCategorias = new MaterialSkin.Controls.MaterialLabel();
             this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnNuevoCategoria = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBuscarCategoria = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtBuscarCategoria = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblAdminCategorias = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,68 +72,6 @@ namespace _Plantilla_Sistema_facturación_
             this.dgvCategoria.TabIndex = 13;
             this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellContentClick);
             // 
-            // btnNuevoCategoria
-            // 
-            this.btnNuevoCategoria.AutoSize = true;
-            this.btnNuevoCategoria.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNuevoCategoria.Depth = 0;
-            this.btnNuevoCategoria.Icon = null;
-            this.btnNuevoCategoria.Location = new System.Drawing.Point(587, 171);
-            this.btnNuevoCategoria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnNuevoCategoria.Name = "btnNuevoCategoria";
-            this.btnNuevoCategoria.Primary = true;
-            this.btnNuevoCategoria.Size = new System.Drawing.Size(66, 36);
-            this.btnNuevoCategoria.TabIndex = 12;
-            this.btnNuevoCategoria.Text = "NUEVO";
-            this.btnNuevoCategoria.UseVisualStyleBackColor = true;
-            this.btnNuevoCategoria.Click += new System.EventHandler(this.btnNuevoCategoria_Click);
-            // 
-            // btnBuscarCategoria
-            // 
-            this.btnBuscarCategoria.AutoSize = true;
-            this.btnBuscarCategoria.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnBuscarCategoria.Depth = 0;
-            this.btnBuscarCategoria.Icon = null;
-            this.btnBuscarCategoria.Location = new System.Drawing.Point(432, 171);
-            this.btnBuscarCategoria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscarCategoria.Name = "btnBuscarCategoria";
-            this.btnBuscarCategoria.Primary = true;
-            this.btnBuscarCategoria.Size = new System.Drawing.Size(74, 36);
-            this.btnBuscarCategoria.TabIndex = 11;
-            this.btnBuscarCategoria.Text = "BUSCAR";
-            this.btnBuscarCategoria.UseVisualStyleBackColor = true;
-            this.btnBuscarCategoria.Click += new System.EventHandler(this.btnBuscarCategoria_Click);
-            // 
-            // txtBuscarCategoria
-            // 
-            this.txtBuscarCategoria.Depth = 0;
-            this.txtBuscarCategoria.Hint = "Buscar Categoria";
-            this.txtBuscarCategoria.Location = new System.Drawing.Point(193, 173);
-            this.txtBuscarCategoria.MaxLength = 32767;
-            this.txtBuscarCategoria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtBuscarCategoria.Name = "txtBuscarCategoria";
-            this.txtBuscarCategoria.PasswordChar = '\0';
-            this.txtBuscarCategoria.SelectedText = "";
-            this.txtBuscarCategoria.SelectionLength = 0;
-            this.txtBuscarCategoria.SelectionStart = 0;
-            this.txtBuscarCategoria.Size = new System.Drawing.Size(233, 23);
-            this.txtBuscarCategoria.TabIndex = 10;
-            this.txtBuscarCategoria.TabStop = false;
-            this.txtBuscarCategoria.UseSystemPasswordChar = false;
-            // 
-            // lblAdminCategorias
-            // 
-            this.lblAdminCategorias.AutoSize = true;
-            this.lblAdminCategorias.Depth = 0;
-            this.lblAdminCategorias.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblAdminCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblAdminCategorias.Location = new System.Drawing.Point(315, 56);
-            this.lblAdminCategorias.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblAdminCategorias.Name = "lblAdminCategorias";
-            this.lblAdminCategorias.Size = new System.Drawing.Size(227, 19);
-            this.lblAdminCategorias.TabIndex = 9;
-            this.lblAdminCategorias.Text = "ADMINISTRACION CATEGORIAS";
-            // 
             // id_Cliente
             // 
             this.id_Cliente.HeaderText = "CODIGO";
@@ -164,6 +102,68 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBorrar.Text = "BORRAR";
             this.btnBorrar.UseColumnTextForButtonValue = true;
             this.btnBorrar.Width = 80;
+            // 
+            // btnNuevoCategoria
+            // 
+            this.btnNuevoCategoria.AutoSize = true;
+            this.btnNuevoCategoria.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNuevoCategoria.Depth = 0;
+            this.btnNuevoCategoria.Icon = null;
+            this.btnNuevoCategoria.Location = new System.Drawing.Point(587, 171);
+            this.btnNuevoCategoria.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNuevoCategoria.Name = "btnNuevoCategoria";
+            this.btnNuevoCategoria.Primary = true;
+            this.btnNuevoCategoria.Size = new System.Drawing.Size(66, 36);
+            this.btnNuevoCategoria.TabIndex = 12;
+            this.btnNuevoCategoria.Text = "NUEVO";
+            this.btnNuevoCategoria.UseVisualStyleBackColor = true;
+            this.btnNuevoCategoria.Click += new System.EventHandler(this.btnNuevoCategoria_Click);
+            // 
+            // btnBuscarCategoria
+            // 
+            this.btnBuscarCategoria.AutoSize = true;
+            this.btnBuscarCategoria.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBuscarCategoria.Depth = 0;
+            this.btnBuscarCategoria.Icon = null;
+            this.btnBuscarCategoria.Location = new System.Drawing.Point(447, 171);
+            this.btnBuscarCategoria.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscarCategoria.Name = "btnBuscarCategoria";
+            this.btnBuscarCategoria.Primary = true;
+            this.btnBuscarCategoria.Size = new System.Drawing.Size(74, 36);
+            this.btnBuscarCategoria.TabIndex = 11;
+            this.btnBuscarCategoria.Text = "BUSCAR";
+            this.btnBuscarCategoria.UseVisualStyleBackColor = true;
+            this.btnBuscarCategoria.Click += new System.EventHandler(this.btnBuscarCategoria_Click);
+            // 
+            // txtBuscarCategoria
+            // 
+            this.txtBuscarCategoria.Depth = 0;
+            this.txtBuscarCategoria.Hint = "Buscar Categoria";
+            this.txtBuscarCategoria.Location = new System.Drawing.Point(193, 184);
+            this.txtBuscarCategoria.MaxLength = 32767;
+            this.txtBuscarCategoria.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBuscarCategoria.Name = "txtBuscarCategoria";
+            this.txtBuscarCategoria.PasswordChar = '\0';
+            this.txtBuscarCategoria.SelectedText = "";
+            this.txtBuscarCategoria.SelectionLength = 0;
+            this.txtBuscarCategoria.SelectionStart = 0;
+            this.txtBuscarCategoria.Size = new System.Drawing.Size(233, 23);
+            this.txtBuscarCategoria.TabIndex = 10;
+            this.txtBuscarCategoria.TabStop = false;
+            this.txtBuscarCategoria.UseSystemPasswordChar = false;
+            // 
+            // lblAdminCategorias
+            // 
+            this.lblAdminCategorias.AutoSize = true;
+            this.lblAdminCategorias.Depth = 0;
+            this.lblAdminCategorias.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAdminCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdminCategorias.Location = new System.Drawing.Point(315, 56);
+            this.lblAdminCategorias.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdminCategorias.Name = "lblAdminCategorias";
+            this.lblAdminCategorias.Size = new System.Drawing.Size(227, 19);
+            this.lblAdminCategorias.TabIndex = 9;
+            this.lblAdminCategorias.Text = "ADMINISTRACION CATEGORIAS";
             // 
             // frmListaCategoria
             // 

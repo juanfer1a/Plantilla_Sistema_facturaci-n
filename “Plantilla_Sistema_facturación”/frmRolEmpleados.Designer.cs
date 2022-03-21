@@ -38,9 +38,9 @@ namespace _Plantilla_Sistema_facturación_
             this.lblSalirRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizarRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblRolEmpleados = new MaterialSkin.Controls.MaterialLabel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbRolEmpleados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // grbRolEmpleados
@@ -146,9 +146,9 @@ namespace _Plantilla_Sistema_facturación_
             this.lblRolEmpleados.Text = "ROL EMPLEADOS";
             this.lblRolEmpleados.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // errorProvider1
+            // MensajeError
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.MensajeError.ContainerControl = this;
             // 
             // frmRolEmpleados
             // 
@@ -166,7 +166,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Load += new System.EventHandler(this.frmRolEmpleados_Load);
             this.grbRolEmpleados.ResumeLayout(false);
             this.grbRolEmpleados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +182,6 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizarRol;
         private System.Windows.Forms.TextBox txbDescripcionRol;
         private MaterialSkin.Controls.MaterialLabel lblDescripcionRol;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }
