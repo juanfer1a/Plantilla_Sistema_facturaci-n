@@ -33,7 +33,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtIdCategoria = new System.Windows.Forms.TextBox();
             this.txtNombreCategoria = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblCatProduc = new MaterialSkin.Controls.MaterialLabel();
-            this.lblSalirCatProduc = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSalirCatProduc = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizarCatProduc = new MaterialSkin.Controls.MaterialRaisedButton();
             this.grbCategoriaProductos = new System.Windows.Forms.GroupBox();
             this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
@@ -78,21 +78,21 @@ namespace _Plantilla_Sistema_facturación_
             this.lblCatProduc.TabIndex = 12;
             this.lblCatProduc.Text = "CATEGORIA PRODUCTOS";
             // 
-            // lblSalirCatProduc
+            // btnSalirCatProduc
             // 
-            this.lblSalirCatProduc.AutoSize = true;
-            this.lblSalirCatProduc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.lblSalirCatProduc.Depth = 0;
-            this.lblSalirCatProduc.Icon = null;
-            this.lblSalirCatProduc.Location = new System.Drawing.Point(291, 140);
-            this.lblSalirCatProduc.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblSalirCatProduc.Name = "lblSalirCatProduc";
-            this.lblSalirCatProduc.Primary = true;
-            this.lblSalirCatProduc.Size = new System.Drawing.Size(58, 36);
-            this.lblSalirCatProduc.TabIndex = 16;
-            this.lblSalirCatProduc.Text = "SALIR";
-            this.lblSalirCatProduc.UseVisualStyleBackColor = true;
-            this.lblSalirCatProduc.Click += new System.EventHandler(this.lblSalirCatProduc_Click);
+            this.btnSalirCatProduc.AutoSize = true;
+            this.btnSalirCatProduc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalirCatProduc.Depth = 0;
+            this.btnSalirCatProduc.Icon = null;
+            this.btnSalirCatProduc.Location = new System.Drawing.Point(291, 140);
+            this.btnSalirCatProduc.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalirCatProduc.Name = "btnSalirCatProduc";
+            this.btnSalirCatProduc.Primary = true;
+            this.btnSalirCatProduc.Size = new System.Drawing.Size(58, 36);
+            this.btnSalirCatProduc.TabIndex = 16;
+            this.btnSalirCatProduc.Text = "SALIR";
+            this.btnSalirCatProduc.UseVisualStyleBackColor = true;
+            this.btnSalirCatProduc.Click += new System.EventHandler(this.btnSalirCatProduc_Click);
             // 
             // btnActualizarCatProduc
             // 
@@ -113,7 +113,7 @@ namespace _Plantilla_Sistema_facturación_
             // grbCategoriaProductos
             // 
             this.grbCategoriaProductos.Controls.Add(this.txtIdCategoria);
-            this.grbCategoriaProductos.Controls.Add(this.lblSalirCatProduc);
+            this.grbCategoriaProductos.Controls.Add(this.btnSalirCatProduc);
             this.grbCategoriaProductos.Controls.Add(this.txtNombreCategoria);
             this.grbCategoriaProductos.Controls.Add(this.btnActualizarCatProduc);
             this.grbCategoriaProductos.Location = new System.Drawing.Point(12, 70);
@@ -151,7 +151,7 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.TextBox txtIdCategoria;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreCategoria;
         private MaterialSkin.Controls.MaterialLabel lblCatProduc;
-        private MaterialSkin.Controls.MaterialRaisedButton lblSalirCatProduc;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalirCatProduc;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizarCatProduc;
         private System.Windows.Forms.GroupBox grbCategoriaProductos;
         private System.Windows.Forms.ErrorProvider MensajeError;

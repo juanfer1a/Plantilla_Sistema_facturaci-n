@@ -63,6 +63,11 @@ namespace _Plantilla_Sistema_facturación_
                 int posActual = dgvCategoria.CurrentRow.Index;//Obtenemos el numero de la fila
                 if (MessageBox.Show("Esta seguro de borrar", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     MessageBox.Show($"BORRANDO indice{e.RowIndex} ID{dgvCategoria[0, posActual].Value.ToString()}");//Mostramos mensaje
+                int IdCategoria = Convert.ToInt32(dgvCategoria[0, posActual].Value.ToString());
+                string sentencia = $"EXEC Eliminar_Producto {IdCategoria}";
+                string mensaje = Acceso.EjecutarComando(sentencia);
+                dgvCategoria.Rows.Clear();
+                llenar_grid();
             }
 
             if (dgvCategoria.Columns[e.ColumnIndex].Name == "btnEditar")//Obtenemos el nombre de la columna para comparar
