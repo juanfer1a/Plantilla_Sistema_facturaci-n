@@ -195,7 +195,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnClientes.ForeColor = System.Drawing.Color.GhostWhite;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(4, 200);
+            this.btnClientes.Location = new System.Drawing.Point(21, 200);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(142, 39);
             this.btnClientes.TabIndex = 4;
@@ -206,6 +206,7 @@ namespace _Plantilla_Sistema_facturación_
             // 
             // btnProductos
             // 
+            this.btnProductos.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -213,7 +214,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnProductos.ForeColor = System.Drawing.Color.GhostWhite;
             this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(4, 262);
+            this.btnProductos.Location = new System.Drawing.Point(8, 262);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(165, 39);
             this.btnProductos.TabIndex = 3;

@@ -29,6 +29,7 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblAdminClientes = new MaterialSkin.Controls.MaterialLabel();
             this.txtBuscarClientes = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -41,7 +42,9 @@ namespace _Plantilla_Sistema_facturación_
             this.btnEditarCliente = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAdminClientes
@@ -69,7 +72,7 @@ namespace _Plantilla_Sistema_facturación_
             this.txtBuscarClientes.SelectedText = "";
             this.txtBuscarClientes.SelectionLength = 0;
             this.txtBuscarClientes.SelectionStart = 0;
-            this.txtBuscarClientes.Size = new System.Drawing.Size(420, 23);
+            this.txtBuscarClientes.Size = new System.Drawing.Size(303, 23);
             this.txtBuscarClientes.TabIndex = 3;
             this.txtBuscarClientes.TabStop = false;
             this.txtBuscarClientes.UseSystemPasswordChar = false;
@@ -80,7 +83,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBuscar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscar.Depth = 0;
             this.btnBuscar.Icon = null;
-            this.btnBuscar.Location = new System.Drawing.Point(651, 165);
+            this.btnBuscar.Location = new System.Drawing.Point(494, 165);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Primary = true;
@@ -181,6 +184,10 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // MensajeError
+            // 
+            this.MensajeError.ContainerControl = this;
+            // 
             // frmListaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +205,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Text = "frmListaClientes";
             this.Load += new System.EventHandler(this.frmListaClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +225,6 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.DataGridViewTextBoxColumn intTelefonoCliente;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditarCliente;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }

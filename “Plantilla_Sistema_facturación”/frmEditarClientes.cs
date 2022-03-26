@@ -35,7 +35,7 @@ namespace _Plantilla_Sistema_facturación_
             }
             else
             {//Actulizar cliente
-             //ACTUALIZAR EL REGISTRO CON EL ID PASADO
+                lblTitulo.Text = "EDITAR CLIENTE";
                 string sentencia = $"select * from TBLCLIENTES where IdCliente = {idCliente}"; // CONSULTO REGISTRO DEL iDcLIENTE
 
                 dt = Acceso.EjecutarComandoDatos(sentencia);
@@ -66,8 +66,6 @@ namespace _Plantilla_Sistema_facturación_
                         $"'{txtTelefono.Text}', '{txtEmail.Text}','Juan','{DateTime.Now.ToShortDateString()}'";
                     MessageBox.Show(Acceso.EjecutarComando(sentencia));
                     actualizado = true;
-                    
-
                 }
                 catch (Exception ex)
                 {
@@ -81,29 +79,67 @@ namespace _Plantilla_Sistema_facturación_
         private Boolean validar()
         {
             Boolean errorCampos = true;
+            //campo nombre
             if (txtNombreCliente.Text == string.Empty)
             {
-                MensajeError.SetError(txtNombreCliente, "debeingresar el nombre del Cliente");
+                MensajeError.SetError(txtNombreCliente, "Debe ingresar el nombre del Cliente");
                 txtNombreCliente.Focus();
                 errorCampos = false;
             }
-            else { MensajeError.SetError(txtNombreCliente, ""); }
-            if (txtDocumento.Text == "")
+            else { MensajeError.SetError(txtNombreCliente, string.Empty); }
+
+            //campo email
+            if (txtEmail.Text == string.Empty)
             {
-                MensajeError.SetError(txtDocumento, "debe ingresar el documento");
+                MensajeError.SetError(txtEmail, "Debe ingresar el email del cliente");
+                txtEmail.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtEmail, string.Empty); }
+
+            //campo documento
+            if (txtDocumento.Text == string.Empty)
+            {
+                MensajeError.SetError(txtDocumento, "Debe ingresar el documento");
                 txtDocumento.Focus();
                 errorCampos = false;
             }
-            else { MensajeError.SetError(txtDocumento, ""); }
-            if (!esNumerico(txtDocumento.Text))
+            else if (!esNumerico(txtDocumento.Text))
             {
                 MensajeError.SetError(txtDocumento, "El Documento debe ser numerico");
                 txtDocumento.Focus();
                 return false;
             }
-            MensajeError.SetError(txtDocumento, "");
+            else { MensajeError.SetError(txtDocumento, string.Empty); }
+
+            //campo direccion
+            if (txtDireccion.Text == string.Empty)
+            {
+                MensajeError.SetError(txtDireccion, "Debe ingresar la direccion del cliente");
+                txtDocumento.Focus();
+                errorCampos = false;
+            }
+            else { MensajeError.SetError(txtDireccion, string.Empty); }
+
+
+            //campo telefono
+            if (txtTelefono.Text == string.Empty)//validar que el campo numero telefonico no este vacio 
+            {
+                MensajeError.SetError(txtTelefono, "Debe ingresar el telefono");
+                txtDocumento.Focus();
+                errorCampos = false;
+            }
+            else if (!esNumerico(txtTelefono.Text))//validar que el campo numero telefonico tenga valores nuemricos
+            {
+                MensajeError.SetError(txtTelefono, "El numero de telefono debe ser numerico");
+                txtDocumento.Focus();
+                return false;
+            }
+            else { MensajeError.SetError(txtTelefono, string.Empty); }
+
             return errorCampos;
         }
+
         //función para validar si un valor dado es numerico
         private bool esNumerico(string num)
         {
@@ -117,16 +153,20 @@ namespace _Plantilla_Sistema_facturación_
                 return false;
             }
         }
+
+        public void NombreBtnActualizar(string nombre)
+        {
+            btnActualizar.Text = nombre;
+        }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
             Guardar();
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
-        {   
+        {
             this.Close();
-        }       
+        }
 
         private void lblSalir_Click(object sender, EventArgs e)
         {

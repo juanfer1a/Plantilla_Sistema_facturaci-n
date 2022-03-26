@@ -29,6 +29,7 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSalirCategoria = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvCategoria = new System.Windows.Forms.DataGridView();
             this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +40,9 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBuscarCategoria = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtBuscarCategoria = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblAdminCategorias = new MaterialSkin.Controls.MaterialLabel();
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalirCategoria
@@ -165,6 +168,10 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminCategorias.TabIndex = 9;
             this.lblAdminCategorias.Text = "ADMINISTRACION CATEGORIAS";
             // 
+            // MensajeError
+            // 
+            this.MensajeError.ContainerControl = this;
+            // 
             // frmListaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +188,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Text = "frmListaCategoria";
             this.Load += new System.EventHandler(this.frmListaCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +206,6 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.DataGridViewTextBoxColumn strcliente;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }

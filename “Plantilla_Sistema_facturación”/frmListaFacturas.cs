@@ -51,26 +51,27 @@ namespace _Plantilla_Sistema_facturación_
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             string sentencia = $"EXEC SpConsultaFactura";
+            dt = Acceso.EjecutarComandoDatos(sentencia);
+            //string categoria = txtBuscarFactura.Text;
 
             if (dt.Rows.Count > 0)
             {
-                dgvFacturas.Rows.Clear();
 
-                dt = Acceso.EjecutarComandoDatos(sentencia);
                 foreach (DataRow row in dt.Rows)
                 {
+                    //string cliente = row[2].ToString();
                     if (row[2].Equals(txtBuscarFactura.Text))
                     {
+                        dgvFacturas.Rows.Clear();
                         // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
                         dgvFacturas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
                     }
-                    else MessageBox.Show($"No hay una factura asociada al cliente {txtBuscarFactura.Text}");
-                    break;
-                                     
+
                 }
             }
+
             Llenar_grid();
-          
+
         }
         private void dgvFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -29,12 +29,9 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSalirProducto = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnProductoNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnBuscarProducto = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtBuscarProductos = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblAdminProductos = new MaterialSkin.Controls.MaterialLabel();
             this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strNombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intReferenciaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +40,13 @@ namespace _Plantilla_Sistema_facturación_
             this.intStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnProductoNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBuscarProducto = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtBuscarProductos = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblAdminProductos = new MaterialSkin.Controls.MaterialLabel();
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalirProducto
@@ -52,7 +55,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirProducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalirProducto.Depth = 0;
             this.btnSalirProducto.Icon = null;
-            this.btnSalirProducto.Location = new System.Drawing.Point(848, 369);
+            this.btnSalirProducto.Location = new System.Drawing.Point(922, 369);
             this.btnSalirProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalirProducto.Name = "btnSalirProducto";
             this.btnSalirProducto.Primary = true;
@@ -79,68 +82,6 @@ namespace _Plantilla_Sistema_facturación_
             this.dgvProductos.Size = new System.Drawing.Size(968, 150);
             this.dgvProductos.TabIndex = 13;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
-            // 
-            // btnProductoNuevo
-            // 
-            this.btnProductoNuevo.AutoSize = true;
-            this.btnProductoNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProductoNuevo.Depth = 0;
-            this.btnProductoNuevo.Icon = null;
-            this.btnProductoNuevo.Location = new System.Drawing.Point(840, 171);
-            this.btnProductoNuevo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnProductoNuevo.Name = "btnProductoNuevo";
-            this.btnProductoNuevo.Primary = true;
-            this.btnProductoNuevo.Size = new System.Drawing.Size(66, 36);
-            this.btnProductoNuevo.TabIndex = 12;
-            this.btnProductoNuevo.Text = "NUEVO";
-            this.btnProductoNuevo.UseVisualStyleBackColor = true;
-            this.btnProductoNuevo.Click += new System.EventHandler(this.btnProductoNuevo_Click);
-            // 
-            // btnBuscarProducto
-            // 
-            this.btnBuscarProducto.AutoSize = true;
-            this.btnBuscarProducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnBuscarProducto.Depth = 0;
-            this.btnBuscarProducto.Icon = null;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(625, 171);
-            this.btnBuscarProducto.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Primary = true;
-            this.btnBuscarProducto.Size = new System.Drawing.Size(74, 36);
-            this.btnBuscarProducto.TabIndex = 11;
-            this.btnBuscarProducto.Text = "BUSCAR";
-            this.btnBuscarProducto.UseVisualStyleBackColor = true;
-            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
-            // 
-            // txtBuscarProductos
-            // 
-            this.txtBuscarProductos.Depth = 0;
-            this.txtBuscarProductos.Hint = "Buscar Producto";
-            this.txtBuscarProductos.Location = new System.Drawing.Point(42, 184);
-            this.txtBuscarProductos.MaxLength = 32767;
-            this.txtBuscarProductos.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtBuscarProductos.Name = "txtBuscarProductos";
-            this.txtBuscarProductos.PasswordChar = '\0';
-            this.txtBuscarProductos.SelectedText = "";
-            this.txtBuscarProductos.SelectionLength = 0;
-            this.txtBuscarProductos.SelectionStart = 0;
-            this.txtBuscarProductos.Size = new System.Drawing.Size(475, 23);
-            this.txtBuscarProductos.TabIndex = 10;
-            this.txtBuscarProductos.TabStop = false;
-            this.txtBuscarProductos.UseSystemPasswordChar = false;
-            // 
-            // lblAdminProductos
-            // 
-            this.lblAdminProductos.AutoSize = true;
-            this.lblAdminProductos.Depth = 0;
-            this.lblAdminProductos.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblAdminProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblAdminProductos.Location = new System.Drawing.Point(394, 72);
-            this.lblAdminProductos.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblAdminProductos.Name = "lblAdminProductos";
-            this.lblAdminProductos.Size = new System.Drawing.Size(223, 19);
-            this.lblAdminProductos.TabIndex = 9;
-            this.lblAdminProductos.Text = "ADMINISTRACION PRODUCTOS";
             // 
             // id_Cliente
             // 
@@ -197,6 +138,72 @@ namespace _Plantilla_Sistema_facturación_
             this.btnBorrar.UseColumnTextForButtonValue = true;
             this.btnBorrar.Width = 80;
             // 
+            // btnProductoNuevo
+            // 
+            this.btnProductoNuevo.AutoSize = true;
+            this.btnProductoNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnProductoNuevo.Depth = 0;
+            this.btnProductoNuevo.Icon = null;
+            this.btnProductoNuevo.Location = new System.Drawing.Point(914, 171);
+            this.btnProductoNuevo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnProductoNuevo.Name = "btnProductoNuevo";
+            this.btnProductoNuevo.Primary = true;
+            this.btnProductoNuevo.Size = new System.Drawing.Size(66, 36);
+            this.btnProductoNuevo.TabIndex = 12;
+            this.btnProductoNuevo.Text = "NUEVO";
+            this.btnProductoNuevo.UseVisualStyleBackColor = true;
+            this.btnProductoNuevo.Click += new System.EventHandler(this.btnProductoNuevo_Click);
+            // 
+            // btnBuscarProducto
+            // 
+            this.btnBuscarProducto.AutoSize = true;
+            this.btnBuscarProducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBuscarProducto.Depth = 0;
+            this.btnBuscarProducto.Icon = null;
+            this.btnBuscarProducto.Location = new System.Drawing.Point(625, 171);
+            this.btnBuscarProducto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Primary = true;
+            this.btnBuscarProducto.Size = new System.Drawing.Size(74, 36);
+            this.btnBuscarProducto.TabIndex = 11;
+            this.btnBuscarProducto.Text = "BUSCAR";
+            this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            // 
+            // txtBuscarProductos
+            // 
+            this.txtBuscarProductos.Depth = 0;
+            this.txtBuscarProductos.Hint = "Buscar Producto";
+            this.txtBuscarProductos.Location = new System.Drawing.Point(42, 184);
+            this.txtBuscarProductos.MaxLength = 32767;
+            this.txtBuscarProductos.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBuscarProductos.Name = "txtBuscarProductos";
+            this.txtBuscarProductos.PasswordChar = '\0';
+            this.txtBuscarProductos.SelectedText = "";
+            this.txtBuscarProductos.SelectionLength = 0;
+            this.txtBuscarProductos.SelectionStart = 0;
+            this.txtBuscarProductos.Size = new System.Drawing.Size(475, 23);
+            this.txtBuscarProductos.TabIndex = 10;
+            this.txtBuscarProductos.TabStop = false;
+            this.txtBuscarProductos.UseSystemPasswordChar = false;
+            // 
+            // lblAdminProductos
+            // 
+            this.lblAdminProductos.AutoSize = true;
+            this.lblAdminProductos.Depth = 0;
+            this.lblAdminProductos.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAdminProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdminProductos.Location = new System.Drawing.Point(394, 72);
+            this.lblAdminProductos.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdminProductos.Name = "lblAdminProductos";
+            this.lblAdminProductos.Size = new System.Drawing.Size(223, 19);
+            this.lblAdminProductos.TabIndex = 9;
+            this.lblAdminProductos.Text = "ADMINISTRACION PRODUCTOS";
+            // 
+            // MensajeError
+            // 
+            this.MensajeError.ContainerControl = this;
+            // 
             // frmListaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +220,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Text = "frmListaProductos";
             this.Load += new System.EventHandler(this.frmListaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +242,6 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.DataGridViewTextBoxColumn intStock;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditarProducto;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }

@@ -41,7 +41,7 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnBuscarCategoria_Click(object sender, EventArgs e)
         {
-            consultar();
+            validar();
         }
 
         private void btnNuevoCategoria_Click(object sender, EventArgs e)
@@ -82,6 +82,7 @@ namespace _Plantilla_Sistema_facturación_
         public void consultar()
         {
             string sentencia = $"select *  from TBLCATEGORIA_PROD where StrDescripcion ='{txtBuscarCategoria.Text}'"; // CONSULTO REGISTRO DEL iDcLIENTE
+            dt = Acceso.EjecutarComandoDatos(sentencia);
 
 
             if (dt.Rows.Count > 0)
@@ -89,7 +90,6 @@ namespace _Plantilla_Sistema_facturación_
                 dgvCategoria.Rows.Clear();
                 txtBuscarCategoria.Clear();
 
-                dt = Acceso.EjecutarComandoDatos(sentencia);
                 foreach (DataRow row in dt.Rows)
                 {
                     // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
@@ -98,10 +98,28 @@ namespace _Plantilla_Sistema_facturación_
             }
             else
             {
-                MessageBox.Show("No se encuentra un usuario con el nuemero de documento ingresado");
+                MessageBox.Show("No se encuentra una categoria con el nombre ingresado");
                 llenar_grid();
 
             }
+        }
+
+        private Boolean validar()
+        {
+            Boolean errorCampos = true;
+            if (txtBuscarCategoria.Text == string.Empty)
+            {
+                MensajeError.SetError(txtBuscarCategoria, "Debe ingresar el nombre de la categoria a buscar");
+                txtBuscarCategoria.Focus();
+                errorCampos = false;
+            }
+            else
+            {
+                MensajeError.SetError(txtBuscarCategoria, string.Empty);
+                consultar();
+            }
+
+            return errorCampos;
         }
 
     }

@@ -42,11 +42,11 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnProductoNuevo_Click(object sender, EventArgs e)
         {
-                frmProductos Producto = new frmProductos();
-                Producto.IdProducto = 0;
-                Producto.ShowDialog();//muestra el formulario de forma modal
+            frmProductos Producto = new frmProductos();
+            Producto.IdProducto = 0;
+            Producto.ShowDialog();//muestra el formulario de forma modal
         }
-           
+
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -72,23 +72,24 @@ namespace _Plantilla_Sistema_facturación_
             }
         }
 
-       
+
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            consultar();
+            validar();
         }
 
         public void consultar()
         {
             string sentencia = $"select IdProducto,strNombre,Strcodigo,NumPrecioCompra,NumPrecioVenta,NumStock from TBLPRODUCTO " +
-               $"where StrNombre ='{txtBuscarProductos.Text}'"; // CONSULTO REGISTRO DEL iDcLIENTE
+               $"where StrNombre ='{txtBuscarProductos.Text}'"; // CONSULTO REGISTRO DEL PRODUCTO POR NOMBRE
+            dt = Acceso.EjecutarComandoDatos(sentencia);
 
 
             if (dt.Rows.Count > 0)
             {
                 dgvProductos.Rows.Clear();
+                txtBuscarProductos.Clear();
 
-                dt = Acceso.EjecutarComandoDatos(sentencia);
                 foreach (DataRow row in dt.Rows)
                 {
                     // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
@@ -97,9 +98,42 @@ namespace _Plantilla_Sistema_facturación_
             }
             else
             {
-                MessageBox.Show("No se encuentra un usuario con el nuemero de documento ingresado");
+                MessageBox.Show("No se encuentra un producto con ese nombre intentelo de nuevo");
                 Llenar_grid();
 
+            }
+        }
+
+        //FUNCIÓN QE PERMITE VALIDAR LOS CAMPOS DEL FORMULARIO
+        private Boolean validar()
+        {
+            Boolean errorCampos = true;
+            if (txtBuscarProductos.Text == string.Empty)
+            {
+                MensajeError.SetError(txtBuscarProductos, "Debe ingresar el nombre del producto");
+                txtBuscarProductos.Focus();
+                errorCampos = false;
+            }
+            else
+            {
+                MensajeError.SetError(txtBuscarProductos, string.Empty);
+                consultar();
+            }
+
+            return errorCampos;
+        }
+
+        //función para validar si un valor dado es numerico
+        private bool esNumerico(string num)
+        {
+            try
+            {
+                double x = Convert.ToDouble(num);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 
