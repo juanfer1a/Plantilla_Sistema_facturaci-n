@@ -60,21 +60,7 @@ namespace _Plantilla_Sistema_facturación_
         {
             Boolean actualizado = false;
             if (validar())
-            {
-   //             @IdEmpleado int,
-   //         @strNombre varchar(50), 
-			// @NumDocumento bigint,
-   //          @StrDireccion varchar(50)
-			//,@StrTelefono varchar(20)   
-			//,@StrEmail varchar(50)   
-			//,@IdRolEmpleado int
-
-   //         , @DtmIngreso  datetime
-			//,@DtmRetiro datetime
-   //         , @strDatosAdicionales  nvarchar(250)
-			//,@DtmFechaModifica datetime
-   //         , @StrUsuarioModifico  varchar(20)
-
+            {                
                 try
                 {
                     Acceso_datos Acceso = new Acceso_datos();
@@ -100,7 +86,7 @@ namespace _Plantilla_Sistema_facturación_
 
             if (txtNombreEmpleado.Text == string.Empty)
             {
-                MensajeError.SetError(txtNombreEmpleado, "Debe ingresar el nombre del producto");
+                MensajeError.SetError(txtNombreEmpleado, "Debe ingresar el nombre del empleado");
                 txtNombreEmpleado.Focus();
                 errorCampos = false;
             }
@@ -108,14 +94,23 @@ namespace _Plantilla_Sistema_facturación_
 
             if (txtDocumentoEmpleado.Text == string.Empty)
             {
-                MensajeError.SetError(txtDocumentoEmpleado, "Debe ingresar el codigo de referencia del producto");
+                MensajeError.SetError(txtDocumentoEmpleado, "Debe ingresar numero documento del empleado");
+                txtDocumentoEmpleado.Focus();
+                errorCampos = false;
+            }
+            else if (!esNumerico(txtDocumentoEmpleado.Text))
+            {
+
+                MensajeError.SetError(txtDocumentoEmpleado, "El numero de documento es un valor numerico");
                 txtDocumentoEmpleado.Focus();
                 errorCampos = false;
             }
             else { MensajeError.SetError(txtDocumentoEmpleado, string.Empty); }
+                     
+
             if (txtDireccionEmpleado.Text == string.Empty)
             {
-                MensajeError.SetError(txtDireccionEmpleado, "Debe ingresar el codigo de referencia del producto");
+                MensajeError.SetError(txtDireccionEmpleado, "Debe ingresar direccion para el empleado");
                 txtDocumentoEmpleado.Focus();
                 errorCampos = false;
             }
@@ -123,20 +118,40 @@ namespace _Plantilla_Sistema_facturación_
 
             if (txtTelefonoEmpleado.Text == string.Empty)
             {
-                MensajeError.SetError(txtTelefonoEmpleado, "Debe ingresar el codigo de referencia del producto");
+                MensajeError.SetError(txtTelefonoEmpleado, "Debe ingresar un numero de telefono para el empleado");
                 txtTelefonoEmpleado.Focus();
+                errorCampos = false;
+            }
+            else if (!esNumerico(txtTelefonoEmpleado.Text))
+            {
+
+                MensajeError.SetError(txtTelefonoEmpleado, "El numero de telefono debe ser numerico");
+                txtDocumentoEmpleado.Focus();
                 errorCampos = false;
             }
             else { MensajeError.SetError(txtTelefonoEmpleado, string.Empty); }
 
             if (txtEmailEmpleado.Text == string.Empty)
             {
-                MensajeError.SetError(txtEmailEmpleado, "Debe ingresar el codigo de referencia del producto");
+                MensajeError.SetError(txtEmailEmpleado, "Debe ingresar un email para el empleado");
                 txtEmailEmpleado.Focus();
                 errorCampos = false;
             }
             else { MensajeError.SetError(txtEmailEmpleado, string.Empty); }
             return errorCampos;
+        }
+
+        private bool esNumerico(string num)
+        {
+            try
+            {
+                double x = Convert.ToDouble(num);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public void Cargar_ComboRol()

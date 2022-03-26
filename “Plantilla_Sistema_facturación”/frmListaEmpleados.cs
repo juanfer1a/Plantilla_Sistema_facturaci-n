@@ -32,8 +32,8 @@ namespace _Plantilla_Sistema_facturación_
             //ACTUALIZAR EL REGISTRO CON EL ID PASADO
             string sentencia = $"select IdEmpleado,strNombre,NumDocumento,StrDireccion,StrTelefono,StrEmail,IdRolEmpleado," +
                 $"DtmIngreso,DtmRetiro from TBLEMPLEADO"; // CONSULTO REGISTRO DEL iDcLIENTE
-
             dt = Acceso.EjecutarComandoDatos(sentencia);
+
             foreach (DataRow row in dt.Rows)
             {
                 // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
@@ -43,7 +43,7 @@ namespace _Plantilla_Sistema_facturación_
        
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcion en desarrollo");
+            validar();
         }
 
         private void btnSalirCliente_Click(object sender, EventArgs e)
@@ -80,6 +80,71 @@ namespace _Plantilla_Sistema_facturación_
             empleados.IdEmpleado = 0;
             empleados.ShowDialog();
         }
-               
+
+        public void Consultar()//metodo que busca en la base de datos el cliente que coincide con el numero de documento
+        {
+            string sentencia = $"select IdEmpleado,strNombre,NumDocumento,StrDireccion,StrTelefono,StrEmail,IdRolEmpleado," +
+                $"DtmIngreso,DtmRetiro from TBLEMPLEADO where NumDocumento = {txtBuscarEmpleado.Text}"; // CONSULTO REGISTRO DEL iDcLIENTE
+            dt = Acceso.EjecutarComandoDatos(sentencia);
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvListaEmpleados.Rows.Clear();
+                txtBuscarEmpleado.Clear();
+                foreach (DataRow row in dt.Rows)
+                {
+                    // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                    dgvListaEmpleados.Rows.Add(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra un usuario con el nuemero de documento ingresado");
+                llenar_grid();
+
+            }
+
+        }
+
+        //FUNCIÓN QE PERMITE VALIDAR LOS CAMPOS DEL FORMULARIO
+        private Boolean validar()
+        {
+            Boolean errorCampos = true;
+            if (txtBuscarEmpleado.Text == string.Empty)
+            {
+                MensajeError.SetError(txtBuscarEmpleado, "Debe ingresar el nuemero de documento");
+                txtBuscarEmpleado.Focus();
+                errorCampos = false;
+            }
+            else if (!esNumerico(txtBuscarEmpleado.Text))
+            {
+
+                MensajeError.SetError(txtBuscarEmpleado, "El numero de documento es un valor numerico");
+                txtBuscarEmpleado.Focus();
+                errorCampos = false;
+
+            }
+            else
+            {
+                MensajeError.SetError(txtBuscarEmpleado, string.Empty);
+                Consultar();
+            }
+
+            return errorCampos;
+        }
+
+        private bool esNumerico(string num)
+        {
+            try
+            {
+                double x = Convert.ToDouble(num);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

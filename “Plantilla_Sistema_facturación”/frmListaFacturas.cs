@@ -50,27 +50,7 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            string sentencia = $"EXEC SpConsultaFactura";
-            dt = Acceso.EjecutarComandoDatos(sentencia);
-            //string categoria = txtBuscarFactura.Text;
-
-            if (dt.Rows.Count > 0)
-            {
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    //string cliente = row[2].ToString();
-                    if (row[2].Equals(txtBuscarFactura.Text))
-                    {
-                        dgvFacturas.Rows.Clear();
-                        // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
-                        dgvFacturas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
-                    }
-
-                }
-            }
-
-            Llenar_grid();
+            validar();        
 
         }
         private void dgvFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -96,7 +76,57 @@ namespace _Plantilla_Sistema_facturación_
             }
         }
 
-        private void btnSalirProducto_Click(object sender, EventArgs e)
+
+        public void consultar()
+        {
+            bool bandera = false;
+            string sentencia = $"EXEC SpConsultaFactura";
+            dt = Acceso.EjecutarComandoDatos(sentencia);
+
+
+            if (dt.Rows.Count > 0)
+            {
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row[2].Equals(txtBuscarFactura.Text))
+                    {
+                        bandera = true;
+                        dgvFacturas.Rows.Clear();
+                        txtBuscarFactura.Clear();
+
+                        // LLENAMOS LOS CAMPOS CON EL REGISTRO CONSULTADO
+                        dgvFacturas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+                    }
+                }
+
+                if (!bandera)
+                {
+                    MessageBox.Show($"No se encuentra ninguna factura asociada al usuario{txtBuscarFactura.Text}");
+                    txtBuscarFactura.Clear();
+                }
+            }
+        }
+        private Boolean validar()
+        {
+            Boolean errorCampos = true;
+            //campo nombre
+            if (txtBuscarFactura.Text == string.Empty)
+            {
+                MensajeError.SetError(txtBuscarFactura, "Debe ingresar el nombre del cliente");
+                txtBuscarFactura.Focus();
+                errorCampos = false;
+            }
+            else 
+            {
+                consultar();
+                MensajeError.SetError(txtBuscarFactura, string.Empty); 
+            }
+
+            return errorCampos;
+        }
+
+            private void btnSalirProducto_Click(object sender, EventArgs e)
         {
             this.Close();
         }

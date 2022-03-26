@@ -29,6 +29,7 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvListaEmpleados = new System.Windows.Forms.DataGridView();
             this.intIdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strNameEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +47,9 @@ namespace _Plantilla_Sistema_facturación_
             this.btnEmpleadoNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBuscarEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalirListEmpleado = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvListaEmpleados
@@ -209,6 +212,10 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirListEmpleado.UseVisualStyleBackColor = true;
             this.btnSalirListEmpleado.Click += new System.EventHandler(this.btnSalirCliente_Click);
             // 
+            // MensajeError
+            // 
+            this.MensajeError.ContainerControl = this;
+            // 
             // frmListaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +232,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Text = "frmListaEmpleados";
             this.Load += new System.EventHandler(this.frmListaEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +257,6 @@ namespace _Plantilla_Sistema_facturación_
         private System.Windows.Forms.DataGridViewTextBoxColumn strFechaRetiro;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }

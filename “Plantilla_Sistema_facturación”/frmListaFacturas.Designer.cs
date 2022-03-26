@@ -29,23 +29,23 @@ namespace _Plantilla_Sistema_facturación_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSalirFactura = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
+            this.btnFacturaNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBuscarFactura = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtBuscarFactura = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblAdminProductos = new MaterialSkin.Controls.MaterialLabel();
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.intNroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strFechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intIva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnFacturaNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnBuscarFactura = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtBuscarFactura = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblAdminProductos = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalirFactura
@@ -54,7 +54,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnSalirFactura.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalirFactura.Depth = 0;
             this.btnSalirFactura.Icon = null;
-            this.btnSalirFactura.Location = new System.Drawing.Point(913, 413);
+            this.btnSalirFactura.Location = new System.Drawing.Point(862, 413);
             this.btnSalirFactura.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalirFactura.Name = "btnSalirFactura";
             this.btnSalirFactura.Primary = true;
@@ -73,83 +73,13 @@ namespace _Plantilla_Sistema_facturación_
             this.strCliente,
             this.strEmpleado,
             this.strEstado,
-            this.intDescuento,
-            this.intIva,
-            this.intFactura,
             this.btnEditar,
             this.btnBorrar});
             this.dgvFacturas.Location = new System.Drawing.Point(28, 257);
             this.dgvFacturas.Name = "dgvFacturas";
-            this.dgvFacturas.Size = new System.Drawing.Size(943, 150);
+            this.dgvFacturas.Size = new System.Drawing.Size(892, 150);
             this.dgvFacturas.TabIndex = 18;
             this.dgvFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFacturas_CellContentClick);
-            // 
-            // intNroFactura
-            // 
-            this.intNroFactura.HeaderText = "NRO. FACTURA";
-            this.intNroFactura.Name = "intNroFactura";
-            this.intNroFactura.Width = 80;
-            // 
-            // strFechaRegistro
-            // 
-            this.strFechaRegistro.HeaderText = "FECHA REGISTRO";
-            this.strFechaRegistro.Name = "strFechaRegistro";
-            this.strFechaRegistro.Width = 120;
-            // 
-            // strCliente
-            // 
-            this.strCliente.HeaderText = "CLIENTE";
-            this.strCliente.Name = "strCliente";
-            this.strCliente.Width = 250;
-            // 
-            // strEmpleado
-            // 
-            this.strEmpleado.HeaderText = "EMPLEADO";
-            this.strEmpleado.Name = "strEmpleado";
-            this.strEmpleado.Width = 220;
-            // 
-            // strEstado
-            // 
-            this.strEstado.HeaderText = "ESTADO FACTURA";
-            this.strEstado.Name = "strEstado";
-            // 
-            // intDescuento
-            // 
-            this.intDescuento.HeaderText = "DESCUENTO";
-            this.intDescuento.Name = "intDescuento";
-            this.intDescuento.Width = 80;
-            // 
-            // intIva
-            // 
-            this.intIva.HeaderText = "TOTAL IVA";
-            this.intIva.Name = "intIva";
-            this.intIva.Width = 80;
-            // 
-            // intFactura
-            // 
-            this.intFactura.HeaderText = "TOTAL FACTURA";
-            this.intFactura.Name = "intFactura";
-            this.intFactura.Width = 80;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.HeaderText = "EDITAR";
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseColumnTextForButtonValue = true;
-            this.btnEditar.Width = 80;
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.HeaderText = "BORRAR";
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnBorrar.Text = "BORRAR";
-            this.btnBorrar.UseColumnTextForButtonValue = true;
-            this.btnBorrar.Width = 80;
             // 
             // btnFacturaNuevo
             // 
@@ -157,7 +87,7 @@ namespace _Plantilla_Sistema_facturación_
             this.btnFacturaNuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnFacturaNuevo.Depth = 0;
             this.btnFacturaNuevo.Icon = null;
-            this.btnFacturaNuevo.Location = new System.Drawing.Point(905, 215);
+            this.btnFacturaNuevo.Location = new System.Drawing.Point(854, 215);
             this.btnFacturaNuevo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnFacturaNuevo.Name = "btnFacturaNuevo";
             this.btnFacturaNuevo.Primary = true;
@@ -206,18 +136,71 @@ namespace _Plantilla_Sistema_facturación_
             this.lblAdminProductos.Depth = 0;
             this.lblAdminProductos.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblAdminProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblAdminProductos.Location = new System.Drawing.Point(367, 78);
+            this.lblAdminProductos.Location = new System.Drawing.Point(349, 78);
             this.lblAdminProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblAdminProductos.Name = "lblAdminProductos";
             this.lblAdminProductos.Size = new System.Drawing.Size(212, 19);
             this.lblAdminProductos.TabIndex = 20;
             this.lblAdminProductos.Text = "ADMINISTRACION FACTURAS";
             // 
+            // MensajeError
+            // 
+            this.MensajeError.ContainerControl = this;
+            // 
+            // intNroFactura
+            // 
+            this.intNroFactura.HeaderText = "NRO. FACTURA";
+            this.intNroFactura.Name = "intNroFactura";
+            this.intNroFactura.Width = 80;
+            // 
+            // strFechaRegistro
+            // 
+            this.strFechaRegistro.HeaderText = "FECHA REGISTRO";
+            this.strFechaRegistro.Name = "strFechaRegistro";
+            this.strFechaRegistro.Width = 120;
+            // 
+            // strCliente
+            // 
+            this.strCliente.HeaderText = "CLIENTE";
+            this.strCliente.Name = "strCliente";
+            this.strCliente.Width = 250;
+            // 
+            // strEmpleado
+            // 
+            this.strEmpleado.HeaderText = "EMPLEADO";
+            this.strEmpleado.Name = "strEmpleado";
+            this.strEmpleado.Width = 220;
+            // 
+            // strEstado
+            // 
+            this.strEstado.HeaderText = "ESTADO FACTURA";
+            this.strEstado.Name = "strEstado";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "EDITAR";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseColumnTextForButtonValue = true;
+            this.btnEditar.Width = 80;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.HeaderText = "BORRAR";
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.UseColumnTextForButtonValue = true;
+            this.btnBorrar.Width = 80;
+            // 
             // frmListaFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 500);
+            this.ClientSize = new System.Drawing.Size(943, 500);
             this.Controls.Add(this.lblAdminProductos);
             this.Controls.Add(this.btnSalirFactura);
             this.Controls.Add(this.dgvFacturas);
@@ -229,6 +212,7 @@ namespace _Plantilla_Sistema_facturación_
             this.Text = "frmListaFacturas";
             this.Load += new System.EventHandler(this.frmListaFacturas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,14 +226,12 @@ namespace _Plantilla_Sistema_facturación_
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarFactura;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarFactura;
         private MaterialSkin.Controls.MaterialLabel lblAdminProductos;
+        private System.Windows.Forms.ErrorProvider MensajeError;
         private System.Windows.Forms.DataGridViewTextBoxColumn intNroFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn strFechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn strCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn strEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn strEstado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intDescuento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intIva;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intFactura;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
     }
