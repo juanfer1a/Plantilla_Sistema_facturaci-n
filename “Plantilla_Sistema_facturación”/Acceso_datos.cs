@@ -20,11 +20,7 @@ namespace _Plantilla_Sistema_facturación_
 
         //Guardamos el Usuario que realizo el login
         public static string UsuarioActivo;
-
-        //public static string usuario;
-
-        //public static string clave;
-
+               
         //R
         #region conexión
         private void conectar()
@@ -625,6 +621,47 @@ namespace _Plantilla_Sistema_facturación_
 
             }
 
+        }
+
+        public void insertarRol(string rol)
+        {
+            conectar();
+            try
+            {
+                //---------------------OTRA FORMA DE HACERLO
+
+                command = new SqlCommand("Insert into tblroles values ('"+rol+"')", connection);
+
+                command.ExecuteNonQuery();
+                MessageBox.Show("Registro exitoso");
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show("Error al insertar el rol");
+
+            }
+
+        }
+
+        public void actualizarSeguridad(string usuario, string contra, string code)
+        {
+            conectar();
+            try
+            {
+                //---------------------OTRA FORMA DE HACERLO
+
+                command = new SqlCommand("UPDATE tblSeguridad set StrUsuario='"+usuario+"', StrClave='"+contra+"' where IdEmpleado="+code+"", connection);
+
+                command.ExecuteNonQuery();
+                MessageBox.Show("Actualización exitosa");
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show("Error al actualizar el usuario");
+
+            }
         }
 
         //public void eliminarProducto(int identificador)

@@ -14,18 +14,32 @@ namespace _Plantilla_Sistema_facturación_
     {
         public static string usuario;
         public static string clave;
+
         public frmAdminSeguridad()
         {
             InitializeComponent();
         }
+
         Acceso_datos cn = new Acceso_datos();
+
+        public void NumeroRandom()
+        {
+            Random r = new Random();
+
+            int numero=r.Next(0000, 9999);
+
+            MessageBox.Show(""+numero);
+
+        }
 
         private void btnActualizarUsuarioEmpleado_Click(object sender, EventArgs e)
         {
-            errorProvider1.SetError(cxbEmpleadoUsuario, "Ingrese un valor");
+            
             errorProvider1.SetError(txtClave, "Ingrese un valor");
             errorProvider1.SetError(txtUsuario, "Ingrese un valor");
+            string codigo =cxbEmpleadoUsuario.SelectedValue.ToString();
 
+            cn.actualizarSeguridad(txtUsuario.Text,txtClave.Text,codigo);
         }
 
 
@@ -37,6 +51,7 @@ namespace _Plantilla_Sistema_facturación_
         private void frmAdminSeguridad_Load(object sender, EventArgs e)
         {
             cn.llenarComboEmpleado(cxbEmpleadoUsuario);
+            NumeroRandom();
             
         }
 

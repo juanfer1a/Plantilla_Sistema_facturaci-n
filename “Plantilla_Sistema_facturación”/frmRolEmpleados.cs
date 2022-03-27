@@ -15,6 +15,8 @@ namespace _Plantilla_Sistema_facturación_
         public int IdRol { get; set; }
         public string descripcion { get; set; }
 
+        Acceso_datos cn = new Acceso_datos();
+
         public frmRolEmpleados()
         {
             InitializeComponent();
@@ -42,17 +44,27 @@ namespace _Plantilla_Sistema_facturación_
             {//Actulizar rol
                 lblRolEmpleados.Text = "MODIFICAR ROL";
                 txbDescripcionRol.Text = descripcion;
-                txtNombreRol.Text = "NOMBRE ROL";
-                txbIdRolEmpleado.Text = "ID";
+                txtNombreRol.Text = descripcion;
+                txbIdRolEmpleado.Text = IdRol.ToString();
             }
 
         }
 
         private void btnActualizarRol_Click(object sender, EventArgs e)
         {
-            campoVacio(txbDescripcionRol);
-            campoVacio(txbIdRolEmpleado);
-            campoVacio(txtNombreRol);
+            if (IdRol >= 0)
+            {
+                MessageBox.Show("No se puede actualizar ya que esta asociado a una empleado");
+            }
+            else
+            {
+                cn.insertarRol(txtNombreRol.Text);
+                
+            }
+            //campoVacio(txbDescripcionRol);
+            ////campoVacio(txbIdRolEmpleado);
+            //campoVacio(txtNombreRol);
+            
         }
 
         private void lblSalirRol_Click(object sender, EventArgs e)
