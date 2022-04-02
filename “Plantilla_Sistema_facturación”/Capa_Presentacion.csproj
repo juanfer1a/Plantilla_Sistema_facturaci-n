@@ -241,5 +241,11 @@
   <ItemGroup>
     <None Include="Resources\salir.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa_LogicaDeNegocios\Capa_LogicaDeNegocios.csproj">
+      <Project>{56bd1812-8e4b-4fbf-bd0c-daf3a4784f62}</Project>
+      <Name>Capa_LogicaDeNegocios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

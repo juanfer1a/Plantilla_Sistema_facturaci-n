@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Capa_LogicaDeNegocios;
 
 namespace _Plantilla_Sistema_facturación_
 {
@@ -24,31 +25,36 @@ namespace _Plantilla_Sistema_facturación_
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
-            if (validar())
+            if (txtUsuario.Text != string.Empty && txtPassword.Text != string.Empty)//Valida que los campos tengan informacion
             {
-                string Respuesta = string.Empty;//variable para validar si la consulta devuelte un resultado
+                Validar_usuario Obj_Validar = new Validar_usuario();
 
-                if (txtUsuario.Text != string.Empty && txtPassword.Text != string.Empty)//Valida que los campos tengan informacion
+                Obj_Validar.C_StrUsuario = txtUsuario.Text;
+                Obj_Validar.C_StrClave = txtPassword.Text;
+
+                Obj_Validar.ValidarUsuario();
+                
+                if (Obj_Validar.C_IdEmpleado != 0)
                 {
-                    Acceso_datos ad = new Acceso_datos();//Instanciamos la clase acceso a datos
-                    Respuesta = ad.ValidarUsuario(txtUsuario.Text, txtPassword.Text);//metodo de la clase que devuelve el nombre del usuario 
-                    if (Respuesta != string.Empty)
-                    {
-                        MessageBox.Show("Acceso concedido, Bienvenido " + Respuesta);
-                        frmPrincipal frmPpal = new frmPrincipal();//objeto tipo formPrincipal 
-                        this.Hide();//Hacemos invisible el login
-                        frmPpal.Show();//Mostramos el principal
-                    }
-                    else
-                    {
-                        MessageBox.Show("USUARIO O CONTRASEÑA INVALIDA INTENTELO DE NUEVO");
-                        txtUsuario.Text = string.Empty;
-                        txtPassword.Text = string.Empty;
-                        txtUsuario.Focus();
-                    }
-
+                    MessageBox.Show("Datos de  verificacion validos");
+                    frmPrincipal frmPpal = new frmPrincipal();//objeto tipo formPrincipal 
+                    this.Hide();//Hacemos invisible el login
+                    frmPpal.Show();//Mostramos el principal
                 }
+                else
+                {
+                    MessageBox.Show("USUARIO O CONTRASEÑA NO ENCONTRADOS");
+                    txtUsuario.Text = string.Empty;
+                    txtPassword.Text = string.Empty;
+                    txtUsuario.Focus();
+                }
+
             }
+            else
+            {
+                MessageBox.Show("Debes ingresar un usuario y una clave ");
+            }
+
 
         }
         private Boolean validar()
